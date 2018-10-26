@@ -1,0 +1,33 @@
+<!--Confeccionar una página que permita seleccionar una pizza y la cantidad de unidades. 
+Luego al presionar un botón calcular el importe a pagar.
+Utilizar un objeto de la clase SELECT para la selección de la pizza, pudiendo ser:
+Queso: $ 4.
+Jamón y queso: $ 6.
+Especial: $ 10.
+A la cantidad de pizzas cargarla en un objeto de la clase TEXT y en otro objeto de la clase TEXT mostrar el importe total a abonar.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script type="text/javaScript" src="./ejercicio27_3.js"></script>
+
+<form>
+  Seleccione la pizza:
+  <select id="pizza">
+    <option value="4">Queso</option>
+    <option value="6">Jamon y Queso</option>
+    <option value="10">Especial</option>
+  </select>
+  <br>
+  Cantidad de pizzas:
+  <input type="text" id="cantidad">
+  <br>
+  <input type="button" value="Calcular coste" id="botonCalcular">
+</form>
+</body>
+</html>

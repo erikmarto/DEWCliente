@@ -1,0 +1,27 @@
+body#bg{ background: url(../img/bg.jpg); background-repeat: repeat-x; margin: 0;}
+a, a:hover, a:visited { text-decoration: none; color: black;}
+	
+#box {width: 950px; height: 830px;position: absolute; left:50%; margin-left: -475px; border: 2px black solid; background: url(../img/bg3.jpg);
+background-position: center;}
+
+/* Header */
+#header {width: 950px;height: 150px;}
+#logo {width: 950px; height: 150px; background: url(../img/logo.jpg);}
+
+/*StartBox*/
+#startBox {width: 950px; height: 70px; border-bottom: 1px black solid; margin-top:0px; background: linear-gradient(to top, #424242, #1C1C1C)}
+#startButton {width: 80px; height: 35px; border: 1px black solid;  border-radius: 10px;margin-left: 435px; margin-top:15px; position: absolute;
+background: linear-gradient(to right top, #6E6E6E, #D8D8D8)}
+#startP {text-align: center; margin-top: 8px; text-decoration: 0;}
+
+/* gameBox */
+#gameBox{width: 462px; height: 462px; border: 2px black solid; margin-left:244px; margin-top: 20px; background-color: #FFF;}
+.gameCel {width: 20px; height: 20px; float: left; font-size: 8px; border: 1px black solid; margin-left: 1px; margin-top: 1px;
+background: linear-gradient(to right top, #6E6E6E, #D8D8D8)}
+.gameCelsel {width: 20px; height: 20px; float: left; font-size: 8px; border: 1px black solid; margin-left: 1px; margin-top: 1px; background-color: #D8D8D8;}
+.gameCelf {width: 20px; height: 20px; font-size: 8px; border: 1px black solid; margin-left: 1px; margin-top: 1px;
+background: linear-gradient(to right top, #6E6E6E, #D8D8D8)}
+.gameCelfsel {width: 20px; height: 20px; font-size: 8px; border: 1px black solid; margin-left: 1px; margin-top: 1px; background-color: #D8D8D8;}
+.minaPa {font-size: 12px; margin-top: 2px; margin-left: 6px; font-weight: bold;}
+/* shoutBox */
+#shoutBox {width: 950px; height: 100px; border-top: 2px #6E6E6E solid; margin-top: 23px; background-color: #000; }

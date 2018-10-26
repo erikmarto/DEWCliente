@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Minesweeper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+
+
+
+
+
+<body>
+    <div class="btn-group" id="btnGroup" role="group" aria-label="Basic example">
+        <button type="button" id="principiante" class="btn btn-secondary">Principiante</button>
+        <button type="button" id="intermedio" class="btn btn-secondary">Intermedio</button>
+        <button type="button" id="experto" class="btn btn-secondary">Experto</button>
+        <button type="button" id="custom" class="btn btn-secondary">Custom</button>
+        
+    </div>
+    <div id="minesweeper" class="row">
+        <div id="gameCounter">
+            <div class="col-6">
+                <img src="img/time0.gif">
+                <img src="img/time0.gif">
+                <img src="img/time0.gif">
+            </div>
+
+            <div class="col">
+                <img id="startBtn" src="img/faceclock.gif">
+            </div>
+
+            <div class="col">
+                <img src="img/time0.gif">
+                <img src="img/time0.gif">
+                <img src="img/time0.gif">
+            </div>
+        </div>
+        <div id="game" class="container">
+            <!--Game goes here-->
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

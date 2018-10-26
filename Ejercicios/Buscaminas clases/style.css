@@ -1,0 +1,25 @@
+body {
+    background: url(./img/fondo.jpg) no-repeat center center; 
+    color: white;
+    text-align: center;
+}
+#estilos{
+    margin-top: 5%;
+}
+#empezar {
+    margin-top: 200px;
+}
+.check_class{
+    margin: 15px;
+}
+.tabla{
+    margin:auto; 
+    background-color: #FFF;
+}
+.gameCel {
+    width: 19px; 
+    height: 19px; 
+    float: left; 
+    border: 1px black solid; 
+    background: linear-gradient(to right top, #6E6E6E, #D8D8D8);
+}

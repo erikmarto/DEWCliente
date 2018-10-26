@@ -1,0 +1,48 @@
+<!--Confeccionar una página que permita tomar un examen múltiple choice. 
+Se debe mostrar una pregunta y seguidamente un objeto SELECT con las respuestas posibles. 
+Al presionar un botón mostrar la cantidad de respuestas correctas e incorrectas 
+(Disponer 4 preguntas y sus respectivos controles SELECT)-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script type="text/javaScript" src="./ejercicio27_4.js"></script>
+
+<form>
+  Como se dice rojo en ingles:<br>
+  <select id="pregunta1">
+    <option value="1">blue</option>
+    <option value="2">green</option>
+    <option value="3">red</option>
+  </select>
+  <br>
+  Como se dice ventana en ingles:<br>
+  <select id="pregunta2">
+    <option value="1">window</option>
+    <option value="2">door</option>
+    <option value="3">bedroom</option>
+  </select>
+  <br>
+  Como se dice gato en ingles:<br>
+  <select id="pregunta3">
+    <option value="1">dog</option>
+    <option value="2">cat</option>
+    <option value="3">lion</option>
+  </select>
+  <br>
+  Como se dice hombre en ingles:<br>
+  <select id="pregunta4">
+    <option value="1">women</option>
+    <option value="2">man</option>
+    <option value="3">child</option>
+  </select>
+  <br>
+  <input type="button" value="Controlar" id="botonVerificar">
+</form>
+</body>
+</html>

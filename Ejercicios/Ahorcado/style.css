@@ -1,0 +1,76 @@
+body {
+    background: url(ahorcado.jpg) no-repeat center center fixed;  
+	text-align: center;
+	font-family: sans-serif;
+}
+
+table {
+    margin: auto;
+}
+
+#mensajeTitulo {
+    font-size: 75px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+#mensajeFinal {
+    font-weight: bold;
+    font-size: 20px;
+    display: none;
+}
+
+#introducirLetra {
+	font-weight:bold;
+  	font-size: 20px;
+  	color:black;
+  	margin-top: 90px;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+#eligeLetra {
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+}
+
+#posicionFallo{
+    font-size: 40px;
+    color : red;
+    height: 70px;
+    margin-top: 3%;
+}
+
+#posicionLetra{
+    font-size: 30px;
+    color :  blue;
+    height: 70px;
+    margin-top: 5%;
+}
+
+#posicionReiniciar {
+    font-size: 50px;
+    height: 70px;
+    margin-top: 15px;
+}
+
+#posicionBoton{
+    margin-top: 15px;
+}
+
+button {
+	background-color:black;
+	border-radius:30px;
+	border:8px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:20px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio 25 JavaScriptYA</title>
+    <meta charset="UTF-8">
+    <script src="lodash.js"></script>
+</head>
+
+<body>
+    <script>
+        cont = [];
+        var users = [
+            { 'user': 'Alejandro', 'age': 29 },
+            { 'user': 'rommel', 'age': 12 },
+            { 'user': 'aitor', 'age': 42 },
+            { 'user': 'ruth', 'age': 18 }
+        ];
+        console.log(cont);
+        class Persona {
+            constructor() {
+                this._nombre = 'Alvaro';
+                this._edad = '19';
+            }
+
+            set nombre(n) {
+                this._nombre = n;
+            }
+            get nombre() {
+                return this._nombre;
+            }
+            set edad(e) {
+                if (e > 0)
+                    this._edad = e;
+                else
+                    console.log("ERROR NEGATIVE edad");
+            }
+            get edad() {
+                return this._edad;
+            }
+        }
+        anaydirPersona = () => {
+            const persona1 = new Persona();//creo la clase
+            persona1.nombre = prompt("Por favor, escriba su nombre ");//meto los datos
+            let age = prompt("Por favor, escriba su edad", " ");;
+            let _age = parseInt(age);
+            persona1.nombre=_.toLower(persona1.nombre);//Si escribe el nombre con mayuscula se transforma en minuscula
+            persona1.edad = _age;
+            users.push({ 'user': persona1.nombre, 'age': persona1.edad });//añado la informacion al array
+            borrar();
+            escribir();
+
+        }
+
+        borrar = () => {
+            document.body.innerHTML = '';
+        }
+        escribir = () => {
+            for (i = 0; i < users.length; i++) {
+                users[i]['user']=_.toLower(users[i]['user']); //Para pasar ya los nombres guardados del array users a minuscula si estan con mayuscula
+                users = _.orderBy(users, ['user', 'age'], ['asc', 'desc']);//Ordena los users por user y edad de forma ascendente guardandolos otra vez en el array users
+                document.write("Hola me llamo " + users[i]['user'] + " y tengo " + users[i]['age'] + "<br>");
+            }
+            //creo el boton 
+            var input = document.createElement("input");
+            input.type = "button";
+            input.value = "Añadir Persona";
+            input.addEventListener("click", anaydirPersona, false);
+            document.body.appendChild(input);
+        }
+
+        //escribo por primera vez la información guardada del array y la muestro por pantalla
+        escribir();
+
+
+    </script>
+
+</body>
+
+</html>

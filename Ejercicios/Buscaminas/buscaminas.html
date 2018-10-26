@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Juego Buscaminas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="minas.js"></script>
+
+</head>
+
+<body>
+    <h1>BUSCAMINAS</h1>
+    <form id="comienzo">
+        <div id="estilos">
+            <p>Seleccione un nivel de dificultad:</p>
+            <input type="checkbox" name="principiante" id="ch1" class="check_class">Novato
+            <input type="checkbox" name="intermedio" id="ch2" class="check_class">Intermedio
+            <input type="checkbox" name="experto" id="ch3" class="check_class">Experto
+            <!--<div>Reglas</p>
+            <p>El juego consiste en despejar todas las casillas de una pantalla que no oculten una mina.</p>
+
+            <p>Algunas casillas tienen un número, este número indica las minas que suman todas las casillas circundantes. 
+            Así, si una casilla tiene el número 3, significa que de las ocho casillas que hay alrededor (si no es en una esquina o borde) hay 3 con minas y 5 sin minas. 
+            Si se descubre una casilla sin número indica que ninguna de las casillas vecinas tiene mina y estas se descubren automáticamente.</p>
+                
+            <p>Si se descubre una casilla con una mina se pierde la partida.</p>
+                
+            <p>Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a descubrir la que están cerca.</p>
+            </div>-->
+        </div>
+        <button type="button" class="btn btn-outline-primary" id="empezar">Empezar Juego</button>
+    </form>
+<button type="button" class="btn btn-outline-danger" id="reiniciar">Reiniciar</button>
+</body>
+
+</html>
