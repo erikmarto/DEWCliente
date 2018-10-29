@@ -8,6 +8,18 @@ window.onload = function () {
     //escondemos el introducir letra y el boton de reiniciar
     document.getElementById("introducirLetra").style.display = 'none';
     document.getElementById("botonReiniciar").style.display = 'none';
+
+
+    const enter = document.getElementById("eligeLetra");
+
+    enter.addEventListener("keyup", function (event) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            document.getElementById("botonComprobar").click();
+        }
+    });
 }
 
 //let que recoge la palabra
@@ -22,48 +34,42 @@ let numAciertos = 0;
 let numLetras = [""];
 //ARRAY que contiene las palabras que pueden salir
 const arrayPalabras = ["Coco", "Luz", "Fuente", "Casa", "Enorme", "Silla", "Ordenador", "Pizarra", "Pantalon", "Fiesta",
-    "Parque", "Escaleras", "Videojuegos", "Deporte", "Insecto", "Amistad", "Pulpo", "Lluvia", "Naranja", "Matematicas", 
+    "Parque", "Escaleras", "Videojuegos", "Deporte", "Insecto", "Amistad", "Pulpo", "Lluvia", "Naranja", "Matematicas",
     "Mochila", "Servir", "Deletrear", "Hombre", "Enorme", "Galera", "Prototipo", "Veloz", "Ayuntamiento", "Leon"];
 
 
-class Ahorcado {
-    constructor(){
 
+function newTablaAhorcado() {
+    //creamos una nueva tabla con la palabra AHORCADO
+    const tbl1 = document.createElement('table');
+    const tr1 = tbl1.insertRow();
+    for (let i = 0; i < stringAhorcado.length; i++) {
+        const td1 = tr1.insertCell();
+        td1.setAttribute("id", "celdaAhorcado" + i);
+        td1.setAttribute("class", "celdaAhorcado");
+        td1.appendChild(document.createTextNode(stringAhorcado[i]));
+        td1.style.borderBottom = "thick solid #2E2E2E";
+        td1.style.display = "none";
     }
-    newTablaAhorcado() {
-
-        //creamos una nueva tabla con la palabra AHORCADO
-        const tbl1 = document.createElement('table');
-        const tr1 = tbl1.insertRow();
-        for (let i = 0; i < stringAhorcado.length; i++) {
-            const td1 = tr1.insertCell();
-            td1.setAttribute("id", "celdaAhorcado" + i);
-            td1.setAttribute("class", "celdaAhorcado");
-            td1.appendChild(document.createTextNode(stringAhorcado[i]));
-            td1.style.borderBottom = "thick solid #2E2E2E";
-            td1.style.display = "none";
-        }
-        document.getElementById("posicionFallo").appendChild(tbl1);
-    }
-
-    newTablaPalabra() {
-
-        //creamos nueva tabla con la palabra a adivinar
-        let textoArray = palabra.split("");
-        const tbl2 = document.createElement('table');
-        const tr2 = tbl2.insertRow();
-        for (let i = 0; i < textoArray.length; i++) {
-            const td2 = tr2.insertCell();
-            td2.setAttribute("id", "celdaLetra" + i);
-            td2.setAttribute("class", "celdaLetra");
-            td2.appendChild(document.createTextNode(""));
-            td2.style.borderBottom = "thick solid #2E2E2E";
-            td2.style.width = "30px";
-        }
-        document.getElementById("posicionLetra").appendChild(tbl2);
-    }
-    
+    document.getElementById("posicionFallo").appendChild(tbl1);
 }
+
+function newTablaPalabra() {
+    //creamos nueva tabla con la palabra a adivinar
+    let textoArray = palabra.split("");
+    const tbl2 = document.createElement('table');
+    const tr2 = tbl2.insertRow();
+    for (let i = 0; i < textoArray.length; i++) {
+        const td2 = tr2.insertCell();
+        td2.setAttribute("id", "celdaLetra" + i);
+        td2.setAttribute("class", "celdaLetra");
+        td2.appendChild(document.createTextNode(""));
+        td2.style.borderBottom = "thick solid #2E2E2E";
+        td2.style.width = "30px";
+    }
+    document.getElementById("posicionLetra").appendChild(tbl2);
+}
+
 //creamos una funcion para que pueda empezar el juego como tal
 function empezarJuego() {
 
@@ -93,7 +99,7 @@ function comprobarPalabra() {
 
     //let que crea un array con las letras de la palabra
     let stringLetra = palabra.split("");
-    
+
     //let para comprobar si ya se ha introducido la letra anteriormente
     let letraEncontrada = false;
 
@@ -103,7 +109,7 @@ function comprobarPalabra() {
             letraEncontrada = true;
         }
     }
-
+    
     //si ya se introducio la letra antes vuelve al input
     if (letraEncontrada) {
         //alert("Ya has introducido esta letra " + letra + " escoge otra que no hayas elegido");
@@ -111,7 +117,7 @@ function comprobarPalabra() {
 
         //si no estaba la letra la introducimos en el array
         numLetras.push(letra);
-
+        
         //let boolean que nos sirve para incrementar los fallos si no se encuentra la letra
         let letraErronea = false;
 
@@ -123,7 +129,7 @@ function comprobarPalabra() {
                 letraErronea = true;
                 document.getElementById("celdaLetra" + i).innerHTML = letra.toUpperCase();
                 numAciertos++;
-
+                
                 //cuando se acierte la palabra escondemos los inputs y el boton de comprobar
                 //y aparece un mensaje donde pone que se ha acertado la palabra, además de hacer visible el boton de volver a jugar
                 if (numAciertos == stringLetra.length) {
@@ -141,6 +147,8 @@ function comprobarPalabra() {
             document.getElementById('celdaAhorcado' + (stringAhorcado.length - numIntentos)).style.display = 'initial';
             numIntentos--;
             document.getElementById('numIntentos').innerHTML = numIntentos + " de 8 intentos";
+
+            document.getElementById('letrasErroneas').innerHTML += letra + ",";
 
             //cuando se agoten los intentos escondemos los inputs y el boton de comprobar
             //y aparece un mensaje donde pone que se ha fallado la palabra, además de hacer visible el boton de volver a jugar
@@ -163,5 +171,4 @@ function comprobarPalabra() {
 function reiniciarJuego() {
     window.location.reload();
 }
-   console.log("hola"); 
-   console.log("hola");
+
