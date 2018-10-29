@@ -1,24 +1,30 @@
 window.onload = function () {
-    //evento para empezar el juego
+    // evento para empezar el juego
     document.getElementById("botonIniciar").addEventListener('click', empezarJuego, false);
-    //evento para comprobar la letra desde el botón
+    // evento para comprobar la letra desde el botón
     document.getElementById("botonComprobar").addEventListener('click', comprobarPalabra, false);
-    //evento para reiniciar el juego
+    // evento para reiniciar el juego
     document.getElementById("botonReiniciar").addEventListener('click', reiniciarJuego, false);
-    //escondemos el introducir letra y el boton de reiniciar
-    document.getElementById("introducirLetra").style.display = 'none';
-    document.getElementById("botonReiniciar").style.display = 'none';
+   
+
+    // escondemos los divs correspondientes
+    document.getElementById("introducirLetra").style.display = "none";
+    document.getElementById("botonReiniciar").style.display = "none";
+    document.getElementById("letrasErroneas").style.display = "none";
 
 
-    const enter = document.getElementById("eligeLetra");
-
-    enter.addEventListener("keyup", function (event) {
-        // Cancel the default action, if needed
-        event.preventDefault();
-        // Number 13 is the "Enter" key on the keyboard
+    const teclado = document.getElementById("eligeLetra");
+    
+    teclado.addEventListener("keyup", function (event) {
+        // numero 13 representa el "Enter" para introducir letra
         if (event.keyCode === 13) {
             document.getElementById("botonComprobar").click();
         }
+        // bloquea simbolos a el input
+        if (!this.value.match(/[A-Za-z]/)) {
+            this.value = this.value.replace(/[^A-Za-z_]/g, '');
+        }
+        event.preventDefault();
     });
 }
 
@@ -79,6 +85,7 @@ function empezarJuego() {
 
     //hacemos visible el div que contiene introducirLetra y el boton comprobar
     document.getElementById("introducirLetra").style.display = "block";
+    document.getElementById("letrasErroneas").style.display = "block";
 
     //ocultamos el boton de inicio
     document.getElementById("botonIniciar").style.display = "none";
