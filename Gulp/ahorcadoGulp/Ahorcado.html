@@ -4,15 +4,20 @@
 <head>
     <title>Juego del Ahorcado</title>
 
-    <script type="text/javascript" src="./js/build/todo.js"></script>
+    <link rel="stylesheet" href="./node_modules/flipclock/compiled/flipclock.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/dist/style.css">
-    <script src="node_modules/lodash/lodash.js"></script>
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./node_modules/lodash/lodash.js"></script>
+    <script type="text/javascript" src="./node_modules/flipclock/compiled/flipclock.min.js"></script>
+    <script type="text/javascript" src="./js/source/ahorcado.js"></script>
+
 </head>
 
 <body>
 
     <div id="mensajeTitulo"> El Ahorcado </div>
-
+    <div id="clock"></div>
     <div id="posicionFallo"></div>
     <div id="reglas">
         <h2>INSTRUCCIONES</h2>

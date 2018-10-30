@@ -37,7 +37,7 @@ table {
 }
 
 #posicionFallo{
-    font-size: 40px;
+    font-size: 30px;
     color : red;
     height: 70px;
     margin-top: 3%;
@@ -71,4 +71,8 @@ button {
 	font-weight:bold;
 	padding:11px 23px;
 	text-decoration:none;
+}
+
+#clock{
+float: right;
 }
