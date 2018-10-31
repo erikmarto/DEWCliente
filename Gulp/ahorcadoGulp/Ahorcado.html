@@ -17,29 +17,38 @@
 <body>
 
     <div id="mensajeTitulo"> El Ahorcado </div>
-    <div id="clock"></div>
-    <div id="posicionFallo"></div>
-    <div id="reglas">
-        <h2>INSTRUCCIONES</h2>
-        - No se permiten numeros, se sumara un error<br><br>
-        - Tiene que ir eligiendo letra por letra y no se puede repetir<br><br>
-        - Cada letra no acertada suma un error
-    </div>
-    <div id="posicionLetra"></div>
-    <div id="letrasErroneas">Letras erroneas: </div>
-    <div id="posicionBoton">
-        <button id="botonIniciar"> Empecemos </button>
-        <p id="mensajeFinal"></p>
-    </div>
-    <div id="introducirLetra">
-        Dime una Letra:
-        <input id="eligeLetra" type="text" maxlength="1"><br><br>
-        <button id="botonComprobar"> Comprueba </button><br>
-        <p id="numIntentos"> 8 de 8 Intentos </p>
-    </div>
-    <div id="posicionReinicio">
-        <button id="botonReiniciar"> Vuelve a jugar </button>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="clock"></div>
+            </div>
+            <div class="col-lg-4">
+                <div id="posicionFallo"></div>
+                <div id="reglas">
+                    <h2>INSTRUCCIONES</h2>
+                    - No se permiten numeros, se sumara un error<br><br>
+                    - Tiene que ir eligiendo letra por letra y no se puede repetir<br><br>
+                    - Cada letra no acertada suma un error
+                </div>
+                <div id="posicionLetra"></div>
+                <div id="letrasErroneas">Letras erroneas: </div>
+                <div id="posicionBoton">
+                    <button id="botonIniciar" class="btn btn-primary"> Empecemos </button>
+                    <p id="mensajeFinal"></p>
+                </div>
+                <div id="introducirLetra">
+                    Dime una Letra:
+                    <input id="eligeLetra" type="text" maxlength="1"><br><br>
+                    <button id="botonComprobar" class="btn btn-primary"> Comprueba </button><br>
+                    <p id="numIntentos"> 8 de 8 Intentos </p>
+                </div>
+                <div id="posicionReinicio">
+                    <button id="botonReiniciar" class="btn btn-primary"> Vuelve a jugar </button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+            </div>
+        </div>
     </div>
 </body>
-
 </html>

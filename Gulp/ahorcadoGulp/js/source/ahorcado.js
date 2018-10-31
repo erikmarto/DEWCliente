@@ -49,6 +49,7 @@ let numAciertos = 0;
 // let que recoge las letras usadas
 let numLetras = [""];
 
+
 class Tablas {
     constructor(longitud) {
         this.long = longitud;
@@ -87,7 +88,6 @@ class Tablas {
 
 class Comprobar {
     constructor() {
-
     }
     elegirLetra() {
         // recogemos la letra que se introduce

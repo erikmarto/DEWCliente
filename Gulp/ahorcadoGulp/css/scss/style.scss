@@ -1,41 +1,49 @@
+$fontWe: bold;
+$fontSi: 20px;
+$txtAlig: center;
+
 body {
-    background: url(ahorcado.jpg) no-repeat center center fixed;  
-	text-align: center;
-	font-family: sans-serif;
+    background: url(ahorcado.jpg) no-repeat center center fixed;
+    font-family: "Times New Roman", Times, serif; 
+	text-align: $txtAlig;
 }
 
 table {
     margin: auto;
+    td{
+        margin: 2px;
+    }
 }
 
 #mensajeTitulo {
-    font-size: 75px;
-    font-weight: bold;
+    font-size: 70px;
+    font-weight: $fontWe;
     margin-top: 40px;
 }
 
 #mensajeFinal {
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: $fontWe;
+    font-size: $fontSi;
     display: none;
 }
 
-#introducirLetra {
-	font-weight:bold;
-  	font-size: 20px;
-  	color:black;
-  	margin-top: 90px;
-    position: relative;
-    top: 50%;
-    transform: translateY(0%);
-}
-
 #eligeLetra {
-	width: 30px;
-	height: 30px;
-	font-size: 30px;
+	width: 40px;
+	height: 40px;
+	font-size: $fontSi;
 }
 
+#introducirLetra {
+	font-weight: $fontWe;
+  	font-size: $fontSi;
+  	color: black;
+    position: relative;
+    margin-top: 50%;
+    transform: translateY(0%);
+} 
+
+
+/*
 #posicionFallo{
     font-size: 30px;
     color : red;
@@ -74,5 +82,7 @@ button {
 }
 
 #clock{
-float: right;
+width: 20%;
+margin: auto;
 }
+ */

@@ -1,13 +1,15 @@
 body {
   background: url(ahorcado.jpg) no-repeat center center fixed;
-  text-align: center;
-  font-family: sans-serif; }
+  font-family: "Times New Roman", Times, serif;
+  text-align: center; }
 
 table {
   margin: auto; }
+  table td {
+    margin: 2px; }
 
 #mensajeTitulo {
-  font-size: 75px;
+  font-size: 70px;
   font-weight: bold;
   margin-top: 40px; }
 
@@ -16,51 +18,59 @@ table {
   font-size: 20px;
   display: none; }
 
+#eligeLetra {
+  width: 40px;
+  height: 40px;
+  font-size: 20px; }
+
 #introducirLetra {
   font-weight: bold;
   font-size: 20px;
   color: black;
-  margin-top: 90px;
   position: relative;
-  top: 50%;
+  margin-top: 50%;
   transform: translateY(0%); }
 
-#eligeLetra {
-  width: 30px;
-  height: 30px;
-  font-size: 30px; }
+/*
+#posicionFallo{
+    font-size: 30px;
+    color : red;
+    height: 70px;
+    margin-top: 3%;
+}
 
-#posicionFallo {
-  font-size: 30px;
-  color: red;
-  height: 70px;
-  margin-top: 3%; }
-
-#posicionLetra {
-  font-size: 30px;
-  color: blue;
-  height: 70px;
-  margin-top: 5%; }
+#posicionLetra{
+    font-size: 30px;
+    color :  blue;
+    height: 70px;
+    margin-top: 5%;
+}
 
 #posicionReiniciar {
-  font-size: 50px;
-  height: 70px;
-  margin-top: 15px; }
+    font-size: 50px;
+    height: 70px;
+    margin-top: 15px;
+}
 
-#posicionBoton {
-  margin-top: 15px; }
+#posicionBoton{
+    margin-top: 15px;
+}
 
 button {
-  background-color: black;
-  border-radius: 30px;
-  border: 8px solid black;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 11px 23px;
-  text-decoration: none; }
+	background-color:black;
+	border-radius:30px;
+	border:8px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:20px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+}
 
-#clock {
-  float: right; }
+#clock{
+width: 20%;
+margin: auto;
+}
+ */
