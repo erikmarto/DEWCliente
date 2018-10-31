@@ -2,6 +2,11 @@
 <html>
 
 <head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Juego del Ahorcado</title>
 
     <link rel="stylesheet" href="./node_modules/flipclock/compiled/flipclock.css">
@@ -10,7 +15,7 @@
     <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="./node_modules/lodash/lodash.js"></script>
     <script type="text/javascript" src="./node_modules/flipclock/compiled/flipclock.min.js"></script>
-    <script type="text/javascript" src="./js/source/ahorcado.js"></script>
+    <script type="module" src="./js/source/ahorcado.js"></script>
 
 </head>
 
@@ -20,7 +25,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div id="clock"></div>
             </div>
             <div class="col-lg-4">
                 <div id="posicionFallo"></div>
@@ -31,7 +35,6 @@
                     - Cada letra no acertada suma un error
                 </div>
                 <div id="posicionLetra"></div>
-                <div id="letrasErroneas">Letras erroneas: </div>
                 <div id="posicionBoton">
                     <button id="botonIniciar" class="btn btn-primary"> Empecemos </button>
                     <p id="mensajeFinal"></p>
@@ -47,6 +50,8 @@
                 </div>
             </div>
             <div class="col-lg-4">
+                <div id="clock"></div>
+                <div id="letrasErroneas">Letras erroneas: </div>
             </div>
         </div>
     </div>

@@ -10,67 +10,53 @@ table {
 
 #mensajeTitulo {
   font-size: 70px;
-  font-weight: bold;
-  margin-top: 40px; }
+  font-weight: bold; }
 
-#mensajeFinal {
-  font-weight: bold;
-  font-size: 20px;
-  display: none; }
+#posicionFallo {
+  font-size: 30px;
+  color: blue;
+  height: 70px;
+  margin-top: 10%; }
+
+#posicionLetra {
+  font-size: 30px;
+  color: black;
+  height: 70px;
+  margin-top: 5%; }
+
+#letrasErroneas {
+  margin-top: 5%;
+  color: red;
+  font-weight: bold; }
 
 #eligeLetra {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   font-size: 20px; }
 
 #introducirLetra {
   font-weight: bold;
   font-size: 20px;
-  color: black;
   position: relative;
-  margin-top: 50%;
-  transform: translateY(0%); }
+  margin-top: 40%; }
 
-/*
-#posicionFallo{
-    font-size: 30px;
-    color : red;
-    height: 70px;
-    margin-top: 3%;
-}
+#posicionReinicio {
+  margin-top: 5%; }
 
-#posicionLetra{
-    font-size: 30px;
-    color :  blue;
-    height: 70px;
-    margin-top: 5%;
-}
+#mensajeFinal {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 5%; }
 
-#posicionReiniciar {
-    font-size: 50px;
-    height: 70px;
-    margin-top: 15px;
-}
+#posicionBoton {
+  margin-top: 5%; }
 
-#posicionBoton{
-    margin-top: 15px;
-}
-
-button {
-	background-color:black;
-	border-radius:30px;
-	border:8px solid black;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:20px;
-	font-weight:bold;
-	padding:11px 23px;
-	text-decoration:none;
-}
-
-#clock{
-width: 20%;
-margin: auto;
-}
- */
+.btn {
+  background-color: black;
+  border-radius: 30px;
+  border: 2px solid white;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px; }

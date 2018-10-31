@@ -1,3 +1,11 @@
+//Pruebas con imports de las clases no funciona correctamente: "TypeError: XX is not a constructor"
+/* import Tablas from "./tablasClases.js";
+import Comprobar from "./comprobarClases.js"; */
+
+//Import de la funcion reiniciar
+import { reiniciarJuego } from "./reiniciar.js";
+
+
 window.onload = function () {
     // evento para empezar el juego
     document.getElementById("botonIniciar").addEventListener('click', empezarJuego, false);
@@ -13,9 +21,8 @@ window.onload = function () {
     document.getElementById("letrasErroneas").style.display = "none";
     document.getElementById("clock").style.display = "none";
 
-
+    // funcion de ayuda para el teclado
     const teclado = document.getElementById("eligeLetra");
-
     teclado.addEventListener("keyup", function (event) {
         // numero 13 representa el "Enter" para introducir letra
         if (event.keyCode === 13) {
@@ -49,12 +56,12 @@ let numAciertos = 0;
 // let que recoge las letras usadas
 let numLetras = [""];
 
-
+// clase de las tablas Ahorcado y Palabras
 class Tablas {
     constructor(longitud) {
         this.long = longitud;
     }
-    
+
     newTablaAhorcado() {
         // creamos una nueva tabla con la palabra AHORCADO
         const tbl1 = document.createElement('table');
@@ -64,7 +71,7 @@ class Tablas {
             td1.setAttribute("id", "celdaAhorcado" + i);
             td1.setAttribute("class", "celdaAhorcado");
             td1.appendChild(document.createTextNode(stringAhorcado[i]));
-            td1.style.borderBottom = "thick solid #2E2E2E";
+            td1.style.borderBottom = "3px solid #2E2E2E";
             td1.style.display = "none";
         }
         document.getElementById("posicionFallo").appendChild(tbl1);
@@ -79,22 +86,27 @@ class Tablas {
             td2.setAttribute("id", "celdaLetra" + i);
             td2.setAttribute("class", "celdaLetra");
             td2.appendChild(document.createTextNode(""));
-            td2.style.borderBottom = "thick solid #2E2E2E";
-            td2.style.width = "30px";
+            td2.innerHTML = "_";
+            td2.style.padding = "10px";
         }
         document.getElementById("posicionLetra").appendChild(tbl2);
     }
 }
 
+// clase de comprobar Intentos, Aciertos...
 class Comprobar {
     constructor() {
+        // sin necesidad de constructor
     }
+
     elegirLetra() {
         // recogemos la letra que se introduce
         const letra = document.getElementById("eligeLetra").value;
 
         // let que crea un array con las letras de la palabra
         let stringLetra = _.split(palabra, "");
+
+        console.log(palabra);
 
         // let para comprobar si ya se ha introducido la letra anteriormente
         let letraEncontrada = false;
@@ -108,11 +120,11 @@ class Comprobar {
 
         // si ya se introducio la letra antes vuelve al input
         if (letraEncontrada) {
-            
-                alert("Ya has introducido esta letra escoge otra que no hayas elegido");
+
+            alert("Ya has introducido esta letra escoge otra que no hayas elegido");
 
         } else {
-            
+
             // si no estaba la letra la introducimos en el array
             numLetras.push(letra);
 
@@ -127,7 +139,7 @@ class Comprobar {
                     letraErronea = true;
                     document.getElementById("celdaLetra" + i).innerHTML = _.upperCase(letra);
                     numAciertos++;
-
+                    
                     // cuando se acierte la palabra escondemos los inputs y el boton de comprobar
                     // y aparece un mensaje donde pone que se ha acertado la palabra, además de hacer visible el boton de volver a jugar
                     if (numAciertos == stringLetra.length) {
@@ -136,6 +148,8 @@ class Comprobar {
                         document.getElementById('botonReiniciar').style.display = 'initial';
                         document.getElementById('mensajeFinal').innerHTML = "Has acertado, ENHORABUENA!!!!!";
                         document.getElementById('mensajeFinal').style.display = 'initial';
+
+                        // para el reloj
                         clock.stop();
                     }
                 }
@@ -147,7 +161,7 @@ class Comprobar {
                 numIntentos--;
                 document.getElementById('numIntentos').innerHTML = numIntentos + " de 8 intentos";
 
-                document.getElementById('letrasErroneas').innerHTML += letra + ",";
+                document.getElementById('letrasErroneas').innerHTML += letra + ", ";
 
                 // cuando se agoten los intentos escondemos los inputs y el boton de comprobar
                 // y aparece un mensaje donde pone que se ha fallado la palabra, además de hacer visible el boton de volver a jugar
@@ -157,6 +171,8 @@ class Comprobar {
                     document.getElementById('botonReiniciar').style.display = 'initial';
                     document.getElementById('mensajeFinal').innerHTML = "No has acertado, la palabra era: " + palabra;
                     document.getElementById('mensajeFinal').style.display = 'initial';
+
+                    // para el reloj
                     clock.stop();
                 }
             }
@@ -175,14 +191,13 @@ function empezarJuego() {
     document.getElementById("introducirLetra").style.display = "block";
     document.getElementById("letrasErroneas").style.display = "block";
     document.getElementById("clock").style.display = "block";
-    
+
     // ocultamos el boton de inicio
     document.getElementById("botonIniciar").style.display = "none";
     document.getElementById("reglas").style.display = "none";
 
-    // llamamos a las clases/funciones que crea las tablas y que comprueban
-    comprobar = new Comprobar(palabra);
-    tabla = new Tablas(palabra.length);
+    // llamamos a la clase y funciones que crea la clase tablas
+    const tabla = new Tablas(palabra.length);
     tabla.newTablaAhorcado();
     tabla.newTablaPalabra();
 
@@ -193,7 +208,8 @@ function empezarJuego() {
 // funcion para comprobar con el botón
 function comprobarPalabra() {
 
-    // llamamos a la funcion
+    // llamamos a la funcion y a la clase comprobar
+    const comprobar = new Comprobar(palabra);
     comprobar.elegirLetra();
 
     // borramos el valor del input y lo ponemos en focus para introducir la siguiente letra
@@ -201,15 +217,9 @@ function comprobarPalabra() {
     document.getElementById('eligeLetra').focus();
 }
 
-// funcion para reiniciar el juego
-function reiniciarJuego() {
-    window.location.reload();
-} 
-
-//PRUEBA RELOJ
+//Reloj de flipClock con funcion en jQuery
 let clock;
-		
-$(document).ready(function() {
+$(document).ready(function () {
     clock = $('#clock').FlipClock({
         clockFace: 'MinuteCounter'
     });

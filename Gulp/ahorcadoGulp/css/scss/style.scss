@@ -1,11 +1,14 @@
 $fontWe: bold;
-$fontSi: 20px;
+$num20: 20px;
+$num30: 30px;
 $txtAlig: center;
+$size-height: 70px;
+$top: 5%;
 
 body {
     background: url(ahorcado.jpg) no-repeat center center fixed;
     font-family: "Times New Roman", Times, serif; 
-	text-align: $txtAlig;
+    text-align: $txtAlig; 
 }
 
 table {
@@ -16,73 +19,64 @@ table {
 }
 
 #mensajeTitulo {
-    font-size: 70px;
+    font-size: $size-height;
     font-weight: $fontWe;
-    margin-top: 40px;
 }
 
-#mensajeFinal {
+#posicionFallo{
+    font-size: $num30;
+    color : blue;
+    height: $size-height;
+    margin-top: 10%;
+}
+
+#posicionLetra{
+    font-size: $num30;
+    color: black;
+    height: $size-height;
+    margin-top: $top;
+}
+
+#letrasErroneas {
+    margin-top: $top;
+    color: red;
     font-weight: $fontWe;
-    font-size: $fontSi;
-    display: none;
 }
 
 #eligeLetra {
-	width: 40px;
-	height: 40px;
-	font-size: $fontSi;
+	width: 30px;
+	height: 30px;
+	font-size: $num20;
 }
 
 #introducirLetra {
 	font-weight: $fontWe;
-  	font-size: $fontSi;
-  	color: black;
+  	font-size: $num20;
     position: relative;
-    margin-top: 50%;
-    transform: translateY(0%);
+    margin-top: 40%;
 } 
 
-
-/*
-#posicionFallo{
-    font-size: 30px;
-    color : red;
-    height: 70px;
-    margin-top: 3%;
+#posicionReinicio {
+    margin-top: $top;
 }
 
-#posicionLetra{
-    font-size: 30px;
-    color :  blue;
-    height: 70px;
-    margin-top: 5%;
-}
-
-#posicionReiniciar {
-    font-size: 50px;
-    height: 70px;
-    margin-top: 15px;
+#mensajeFinal {
+    font-weight: $fontWe;
+    font-size: $num20;
+    margin: $top;
 }
 
 #posicionBoton{
-    margin-top: 15px;
+    margin-top: $top;
 }
 
-button {
-	background-color:black;
-	border-radius:30px;
-	border:8px solid black;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:20px;
-	font-weight:bold;
-	padding:11px 23px;
-	text-decoration:none;
+.btn {
+	background-color: black;
+	border-radius: 30px;
+	border: 2px solid white;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-size: $num20;
+	padding: 10px 20px;
 }
-
-#clock{
-width: 20%;
-margin: auto;
-}
- */
