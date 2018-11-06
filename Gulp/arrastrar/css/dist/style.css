@@ -18,3 +18,10 @@
   height: 110px;
   padding: 10px;
   border: 1px solid purple; }
+
+.navbar {
+  color: bisque; }
+
+#empezar {
+  width: 10%;
+  height: 50px; }

@@ -9,23 +9,29 @@
     <link rel="stylesheet" type="text/css" href="./css/dist/style.css">
     <script type="text/javascript" src="./node_modules/lodash/lodash.js"></script>
     <script type="text/JavaScript" src="./js/source/arrastrar.js"> </script>
+    <title>Figuras</title>
 </head>
 
 <body>
 
-    <p>Mover imagen desde fuera al rectangulo:</p>
-
-    <div id="divCir"></div>
-    <div id="divTri"></div>
-    <div id="divCua"></div>
-
-    <div id="figuras">
-        <img id="dragCir" src="./img/circulo.png" draggable="true" width="110" height="100">
-        <img id="dragTri" src="./img/triangulo.png" draggable="true" width="100" height="100">
-        <img id="dragCua" src="./img/cuadrado.png" draggable="true" width="100" height="100">
+    <nav class="navbar navbar-dark bg-dark">
+        <h1>Juego de las figuras</h1>
+    </nav>
+    <div id="container">
+        <div class="row">
+            <div id="divCir" class="col-lg-4"></div>
+            <div id="divTri" class="col-lg-4"></div>
+            <div id="divCua" class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div id="figuras">
+                <img id="dragCir" src="./img/circulo.png" draggable="true" width="110" height="100">
+                <img id="dragTri" src="./img/triangulo.png" draggable="true" width="100" height="100">
+                <img id="dragCua" src="./img/cuadrado.png" draggable="true" width="100" height="100">
+            </div>
+        </div>
     </div>
-
-    <button class="btn btn-primary">Empezar</button>
+    <button id="empezar" class="btn btn-primary">Empezar</button>
 
 </body>
 

@@ -8,6 +8,7 @@ $a : 110px;
     padding: 10px;
     border: 1px solid red;
 }
+
 #divTri {
     float: $l;
     width: $a;
@@ -15,6 +16,7 @@ $a : 110px;
     padding: 10px;
     border: 1px solid green;
 }
+
 #divCua {
     float: $l;
     width: $a;
@@ -22,3 +24,13 @@ $a : 110px;
     padding: 10px;
     border: 1px solid purple;
 }
+
+.navbar{
+    color: bisque;
+}
+
+#empezar{
+    width: 10%;
+    height: 50px;
+}
+

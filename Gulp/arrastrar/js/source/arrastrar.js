@@ -1,7 +1,9 @@
 window.onload = function(){
     document.getElementById("divCir").ondrop = drop;
     document.getElementById("divCir").ondragover = allowDrop;
-    document.getElementById("dragCir").addEventListener("ondragstart", drag, false);
+    document.getElementById("dragCir").ondragstart = drag;
+    document.getElementById("empezar").addEventListener("click", empezar, false);
+    document.getElementById("container").style.display = "none";
 }
 
 allowDrop = (ev) => {
@@ -18,10 +20,8 @@ drop = (ev) => {
     ev.target.appendChild(document.getElementById(data));
 }
 
-class Figuras{
-    constructor(){
-        this.circulo = false;
-        this.triangulo = false;
-        this.cuadrado = false;
-    }
+empezar = () =>{
+    document.getElementById("container").style.display = "block";
+    document.getElementById("empezar").style.display = "none";
 }
+

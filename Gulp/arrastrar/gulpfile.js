@@ -13,7 +13,7 @@ gulp.task('scss', function () {
     //Carpeta donde se guardaran los archivos `.css` compilado
     .pipe(gulp.dest('./css/dist'))
     //Mensaje gracias al plugin `gulp-notify`
-    .pipe(notify("Tarea scss terminada!"));
+    /* .pipe(notify("Tarea scss terminada!")); */
 });
 
 //Vuelve a ejecutar la tarea cuando se modifica algún archivo 
