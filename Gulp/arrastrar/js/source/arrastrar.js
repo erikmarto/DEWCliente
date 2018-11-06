@@ -1,10 +1,8 @@
 window.onload = function(){
     document.getElementById("divCir").ondrop = drop;
     document.getElementById("divCir").ondragover = allowDrop;
-    document.getElementById("dragCir").ondragstart = drag;
+    document.getElementById("dragCir").addEventListener("ondragstart", drag, false);
 }
-
-
 
 allowDrop = (ev) => {
     ev.preventDefault();
