@@ -1,27 +1,32 @@
-#divCir {
-  float: left;
-  width: 110px;
-  height: 110px;
-  padding: 10px;
-  border: 1px solid red; }
+#objetos {
+  margin-top: 10%;
+  text-align: center; }
 
-#divTri {
-  float: left;
-  width: 110px;
-  height: 110px;
-  padding: 10px;
-  border: 1px solid green; }
+#dragCir, #dragTri, #dragCua {
+  margin: 10% 4px 4px 4px; }
 
-#divCua {
+#divCir, #divTri, #divCua {
   float: left;
   width: 110px;
   height: 110px;
-  padding: 10px;
-  border: 1px solid purple; }
+  margin: 3px; }
 
 .navbar {
   color: bisque; }
 
+#inicio {
+  margin-top: 60%;
+  text-align: center; }
+
 #empezar {
-  width: 10%;
-  height: 50px; }
+  height: 60px;
+  width: 200px;
+  color: black;
+  border: 1px solid black; }
+
+#volver {
+  height: 50px;
+  width: 150px;
+  margin: 10% auto;
+  color: black;
+  border: 1px solid black; }

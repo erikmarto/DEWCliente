@@ -1,36 +1,43 @@
 $l : left;
 $a : 110px;
+$m : 3px;
 
-#divCir {
-    float: $l;
-    width: $a;
-    height: $a;
-    padding: 10px;
-    border: 1px solid red;
+#objetos{
+    margin-top:10%;
+    text-align: center;
 }
 
-#divTri {
-    float: $l;
-    width: $a;
-    height: $a;
-    padding: 10px;
-    border: 1px solid green;
+#dragCir, #dragTri, #dragCua{
+    margin: 10% 4px 4px 4px;
 }
 
-#divCua {
+#divCir, #divTri, #divCua{
     float: $l;
     width: $a;
     height: $a;
-    padding: 10px;
-    border: 1px solid purple;
+    margin: $m;
 }
 
 .navbar{
     color: bisque;
 }
 
-#empezar{
-    width: 10%;
-    height: 50px;
+#inicio{
+    margin-top: 60%;
+    text-align: center;
 }
 
+#empezar {
+    height: 60px;
+    width: 200px;
+    color: black; 
+    border: 1px solid black;
+}
+
+#volver{
+    height: 50px;
+    width: 150px;
+    margin: 10% auto;
+    color: black; 
+    border: 1px solid black;
+}
