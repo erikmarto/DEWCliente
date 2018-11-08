@@ -1,6 +1,17 @@
-#objetos {
-  margin-top: 10%;
+/*DIVS*/
+/*BOTONES/SCORE*/
+body {
+  font-family: 'Times New Roman';
   text-align: center; }
+
+.navbar {
+  color: bisque; }
+
+#inicio {
+  margin-top: 60%; }
+
+#objetos {
+  margin-top: 10%; }
 
 #dragCir, #dragTri, #dragCua {
   margin: 10% 4px 4px 4px; }
@@ -11,22 +22,21 @@
   height: 110px;
   margin: 3px; }
 
-.navbar {
-  color: bisque; }
-
-#inicio {
-  margin-top: 60%;
-  text-align: center; }
-
-#empezar {
-  height: 60px;
-  width: 200px;
+#empezar, #volver {
+  width: 150px;
+  height: 50px;
   color: black;
-  border: 1px solid black; }
+  border: 1px solid black;
+  font-size: 20px; }
 
 #volver {
-  height: 50px;
+  margin: 10% auto; }
+
+#scoreBox {
   width: 150px;
-  margin: 10% auto;
+  height: 50px;
+  border: 4px solid black;
+  margin: 20px 0 0 100px;
+  border-radius: 10px;
   color: black;
-  border: 1px solid black; }
+  font-size: 20px; }

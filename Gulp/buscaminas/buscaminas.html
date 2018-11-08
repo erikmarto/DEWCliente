@@ -1,0 +1,55 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Juego del Buscaminas</title>
+
+    <link rel="stylesheet" href="./node_modules/flipclock/compiled/flipclock.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/dist/style.css">
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./node_modules/lodash/lodash.js"></script>
+    <script type="text/javascript" src="./node_modules/flipclock/compiled/flipclock.js"></script>
+    <script type="text/javascript" src="./js/source/minas.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h1>BUSCAMINAS</h1>
+    </nav>
+    <form id="comienzo">
+        <div id="estilos">
+            <p>Seleccione un nivel de dificultad:</p>
+            <input type="checkbox" name="novato" id="ch1">Novato
+            <input type="checkbox" name="intermedio" id="ch2">Intermedio
+            <input type="checkbox" name="experto" id="ch3">Experto
+            <div class="cuadroTxt">
+                <h3>Reglas</h3><br>
+                <ul>
+                    <li>El juego consiste en despejar todas las casillas de una pantalla que no oculten una mina.</li><br>
+                    <li>Algunas casillas tienen un número, este número indica las minas que suman todas las casillas
+                        circundantes.</li> <br>
+                    <li>Así, si una casilla tiene el número 3, significa que de las ocho casillas que hay alrededor (si
+                        no es en una esquina o borde) hay 3 con minas y 5 sin minas.</li> <br>
+                    <li>Si se descubre una casilla sin número indica que ninguna de las casillas vecinas tiene mina y
+                        estas se descubren automáticamente.</li><br>
+                    <li>Si se descubre una casilla con una mina se pierde la partida.</li><br>
+                    <li>Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a
+                        descubrir la que están cerca.</li><br>
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-primary" id="empezar">Empezar Juego</button>
+        <div id="clock"></div>
+        <div id="tablero"></div>
+        <button type="button" class="btn btn-outline-danger" id="reiniciar">Reiniciar</button>
+    </form>
+</body>
+
+</html>

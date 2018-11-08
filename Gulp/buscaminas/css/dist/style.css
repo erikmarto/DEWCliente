@@ -1,0 +1,37 @@
+body {
+  background: url(fondo.jpg) no-repeat center center;
+  color: white;
+  text-align: center; }
+
+#estilos {
+  margin-top: 5%; }
+
+#empezar {
+  margin-top: 200px; }
+
+.check_class {
+  margin: 15px; }
+
+.tabla {
+  margin: auto; }
+
+.gameCel {
+  width: 17.8px;
+  height: 18px;
+  float: left;
+  border: 1px black solid;
+  background: linear-gradient(to right top, #6E6E6E, #D8D8D8); }
+
+#clock {
+  margin: 0 0 20px 40%;
+  width: 22%; }
+
+#reiniciar {
+  margin: auto;
+  margin-top: 50px; }
+
+.cuadroTxt {
+  border: 1px solid white;
+  width: 50%;
+  margin-top: 3%;
+  margin-left: 25%; }
