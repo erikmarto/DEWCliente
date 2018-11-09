@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Validaciones</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/validaciones.js"> </script>
+	</head>
+<body>
+	<div id="box">
+		<form method="post" id="registro">
+			<!-- Datos personales -->
+			<div class="title" id="title1">Datos personales<div id="error1"></div></div>
+			<div class="fila">
+				<div class="label">Nombre:</div>
+				<div class="input"><input type="text" name="nombre" class="inp" id="nombre"/></div>
+				<div class="label">Apellidos:</div>
+				<div class="input"><input type="text" name="apellidos" class="inp" id="apellidos"/></div>
+				<div class="label">E-mail:</div>
+				<div class="input"><input type="text" name="mail" class="inp" id="email"/></div>
+			</div>
+			<div class="fila">
+				<div class="label">G&eacute;nero:</div>
+				<div class="input">
+					&nbsp;M<input type="radio" name="sexo" value="M" class="sexo"/> 
+					&nbsp;F<input type="radio" name="sexo" class="sexo" value="F"/>
+				</div>
+				<div class="label">Ciudad:</div>
+				<div class="input"><input type="text" name="ciudad" id="ciudad" class="inp"/></div>	
+				<div class="label">CP: </div>
+				<div class="input"><input type="text" name="cp" id="cp" class="inp"/></div>
+			</div>
+			<div class="fila">
+				<div class="labelsized">Fecha de nacimiento:</div>
+				<div class="inputsized">
+					<select name="dia" id="dia">
+						<option value="01">1</option>
+						<option value="02">2</option>
+						<option value="03">3</option>
+						<option value="04">4</option>
+						<option value="05">5</option>
+						<option value="06">6</option>
+						<option value="07">7</option>
+						<option value="08">8</option>
+						<option value="09">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30" id="30">30</option>
+						<option value="31" id="31">31</option>
+					</select>
+					<select name="mes" id="mes">
+						<option value="01" class="meses" checked>Enero</option>
+						<option value="02" class="meses">Febrero</option>
+						<option value="03" class="meses">Marzo</option>
+						<option value="04" class="meses">Abril</option>
+						<option value="05" class="meses">Mayo</option>
+						<option value="06" class="meses">Junio</option>
+						<option value="07" class="meses">Julio</option>
+						<option value="08" class="meses">Agosto</option>
+						<option value="09" class="meses">Septiembre</option>
+						<option value="10" class="meses">Octubre</option>
+						<option value="11" class="meses">Noviembre</option>
+						<option value="12" class="meses">Diciembre</option>
+					</select>
+					<input type="text" id="anyo" class="inpsmall"/>
+				</div>
+				<div class="labelsmall">Telf:</div>
+				<div class="inputsmall"><input type="text" class="inpmedium" name="telf" id="telf"/></div>
+				<div class="labelmid">E.Civil:</div>
+				<div class="inputmedium">
+					<select name="ecivil" id="ecivil">
+						<option value="casado">Casado/a</option>
+						<option value="soltero">Soltero/a</option>
+						<option value="divorciado">Divorciado/a</option>
+						<option value="viudo">Viudo/a</option>
+					</select>
+				</div>
+			</div>
+			<!-- Test anciedad -->
+			<div class="title">Indica qu&eacute; nivel de ansiedad te produce:<div id="error2"></div></div>
+			<div class="tabla">
+				<!-- fila -->
+				<div class="label2"></div>
+				<div class="label3">Poco o casi nada</div>
+				<div class="label3">Bastante o mucho</div>
+				<!-- fila -->
+				<div class="label2">Que me pregunte el profesor/a</div>
+				<div class="label3"><input type="radio" class="r1" name="r1" value="poco"/></div>
+				<div class="label3"><input type="radio" class="r1" name="r1" value="mucho"/></div>
+				<!-- fila -->
+				<div class="label2">Salir a la pizarra</div>
+				<div class="label3"><input type="radio" class="r1"" name="r2" value="poco"/></div>
+				<div class="label3"><input type="radio" class="r1" name="r2" value="mucho"/></div>
+				<!-- fila -->
+				<div class="label2">Tener mucho que estudiar</div>
+				<div class="label3"><input type="radio" class="r1" name="r3" value="poco"/></div>
+				<div class="label3"><input type="radio" class="r1" name="r3" value="mucho"/></div>
+				<!-- fila -->
+				<div class="label2">Pensar en los ex&aacute;menes</div>
+				<div class="label3"><input type="radio" class="r1" name="r4" value="poco"/></div>
+				<div class="label3"><input type="radio" class="r1" name="r4" value="mucho"/></div>
+				<!-- fila -->
+				<div class="label2">El momento de empezar un examen</div>
+				<div class="label3"><input type="radio" class="r1" name="r5" value="poco"/></div>
+				<div class="label3"><input type="radio" class="r1" name="r5" value="mucho"/></div>
+				<!-- fila -->
+				<div class="label2">Mientras hago el examen</div>
+				<div class="label3"><input type="radio" class="r1" name="r6" value="poco"/></div>
+				<div class="label3"><input type="radio" class="r1" name="r6" value="mucho"/></div>
+				<!-- fila -->
+				<div class="label2">Cuando el profesor/a va a decir las notas</div>
+				<div class="label3"><input type="radio" class="r1" name="r7" value="poco"/></div>
+				<div class="label3"><input type="radio" class="r1" name="r7" value="mucho"/></div>
+				<!-- fila -->
+				<div class="label2">Entregar las notas en casa</div>
+				<div class="label3"><input type="radio" class="r1" name="r8" value="poco"/></div>
+				<div class="label3"><input type="radio" class="r1" name="r8" value="mucho"/></div>
+			</div>
+			<!-- Checkboxes 1 -->
+			<div class="title">C&oacute;mo soy, qu&eacute; habilidades tengo y en qu&eacute; destaco (elige 3)<div id="error3"></div></div>
+			<div class="tabla2">
+				<div class="column">
+					<div class="checks"><input type="checkbox" name="c1" class="c1" value="Meticuloso, perfeccionisa, exhaustivo"/></div>
+					<div class="checklabel">Meticuloso, perfeccionisa, exhaustivo</div>
+					<div class="checks"><input type="checkbox" name="c1" class="c1" value="Humanitario, paciente"/></div>
+					<div class="checklabel">Humanitario, paciente</div>
+					<div class="checks"><input type="checkbox" name="c1" class="c1" value="Creativo, imaginativo"/></div>
+					<div class="checklabel">Creativo, imaginativo</div>
+					<div class="checks"><input type="checkbox" name="c1" class="c1" value="Habilidoso en las tareas manuales"/></div>
+					<div class="checklabel">Habilidoso en las tareas manuales</div>
+					<div class="checks"><input type="checkbox" name="c1" class="c1" value="Me expreso muy bien tanto oralmente como por escrito"/></div>
+					<div class="checklabel">Me expreso muy bien tanto oralmente como por escrito</div>
+					<div class="checks"><input type="checkbox" name="c1" class="c1" value="Bueno resolviendo problemas matematicos"/></div>
+					<div class="checklabel">Bueno resolviendo problemas matem&aacute;ticos</div>
+					<div class="checks"><input type="checkbox" name="c1" class="c1" value="Me gusta participar en tertulias y dialogar sobre temas"/></div>
+					<div class="checklabel">Me gusta participar en tertulias y dialogar sobre temas</div>
+				</div>	
+				<div class="column">
+					<div class="checks"><input type="checkbox" name="c2" class="c1" value="Tengo facilidad para los idiomas"/></div>
+					<div class="checklabel">Tengo facilidad para los idiomas</div>
+					<div class="checks"><input type="checkbox" name="c2" class="c1" value="Capaz de organizar, de dirigir un grupo"/></div>
+					<div class="checklabel">Capaz de organizar, de dirigir un grupo</div>
+					<div class="checks"><input type="checkbox" name="c2" class="c1" value="Organizado con los papeles, ordenado"/></div>
+					<div class="checklabel">Organizado con los papeles, ordenado</div>
+					<div class="checks"><input type="checkbox" name="c2" class="c1" value="Pr&aacute;ctico, capaz de resolver los asuntos que sobrevienen sin avisar"/></div>
+					<div class="checklabel">Pr&aacute;ctico, capaz de resolver los asuntos imprevistos</div>
+					<div class="checks"><input type="checkbox" name="c2" class="c1" value="Interesado por las noticias, por la actualidad"/></div>
+					<div class="checklabel">Interesado por las noticias, por la actualidad</div>
+					<div class="checks"><input type="checkbox" name="c2" class="c1" value="Observador, me fijo en los detalles"/></div>
+					<div class="checklabel">Observador, me fijo en los detalles</div>
+					<div class="checks"><input type="checkbox" name="c2" class="c1" value="Capaz de dise&ntilde;ar una web o hacer programas sencillos"/></div>
+					<div class="checklabel">Capaz de dise&ntilde;ar una web o hacer programas sencillos</div>
+				</div>
+			</div>
+			<!-- checkboxes 2 -->
+			<div class="title">Cosas que habitualmente haces y te gusta hacer (elige 2)<div id="error4"></div></div>
+			<div class="tabla3">
+				<div class="checks"><input type="checkbox" name="c3" class="c2" value="Pintar, dise&aacute;ar o tocar un instrumento musical"/></div>
+				<div class="checklabel2">Pintar, dise&ntilde;ar o tocar un instrumento musical</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c2" value="Observar en el microscopio y otras actividades de laboratorio"/></div>
+				<div class="checklabel2">Observar en el microscopio y otras actividades de laboratorio</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c2" value="Dise&ntilde;ar webs y resolver problemas inform&aacute;ticos"/></div>
+				<div class="checklabel2">Dise&ntilde;ar webs y resolver problemas inform&aacute;ticos</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c2" value="Dar clases particulares o estar con ni&ntilde;os peque&ntilde;os"/></div>
+				<div class="checklabel2">Dar clases particulares o estar con ni&ntilde;os peque&ntilde;os</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c2" value="Practicar idiomas"/></div>
+				<div class="checklabel2">Practicar idiomas</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c2" value="Ayudar en el cuidado de enfermos o limpiar una herida"/></div>
+				<div class="checklabel2">Ayudar en el cuidado de enfermos o limpiar una herida</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c2" value="Hacer prototipos, maquetas o robots sencillos"/></div>
+				<div class="checklabel2">Hacer prototipos, maquetas o robots sencillos</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c2" value="Llevar la econom&iacute;a en la organizaci&oacute;n de alg&uacute;n viaje o evento"/></div>
+				<div class="checklabel2">Llevar la econom&iacute;a en la organizaci&oacute;n de alg&uacute;n viaje o evento</div>
+			</div>
+			<!-- tabla checks 3 -->
+			<div class="title">Quiero dedicarme a algo que me permita (elige 1)<div id="error5"></div></div>
+			<div class="tabla4">
+				<div class="checks"><input type="checkbox" name="c3" class="c3" value="Ayudar a los dem&aacute;s, trabajar con y para las personas, desarrollar proyectos humanitarios que mejoren la salud o la educaci&oacute;n"/></div>
+				<div class="checklabel2">Ayudar a los dem&aacute;s, trabajar con y para las personas, desarrollar proyectos humanitarios que mejoren la salud o la educaci&oacute;n</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c3" value="Llegar a ocupar un puesto directivo y de gesti&oacute;n en una empresa u organizaci&oacute;n"/></div>
+				<div class="checklabel2">Llegar a ocupar un puesto directivo y de gesti&oacute;n en una empresa u organizaci&oacute;n</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c3" value="Investigar, descubrir avances cient&iacute;ficos que sean importantes para la salud o la industria"/></div>
+				<div class="checklabel2">Investigar, descubrir avances cient&iacute;ficos que sean importantes para la salud o la industria</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c3" value="Desarrollar mi creatividad como m&uacute;sico, cineasta, escritor, pintor, dise&ntilde;ador,.."/></div>
+				<div class="checklabel2">Desarrollar mi creatividad como m&uacute;sico, cineasta, escritor, pintor, dise&ntilde;ador,..</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c3" value="Actuar para cambiar la sociedad, para hacerla mejor y m&aacute;s justa, mediante el derecho, la pol&iacute;tica o la informaci&oacute;n period&iacute;stica"/></div>
+				<div class="checklabel2">Actuar para cambiar la sociedad, para hacerla mejor y m&aacute;s justa, mediante el derecho, la pol&iacute;tica o la informaci&oacute;n period&iacute;stica</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c3" value="Contribuir al desarrollo tecnol&oacute;gico, dise&ntilde;ando edificios inteligentes, motores eficientes,ordenadores m&aacute;s potentes,..."/></div>
+				<div class="checklabel2">Contribuir al desarrollo tecnol&oacute;gico, dise&ntilde;ando edificios inteligentes, motores eficientes,ordenadores m&aacute;s potentes,...</div>
+				<div class="checks"><input type="checkbox" name="c3" class="c3" value="Aprender idiomas o disfrutar con el conocimiento y con la cultura"/></div>
+				<div class="checklabel2">Aprender idiomas o disfrutar con el conocimiento y con la cultura</div>
+			</div>
+			<div class="sendbox"><input type="button" id="send" value="Enviar"/></div>
+		</form>
+	</div>
+</body>
+</html>
