@@ -9,7 +9,7 @@ window.onload = function(){
 	meses.addEventListener("change", comprobar_mes,false);
 	
 	/*Esta funcion oculta o muestra los dias 30 y 31
-	según el mes, y en caso de desaparecer un día
+	segï¿½n el mes, y en caso de desaparecer un dï¿½a
 	su valor a 1 */
 	function comprobar_mes(){
 			switch(mes.value){
@@ -143,7 +143,7 @@ window.onload = function(){
 			error[1].appendChild(correofail);
 			fails++;
 		}
-		//género
+		//gï¿½nero
 		var genfail = document.createElement("div");
 		genfail.className = "fail";
 		genfail.innerHTML = "&nbsp;G&eacute;nero inv&aacute;lido&nbsp;";
@@ -167,7 +167,7 @@ window.onload = function(){
 			error[1].appendChild(cpfail);
 			fails++;
 		}
-		//Año
+		//Aï¿½o
 		var anyofail = document.createElement("div");
 		anyofail.className = "fail";
 		anyofail.innerHTML = "&nbsp;A&ntilde;o inv&aacute;lido&nbsp;";	
@@ -210,7 +210,7 @@ window.onload = function(){
 			error[4].appendChild(c2fail);
 			fails++;
 		}
-		//Checkbox tercer bloque (1 opción)
+		//Checkbox tercer bloque (1 opciï¿½n)
 		var c3fail = document.createElement("div");
 		c3fail.className = "fail";
 		c3fail.innerHTML = "Debe elegir 1 opci&oacute;n";
@@ -229,9 +229,9 @@ window.onload = function(){
 		 */
 		
 		
-		//acepta 2 a 60 caracteres de a-z, utilizando vocales acentuadas y ñ
+		//acepta 2 a 60 caracteres de a-z, utilizando vocales acentuadas y ï¿½
 		function nombre_valido(valor){
-			var patt = /^([a-z ñáéíóú]{2,60})$/i;
+			var patt = /^([a-z ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]{2,60})$/i;
 			if (patt.test(valor)){
 				return true;
 			}else{
@@ -239,7 +239,7 @@ window.onload = function(){
 			}
 		}
 		
-		//validación de correo
+		//validaciï¿½n de correo
 		function email_valido(valor){
 			var patt =  /^(.+\@.+\..+)$/;
 			if (patt.test(valor)){
@@ -260,7 +260,7 @@ window.onload = function(){
 			}
 		}
 		
-		//validación de año de nacimiento entre 1896 y 2016
+		//validaciï¿½n de aï¿½o de nacimiento entre 1896 y 2016
 		function anyo_valido(valor){
 			var patt =  /^[0-9]{4}$/;
 			if (patt.test(valor) && valor < 2016 && valor > 1896){
@@ -270,7 +270,7 @@ window.onload = function(){
 			}
 		}
 		
-		//validación de teléfono nacional
+		//validaciï¿½n de telï¿½fono nacional
 		function telf_valido(valor){
 			var patt = /^[0-9]{9}$/; 
 			if (patt.test(valor)){

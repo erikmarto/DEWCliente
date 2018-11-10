@@ -1,109 +1,91 @@
 window.onload = function () {
-    document.getElementById("send").addEventListener("click", validar, false);
-    /*const box = document.getElementById("box"); */
+    //Llamamos al boton
+    enviar = document.getElementById("enviar");
+    enviar.addEventListener("click", validacion, false);
 
-    function validar() {
+    //Container
+    box = document.getElementById("box");
 
-        let nombre = document.getElementById("nombre").value;
-        /* let email = document.getElementById("email").value;
-        let pwd1 = document.getElementById("pwd1").value;
-        let pwd2 = document.getElementById("pwd2").value;
-        let cp = document.getElementById("cp").value;
-        var title1 = document.getElementById("title1");
-        let fails = 0; */
+    //Eventos de la contraseña
+    password1 = document.getElementById("pwd1");
+    password2 = document.getElementById("pwd2");
+    password1.addEventListener("input", validacion, false);
+    password2.addEventListener("input", validacion, false);
 
-        //recogemos errores 
-        let error = new Array(1);
-        for (let i = 0; i < error.length; i++) {
-            error[i] = document.getElementById("error" + i);
-            while (error[i].firstChild){
-				error[i].removeChild(error[i].firstChild);
-			}
-        }
+    //Eventos de la Fecha
+    fechaInicio = document.getElementById("fecha");
+    fechaActual = new Date();
+    fechaI = fechaInicio.value.split("/");
+    fechaIni = new Date(fechaI[2], fechaI[1] -1, fechaI[0] );
 
-        
-
-
-        //COMPROBACION datos personales
-        //nombre 
-        var nombrefail = document.createElement("div");
-        nombrefail.className = "fail";
-        nombrefail.innerHTML = "&nbsp;Nombre inv&aacute;lido&nbsp;";
-        if (!nombre_valido(nombre)) {
-            error[1].appendChild(nombrefail);
-            fails++;
-        }
-        //E-mail
-        /* var correofail = document.createElement("div");
-        correofail.className = "fail";
-        correofail.innerHTML = "&nbsp;E-mail inv&aacute;lido&nbsp;";
-        if (!email_valido(email)) {
-            error[2].appendChild(correofail);
-            fails++;
-        }  */
-        /* //Password
-        var correofail = document.createElement("div");
-        correofail.className = "fail";
-        correofail.innerHTML = "&nbsp;E-mail inv&aacute;lido&nbsp;";
-        if (!email_valido(email)) {
-            error[2].appendChild(correofail);
-            fails++;
-        } */
-        /* //CP
-        var cpfail = document.createElement("div");
-        cpfail.className = "fail";
-        cpfail.innerHTML = "&nbsp;C.P. inv&aacute;lido&nbsp;";
-        if (!cp_valido(cp)) {
-            error[3].appendChild(cpfail);
-            fails++;
-        } */
-        //enviar_form();
-
-        //FUNCIONES
-        //acepta 2 a 60 caracteres de a-z, utilizando vocales acentuadas y �
-         function nombre_valido(valor) {
-            var patt = /^([a-z ������]{2,60})$/i;
-            if (patt.test(valor)) {
-                return true;
-            } else {
-                return false;
-            }
-        } 
-
-        /* //validaci�n de correo
-        function email_valido(valor) {
-            var patt = /^(.+\@.+\..+)$/;
-            if (patt.test(valor)) {
-                return true;
-            } else {
-                return false;
-            }
-        } 
-
-        //validacion de CP
-        function cp_valido(valor) {
-            var patt = /^\d{5}$/;
-            if (patt.test(valor)) {
-                return true;
-            } else {
-                return false;
-            }
-        } */
-
-
-        //Mensaje de formulario enviado
-        /* function enviar_form() {
-           if (fails == 0) {
-                box.innerHTML = "";
-                const mensaje = document.createElement("p");
-                mensaje.className = "mensaje";
-                const msg = document.createTextNode("Formulario enviado correctamente.");
-                 mensaje.appendChild(msg);
-                box.appendChild(mensaje);
-            } 
-        } */
-
-    }
-
+    //Eventos del CP
+    cp = document.getElementById("cp");
 
 }
+
+//Funcion Flecha
+validacion = () => {
+    fails = 0;
+
+    //Datos Personales
+    //Comprobar las contraseñas
+    if (password1.value !== password2.value) {
+        password2.setCustomValidity('Las passwords deben coincidir');
+        fails ++;
+    }else{
+        password2.setCustomValidity('');
+    }
+
+    //Comprobar Fecha	
+    if (fechaActual > fechaInicio) {
+        fechaInicio.setCustomValidity('El año no puede ser menor');
+        fails++;
+    }else{
+        fechaInicio.setCustomValidity('');
+    }
+
+    //Comprobar Codigo Postal
+    if (!cp_valido(cp.value)) {
+        cp.setCustomValidity('Codigo postal no es correcto');
+        fails++;
+    }
+
+    enviarForm();
+
+    /* //validacion Fecha
+    function anyo_valido(valor) {
+        var patt = /^\d{2}\/\d{2}\/\d{4}$/;
+        if (patt.test(valor) > fechaActual) {
+            return true;
+        } else {
+            return false;
+        }
+    } */
+
+
+    //validacion de CP
+    function cp_valido(valor) {
+        const patt = /^\d{5}$/;
+        if (patt.test(valor)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Mensaje de formulario enviado
+    function enviarForm() {
+        if (fails == 0) {
+            box.innerHTML = "";
+            const mensaje = document.createElement("p");
+            mensaje.className = "mensaje";
+            const msg = document.createTextNode("Formulario enviado correctamente.");
+            mensaje.appendChild(msg);
+            box.appendChild(mensaje);
+        }
+    }
+
+}
+
+
+

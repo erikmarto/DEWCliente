@@ -1,73 +1,70 @@
-/* body{
+body{
     margin:0;
     padding:0;
     font-family: tahoma, courier;
     background-color:#E6E6E6;
-    font-size: 12px;
+    font-size: 10px;
+    text-align: center;
 }
-div {
-    box-sizing: border-box;
-}
-#box {
-     width: 900px; 
-    height: 1300px;
-    border-left: 1px black solid; 
-    border-right: 1px black solid;
-    position: absolute; 
-    left: 50%; 
-    margin-left: -445px; 
-    background-color: #FFF; 
-}*/
 
-/* Datos personales  */
-.title {
-    width: 850px; 
-    margin-left: 25px; 
-    border-bottom: 1px black solid;
-    margin-top: 30px; 
-    margin-bottom: 30px; 
-    font-size: 16px;
+form h1 {
+    font-size: 2em;
+    padding: 32px;
+    background: url(../images/right.png) left no-repeat,
+    url(../images/left.png) right no-repeat;
+    -webkit-background-size: 100px auto;
+    -moz-background-size: 100px auto;
+    background-size: 100px auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.fila {
-    width: 850px; 
-    margin-left: 25px; 
-    height: 25px; 
-}
+
 .label {
-    width: 90px;
-    font-size: 12px;
-    text-align: right;
-    float: left;
-    color: black;
-}
-.input {
-    width: 300px; 
-    margin-left: 10px; 
-    height: 25px; 
-    float: left; 
-}
-.inp {
-    border: 1px black solid;
-    border-radius: 5px;
-    width: 150px;
-    height: 20px;
+    font-size: 14px;
 }
 
-/* submit */
-.sendbox {
-    width: 850px; 
-    height: 30px; 
-    text-align: center; 
-    margin-top: 30px;
+input {
+    text-align: center;
+    width: 350px;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 8px;
+    background: transparent no-repeat right;
+    -webkit-background-size: 20px auto;
+    -moz-background-size: 20px auto;
+    background-size: 20px auto; 
 }
-#error1, #error2, #error3, #error4, #error5 {
-    color: red; 
-    text-align: right; 
-    font-size: 12px; 
-    float: right;}
-.fail {
-    float:left;
+
+input:required { 
+    background-image: url('../images/required.png'); 
 }
+
+input:not([type=range]):not([type=date]):not([type=submit]):not([type=button]):not([type=checkbox]):not([type=number]):focus:invalid {
+    background-image: url('../images/invalid.png');
+}
+
+input:not([type=range]):not([type=date]):not([type=submit]):not([type=button]):not([type=checkbox]):not([type=number]):focus:valid {
+    background-image: url('../images/valid.png');
+    
+}
+
+::-moz-selection{ 
+    background: #484848; 
+    color:#fff; 
+    text-shadow: none; 
+}
+
+::selection { 
+    background:#484848; 
+    color:#fff; 
+    text-shadow: none; 
+}
+
+.btn {
+    margin-top: 20px;
+    width: 100px;
+}
+
 .mensaje {
     text-align: center; 
     margin-top: 40px; 

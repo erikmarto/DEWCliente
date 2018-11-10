@@ -2,46 +2,43 @@
 <html>
 
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulario</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <script type="text/javaScript" src="./js/registro.js"></script>
 </head>
 
 <body>
     <div id="box">
-        <form method="POST" id="registro">
-            <div class="title" id="title1">Datos Personales<div id="error1"></div></div>
-            </div>
-            <div class="fila">
-                <div class="label">Nombre:</div>
-                <div class="input"><input type="text" name="nombre" class="inp" id="nombre" /></div>
-                <div class="label">E-mail:</div>
-                <div class="input"><input type="email" name="email" class="inp" id="email" /></div>
-            </div>
-            <div class="fila">
-                <div class="label">Password:</div>
-                <div class="input"><input type="password" name="password1" class="inp" id="pwd1" min="6" /></div>
-                <div class="label">Password2:</div>
-                <div class="input"><input type="password" name="password2" class="inp" id="pwd2" min="6" /></div>
-                <!-- <div class="label">URL:</div>
-                <div class="input"><input type="url" name="url" class="inp" id="url" /></div>
-                <div class="label">Conocimientos:</div>
-                <div class="input"><input type="range" name="conocimientos" class="inp" id="cono" min="1" max="10" /></div> -->
-            </div>
-            <div class="fila">
-                <!-- <div class="label">FechaInicio:</div>
-                <div class="input"><input type="date" name="fechaInicio" class="inp" id="fecha" /></div>
-                <div class="label">Cantidad:</div>
-                <div class="input"><input type="number" name="cantidad" class="inp" id="cant" min="0" max="5" /></div> -->
-            </div>
-            <div class="fila">
-                <!-- <div class="label">Direcci&oacute;n:</div>
-                <div class="input"><input type="text" name="direccion" class="inp" id="direc" /></div> -->
-                <div class="label">C.Postal:</div>
-                <div class="input"><input type="text" name="codigoPostal" class="inp" id="cp" min="0" max="5" /></div>
-            </div>
-            <div class="sendbox"><button class="btn btn-outline-primary" id="send">Enviar</button></div>
+        <form method="POST" id="registro" autocomplete="off">
+            <h1>Regístrate!</h1>
+            <div class="label">Nombre:</div>
+            <input type="text" name="nombre" id="nombre" autofocus required />
+            <div class="label">E-mail:</div>
+            <input type="email" name="email" id="email" placeholder="ejem1@hotmail.com, ejem2@gmail.com" multiple required />
+            <div class="label">Password:</div>
+            <p>(al menos 6 car&aacute;cteres, sin espacios)</p>
+            <input type="password" name="password1" id="pwd1" pattern="\S{6,}" required />
+            <div class="label">Password Repetida:</div>
+            <input type="password" name="password2" id="pwd2" pattern="\S{6,}" required />
+            <div class="label">URL:</div>
+            <input type="url" name="url" id="url" placeholder="http://ejemplo.com" />
+            <div class="label">Escala del 1-10 en Conocimientos:</div>
+            <input type="range" name="conocimientos" id="cmt" min="1" max="10" />
+            <div class="label">Fecha de Inicio:</div>
+            <input type="date" name="fechaInicio" id="fecha" required />
+            <div class="label">C&aacute;ntidad:</div>
+            <input type="number" name="cantidad" id="cant" min="0" max="5" value="1" />
+            <div class="label">Direcci&oacute;n:</div>
+            <input type="text" name="direccion" id="drc" />
+            <div class="label">C.Postal:</div>
+            <input type="text" name="codigoPostal" id="cp" required />
+            <div class="sendbox"><button class="btn btn-primary" id="enviar">Enviar</button></div>
         </form>
     </div>
 </body>
