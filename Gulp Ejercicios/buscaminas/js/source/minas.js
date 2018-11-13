@@ -8,75 +8,74 @@ window.onload = function () {
 
     //boton de reiniciar
     document.getElementById("reiniciar").addEventListener('click', botonReiniciar, false);
+    
+    //Ocultamos elementos
     document.getElementById("estilos").style.display = "none";
     document.getElementById("reiniciar").style.display = "none";
     document.getElementById("clock").style.display = "none";
 
 }
 
-class Celda {
+//Clase Celdas encargada de colocar minas banderas...
+class Celdas {
     constructor() {
-        this.status = "unclicked";
-        this.bomba = false;
-        this.bandera = false;
-        this.numeroContiguo = 0;
-        this._coorX;
-        this._coorY;
+        this.mina = false;
+        this.numCont = 0;
+        this.corX;
+        this.corY;
     }
 
      get coorX(){
-        return this._coorX;
+        return this.corX;
     }
 
     get coorY(){
-        return this._coorY;
+        return this.corY;
     } 
 }
 
-//Clase tablero
+//Clase Buscaminas que in cluye todas las funciones para la tabla
 class Buscaminas {
-    constructor(fil, col, numBombas) {
-        this.fil = fil;
-        this.col = col;
-        this.numBombas = numBombas;
+    constructor(fila, colum, minas) {
+        this.fila = fila;
+        this.colum = colum;
+        this.minas = minas;
     }
 
-    // funcion para crear la tabla
-    crearTabla() {
-        const divTablero = document.getElementById("tablero");
+    //Funcion para crear la tabla
+    generarTabla() {
+        const tablero = document.getElementById("tablero");
 
         let tabla = document.createElement("table");
         let tblBody = document.createElement("tbody");
 
-        // Crea las celdas
-        for (let i = 0; i < this.fil; i++) {
+        //Colocar las celdas 
+        for (let c = 0; c < this.fila; c++) {
             let filas = document.createElement("tr");
-            for (let j = 0; j < this.col; j++) {
+            for (let f = 0; f < this.colum; f++) {
                 let celda = document.createElement("td");
 
-                celda.id = i + "-" + j;
+                celda.id = c + "-" + f;
 
-                this.celda = new Celda();
+                this.celda = new Celdas();
 
-                celda.coorX = i;
-                celda.coorY = j;
+                celda.coorX = c;
+                celda.coorY = f;
 
                 filas.appendChild(celda);
 
                 celda.style.backgroundImage = "url('./img/blank.gif')";
 
-                //Clicks en celdas
-                celda.addEventListener('click', clicks, false);
+                celda.addEventListener('click', clickar, false);
                 celda.className = "gameCel";
-                //console.log(celda.coorX, celda.coorY);
+
             }
             tblBody.appendChild(filas);
         }
 
         tabla.appendChild(tblBody);
-        divTablero.appendChild(tabla);
+        tablero.appendChild(tabla);
 
-        tabla.setAttribute("border", 2);
         tabla.className = "tabla";
 
         document.getElementById("estilos").style.display = "none";
@@ -84,122 +83,120 @@ class Buscaminas {
         document.getElementById("clock").style.display = "block";
     }
 
-    //Funcion para generar bombas
+    //Funcion que genera las minas
     generarMinas() {
-        for (let j = 0; j < this.numBombas; j++) {
+        for (let f = 0; f < this.minas; f++) {
 
-            //Aleatorios creados con metodos de lodash
-            let rndFilas = _.random(0, (this.fil - 1));
-            let rndColumnas = _.random(0, (this.col - 1));
+            let randFil = _.random(0, (this.fila - 1));
+            let randColum = _.random(0, (this.colum - 1));
 
-            let celda = document.getElementById(rndFilas + "-" + rndColumnas);
+            let celda = document.getElementById(randFil + "-" + randColum);
 
-            if (!celda.bomba) {
-                celda.innerHTML = "+";
-                celda.bomba = true;
+            if (!celda.mina) {
+                celda.innerHTML = "m";
+                celda.style.color = "red";
+                celda.mina = true;
 
             } else {
-                j--;
+                f--;
             }
         }
     }
 
-    //Funcion para poner los numero alrededor de las minas 
+    //Funcion que genera num alrededor de la mina
     reparteNumeros() {
-        //La i son las filas y la j son las columnas
-        for (let i = 0; i < this.fil; i++) {
-            for (let j = 0; j < this.col; j++) {
-                let numeroContiguo = 0;
-                let celda = document.getElementById(i + "-" + j);
+        for (let c = 0; c < this.fila; c++) {
+            for (let f = 0; f < this.colum; f++) {
+                let numCont = 0;
+                let celda = document.getElementById(c + "-" + f);
 
-                let celdaDerecha = document.getElementById(i + "-" + (j + 1));
-                let celdaIzquierda = document.getElementById(i + "-" + (j - 1));
+                let celdaDerecha = document.getElementById(c + "-" + (f + 1));
+                let celdaIzquierda = document.getElementById(c + "-" + (f - 1));
 
-                let celdaAbajo = document.getElementById((i + 1) + "-" + j);
-                let celdaArriba = document.getElementById((i - 1) + "-" + j);
+                let celdaAbajo = document.getElementById((c + 1) + "-" + f);
+                let celdaArriba = document.getElementById((c - 1) + "-" + f);
 
-                let celdaDiagonalDerInf = document.getElementById((i + 1) + "-" + (j + 1));
-                let celdaDiagonalDerSup = document.getElementById((i - 1) + "-" + (j + 1));
+                let celdaDiagonalDerInf = document.getElementById((c + 1) + "-" + (f + 1));
+                let celdaDiagonalDerSup = document.getElementById((c - 1) + "-" + (f + 1));
 
-                let celdaDiagonalIzqInf = document.getElementById((i + 1) + "-" + (j - 1));
-                let celdaDiagonalIzqSup = document.getElementById((i - 1) + "-" + (j - 1));
+                let celdaDiagonalIzqInf = document.getElementById((c + 1) + "-" + (f - 1));
+                let celdaDiagonalIzqSup = document.getElementById((c - 1) + "-" + (f - 1));
 
-                if (!celda.bomba) {
-                    //Casos en los que sea nula la casilla 
+                if (!celda.mina) {
                     //Lados
                     if (celdaDerecha == null) {
 
                     } else {
-                        if (celdaDerecha.bomba) {
-                            numeroContiguo++;
+                        if (celdaDerecha.mina) {
+                            numCont++;
                         }
                     }
                     if (celdaIzquierda == null) {
 
                     } else {
-                        if (celdaIzquierda.bomba) {
-                            numeroContiguo++;
+                        if (celdaIzquierda.mina) {
+                            numCont++;
                         }
                     }
 
-                    //Arriba abajo
+                    //Arriba/Abajo
                     if (celdaAbajo == null) {
 
                     } else {
-                        if (celdaAbajo.bomba) {
-                            numeroContiguo++;
+                        if (celdaAbajo.mina) {
+                            numCont++;
                         }
                     }
                     if (celdaArriba == null) {
 
                     } else {
-                        if (celdaArriba.bomba) {
-                            numeroContiguo++;
+                        if (celdaArriba.mina) {
+                            numCont++;
                         }
                     }
 
-                    //Diagonales derechas 
+                    //Diagonales Der 
                     if (celdaDiagonalDerInf == null) {
 
                     } else {
-                        if (celdaDiagonalDerInf.bomba) {
-                            numeroContiguo++;
+                        if (celdaDiagonalDerInf.mina) {
+                            numCont++;
                         }
                     }
                     if (celdaDiagonalDerSup == null) {
 
                     } else {
-                        if (celdaDiagonalDerSup.bomba) {
-                            numeroContiguo++;
+                        if (celdaDiagonalDerSup.mina) {
+                            numCont++;
                         }
                     }
 
-                    //Diagonales izquierdas
+                    //Diagonales Izq
                     if (celdaDiagonalIzqInf == null) {
 
                     } else {
-                        if (celdaDiagonalIzqInf.bomba) {
-                            numeroContiguo++;
+                        if (celdaDiagonalIzqInf.mina) {
+                            numCont++;
                         }
                     }
                     if (celdaDiagonalIzqSup == null) {
 
                     } else {
-                        if (celdaDiagonalIzqSup.bomba) {
-                            numeroContiguo++;
+                        if (celdaDiagonalIzqSup.mina) {
+                            numCont++;
                         }
                     }
-
-                    celda.numeroContiguo = numeroContiguo;
+                    celda.numCont = numCont;
                 }
             }
         }
     }
 }
 
+//Llamamos a los Estilos de Juego
 function tablaNovato() {
     jueTab = new Buscaminas(8, 8, 10);
-    jueTab.crearTabla();
+    jueTab.generarTabla();
     jueTab.generarMinas();
     jueTab.reparteNumeros();
 
@@ -207,7 +204,7 @@ function tablaNovato() {
 
 function tablaIntermedio() {
     jueTab = new Buscaminas(16, 16, 40);
-    jueTab.crearTabla();
+    jueTab.generarTabla();
     jueTab.generarMinas();
     jueTab.reparteNumeros();
 
@@ -215,36 +212,36 @@ function tablaIntermedio() {
 
 function tablaExperto() {
     jueTab = new Buscaminas(16, 30, 99);
-    jueTab.crearTabla();
+    jueTab.generarTabla();
     jueTab.generarMinas();
     jueTab.reparteNumeros();
 }
 
+//Funcion que permite clicar y pone la imagen
+function clickar() {
+    const celClick = document.getElementById(this.id);
 
-function clicks() {
-    const celdaClick = document.getElementById(this.id);
-
-    if (event.target.bomba) {
-        //console.log("Has clickado una bomba");
-        celdaClick.style.backgroundImage = "url('./img/bombdeath.gif')";
-        endGame();
+    if (event.target.mina) {
+        celClick.style.backgroundImage = "url('./img/bombdeath.gif')";
+        finJuego();
     } else {
-        celdaClick.style.backgroundImage = "url('./img/open" + celdaClick.numeroContiguo + ".gif')";
+        celClick.style.backgroundImage = "url('./img/open" + celClick.numCont + ".gif')";
     }
 }
 
-//empezar a jugar
+//Empezar el juego
 function botonEmpezar() {
     document.getElementById("estilos").style.display = "block";
     document.getElementById("empezar").style.display = "none";
 }
 
-// acabar juego
-function endGame() {
-    alert("Perdiste" );
+//Acaba el juego
+function finJuego() {
+    alert("Has perdido!!!");
     botonReiniciar();
 }
 
+//Reinicio del juego
 function botonReiniciar() {
     window.location.reload();
 }
@@ -255,6 +252,4 @@ $(document).ready(function () {
     clock = $('#clock').FlipClock({
         clockFace: 'MinuteCounter'
     });
-    console.log(document);
 });
-
