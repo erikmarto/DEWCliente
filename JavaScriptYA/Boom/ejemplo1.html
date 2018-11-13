@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo windows Objects</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<h1>WINDOWS OBJECT</h1>
+    <script>
+        function abrirVentana() {
+            const ventana = open('', '', 'width=600,height=300');
+            ventana.moveBy(200, 500);
+            ventana.resizeTo(250, 250);
+        }
+    </script>
+
+    <form>
+        <input type="button" value="abrir ventana" onClick="abrirVentana()">
+    </form>
+</body>
+
+</html>
