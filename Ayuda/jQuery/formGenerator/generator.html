@@ -1,0 +1,374 @@
+<html>
+<head>
+	<title>Generador de Formularios</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" title="normal" href="css/gen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.12.1/jquery-ui.css">
+    <script src="js/jquery_v3.js"></script>
+	<script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="js/generator.js" type="text/javascript"></script>
+	
+</head>
+<body>
+
+	<!-- header -->
+	<header id="headBox">
+		<div id="logo"></div>
+	</header>
+	<!-- content-->
+	<div id="content">
+		<!-- Outcome -->
+		<div id="formBox">
+			<!-- Form -->
+			<form name="form1" id="form" method="post" enctype="multipart/form-data">
+				<!-- text field -->
+				<div class="fieldBox" id="textfieldbox">
+					<div class="fieldLabel" id="textlabel">Text</div>
+					<div class="clear"></div>
+					<input type="text" name="textfielinput" id="textfieldinput"/>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>	
+				<!-- number field -->
+				<div class="fieldBox" id="numberfieldbox">
+					<div class="fieldLabel" id="numberlabel">Number</div>
+					<div class="clear"></div>
+					<input type="number" name="numberfieldinput" id="numberfieldinput"/>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- paragraph field -->
+				<div class="fieldBox" id="parafieldbox">
+					<div class="fieldLabel" id="paralabel">Paragraph</div>
+					<div class="clear"></div>
+					<textarea id="parafieldinput">insert paragraph</textarea>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- checkboxes -->
+				<div class="fieldBox" id="checkfieldbox">
+					<div class="fieldLabel" id="checklabel">Checkbox</div>
+					<div class="clear"></div>
+					<div class="checkrow">
+						<div class="checkinputbox"><input type="checkbox" class="checks" name="FirstOption" id="checkboxinput"/></div>
+						<div class="checkvalue"><p>First Option</p></div>
+					</div>
+					<div class="checkrow">
+						<div class="checkinputbox"><input type="checkbox" class="checks" name="SecondOption" id="checkboxinput2"/></div>
+						<div class="checkvalue"><p>Second Option</p></div>
+					</div>
+					<div class="checkrow">
+						<div class="checkinputbox"><input type="checkbox" class="checks" name="ThirdOption" id="checkboxinput3"/></div>
+						<div class="checkvalue"><p>Third Option</p></div>
+					</div>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- Radio buttons -->
+				<div class="fieldBox" id="multiplefieldbox">
+					<div class="fieldLabel" id="multiplelabel">Multiple Choises</div>
+					<div class="clear"></div>
+					<div class="checkrow">
+						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput"/></div>
+						<div class="checkvalue"><p>First Option</p></div>
+					</div>
+					<div class="checkrow">
+						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput2"/></div>
+						<div class="checkvalue"><p>Second Option</p></div>
+					</div>
+					<div class="checkrow">
+						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput3"/></div>
+						<div class="checkvalue"><p>Third Option</p></div>
+					</div>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- Selects -->
+				<div class="fieldBox" id="selectfieldbox">
+					<div class="fieldLabel" id="selectlabel">Multiple Choises</div>
+					<div class="clear"></div>
+					<select name="Drop Down" id="selectfieldinput">
+						<option value="first" id="selecoption">First Option</option>
+						<option value="second" id="selectoption2">Second Option</option>
+						<option value="third" id="selectoption3">Third Option</option>
+					</select>	
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>	
+				<!-- Name -->
+				<div class="fieldBox" id="namefieldbox">
+					<div class="fieldLabel" id="namelabel">Name</div>
+					<div class="clear"></div>
+					<input type="text" name="nombre" id="namefieldinput">
+					<input type="text" name="lastname" id="lastnamefieldinput">
+					<div class="clear"></div>
+					<p class="namep">First Name</p><p class="namep" id="lastnamep">Last Name</p>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- Date -->
+				<div class="fieldBox" id="datefieldbox">
+					<div class="fieldLabel" id="datelabel">Date</div>
+					<div class="clear"></div>
+					<input type="date" name="date" id="datepicker">
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- Time -->
+				<div class="fieldBox" id="timefieldbox">
+					<div class="fieldLabel" id="timelabel">Time</div>
+					<div class="clear"></div>
+					<input type="time" name="time" id="timefieldinput">
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- Phone -->
+				<div class="fieldBox" id="telfieldbox">
+					<div class="fieldLabel" id="telflabel">Phone</div>
+					<div class="clear"></div>
+					<input type="number" name="telf" id="telfieldinput">
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- Address -->
+				<div class="fieldBox" id="addressfieldbox">
+					<div class="fieldLabel" id="addresslabel">Address</div>
+					<div class="clear"></div>
+					<input type="text" name="street" id="streetfieldinput">
+					<div class="clear"></div>
+					<p class="namep">Street</p>
+					<div class="clear"></div>
+					<input type="text" name="city" id="cityfieldinput">
+					<input type="text" name="state" id="statefieldinput">
+					<div class="clear"></div>
+					<p class="namep">City</p>
+					<p class="namep" id="statep">State</p>
+					<div class="clear"></div>
+					<input type="text" name="cp" id="cpfieldinput">
+					<select name="country" id="countryfieldinput">
+						<option selected>Country</option>
+					</select>
+					<div class="clear"></div>
+					<p class="namep">Zip / CP</p>
+					<p class="namep" id="countryp">Country</p>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- Web -->
+				<div class="fieldBox" id="webfieldbox">
+					<div class="fieldLabel" id="weblabel">Web</div>
+					<div class="clear"></div>
+					<input type="text" name="web" id="webfieldinput" value="http://">
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- Price -->
+				<div class="fieldBox" id="pricefieldbox">
+					<div class="fieldLabel" id="pricelabel">Price</div>
+					<div class="clear"></div>
+					<p id="moneytype">$</p>
+					<input type="number" id="pricefieldinput">
+					<p id="dot">.</p>
+					<input type="number" id="centsinput">
+					<div class="clear"></div>
+					<p id="moneyp">Dollars</p>
+					<p id="centsp">Cents</p>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- E-Mail -->
+				<div class="fieldBox" id="mailfieldbox">
+					<div class="fieldLabel">E-Mail</div>
+					<div class="clear"></div>
+					<input type="text" name="mail" id="webfieldinput" value="@">
+					<div class="clear"></div>
+					
+					<div class="removeButton"></div>
+				</div>
+				<!-- Section break -->
+				<div class="fieldBox" id="breakfieldbox">
+					<div class="fieldLabel" id="breaklabel">Section Break</div>
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+				<!-- File  -->
+				<div class="fieldBox" id="filefieldbox">
+					<div class="fieldLabel" id="filelabel">File Upload</div>
+					<div class="clear"></div>
+					<input type="file" id="filefieldinput" name="file">
+					<div class="clear"></div>
+					<div class="removeButton"></div>
+				</div>
+			</form>
+			<!-- Save Button -->
+			<div id="savebutton">
+				<div id="saveicon"></div>
+				<p>Save Form</p>
+			</div>
+		</div>
+		<!-- Options -->
+		<div id="menuBox">
+			<div id = "menuTitle">
+				<nav class="navption" id="addmenubutton"><p>Add field</p></nav>
+				<nav class="navption" id="fieldpropbutton"><p>Field properties</p></nav>
+				<nav class="navption" id="formpropbutton"><p>Form Properties</p></nav>
+			</div>	
+			<div class="clear"></div>
+			<!-- add Menu -->
+			<div id="addMenu">
+				<!-- Input row -->
+				<div class ="menuRow">
+					<p>Click to add a field</p>
+				</div>
+				<!-- Input row -->
+				<div class ="menuRow">
+					<div class="menuColA" id="textfield">
+						<div class="inputIcon" id="texticon"></div>
+						<div class="inputLabel"><p>Single Line</p></div>
+					</div>
+					<div class="menuColB" id="numberfield">
+						<div class="inputIcon" id="numbericon"></div>
+						<div class="inputLabel"><p>Number</p></div>
+					</div>
+				</div>
+				<!-- Input row -->
+				<div class ="menuRow">
+					<div class="menuColA" id="parafield">
+						<div class="inputIcon" id="paraicon"></div>
+						<div class="inputLabel"><p>Paragraph</p></div>
+					</div>
+					<div class="menuColB" id="checkboxfield">
+						<div class="inputIcon" id="checkicon"></div>
+						<div class="inputLabel"><p>Checkbox</p></div>
+					</div>
+					
+				</div>
+				<!-- Input row -->
+				<div class ="menuRow">
+					<div class="menuColA" id="multiplefield">
+						<div class="inputIcon" id="multipleicon"></div>
+						<div class="inputLabel"><p>Multiple </p></div>
+					</div>
+					<div class="menuColB" id="selectfield">
+						<div class="inputIcon" id="selicon"></div>
+						<div class="inputLabel"><p>Drop Down</p></div>
+					</div>
+				</div>
+				<!-- Input row -->
+				<div class ="menuRow">
+					<div class="menuColA" id="namefield">
+						<div class="inputIcon" id="nameicon"></div>
+						<div class="inputLabel"><p>Name</p></div>
+					</div>
+					<div class="menuColB" id="datefield">
+						<div class="inputIcon" id="dateicon"></div>
+						<div class="inputLabel"><p>Date</p></div>
+					</div>
+				</div>
+				<!-- Input row -->
+				<div class ="menuRow">
+					<div class="menuColA" id="timefield">
+						<div class="inputIcon" id="timeicon"></div>
+						<div class="inputLabel"><p>Time</p></div>
+					</div>
+					<div class="menuColB" id="telfield">
+						<div class="inputIcon" id="telficon"></div>
+						<div class="inputLabel"><p>Phone</p></div>
+					</div>
+				</div>
+				<!-- Input row -->
+				<div class ="menuRow">
+					<div class="menuColA" id="addressfield">
+						<div class="inputIcon" id="addressicon"></div>
+						<div class="inputLabel"><p>Address</p></div>
+					</div>
+					<div class="menuColB" id="webfield">
+						<div class="inputIcon" id="webicon"></div>
+						<div class="inputLabel"><p>Web Site</p></div>
+					</div>
+				</div>
+				<!-- Input row -->
+				<div class ="menuRow">
+					<div class="menuColA" id="pricefield">
+						<div class="inputIcon" id="dolaricon"></div>
+						<div class="inputLabel"><p>Price</p></div>
+					</div>
+					<div class="menuColB" id="mailfield">
+						<div class="inputIcon" id="mailicon"></div>
+						<div class="inputLabel"><p>Email</p></div>
+					</div>
+				</div>
+				<!-- Input row -->
+				<div class ="menuRow">
+					<div class="menuColA" id="breakfield">
+						<div class="inputIcon" id="sectionicon"></div>
+						<div class="inputLabel"><p>Section Break</p></div>
+					</div>
+					<div class="menuColB" id="filefield">
+						<div class="inputIcon" id="fileicon"></div>
+						<div class="inputLabel"><p>File Upload</p></div>
+					</div>
+				</div>
+			</div>
+			<!-- Menu Properties -->
+			<div id="menuProp">
+				<!-- No field selected -->
+				<div id="errormenupropbox">
+					<p id="errormenuprop">Please select a field</p>
+					<p id="errormenuprop2">Click on a field on the left to change its properties.</p>
+				</div>
+				<!-- Label Edit -->
+				<div id="editLabelbox">
+					<p class="proplabel">Field Label</p>
+					<div class="clear"></div>
+					<input type="text" id ="editlabelinput" name="editLabelinput"/>
+				</div>
+				<!-- field Size-->
+				<div id="editSizebox">
+					<p class="proplabel">Field Size</p>
+					<div class="clear"></div>
+					<select id="fieldsizeinput">
+						<option>    </option>
+						<option>Small</option>
+						<option>Medium</option>
+						<option>Large</option>
+					</select>	
+				</div>
+				<!-- Selects, checks & radios -->
+				<div id="editchoisesbox">
+					<p class="proplabel">Choises</p>
+					<div class="clear"></div>
+					<div class="editrow">
+						<input type="text" id="editoption" class="editleftinput">
+						<img src="img/remove.png" alt="Delete"/>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Form Properties -->
+			<div id="formProp">
+				<div class="proplabel">Form title</div>
+				<div class="clear"></div>
+				<input type="text" id="formname" class="txtinput" value="Insert form name"/>
+				<div class="clear"></div>
+				<div class="proplabel">Form description</div>
+				<div class="clear"></div>
+				<textarea id="iddesc" class="bigarea">insert description</textarea>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!-- Outcome code -->
+		<div id="outcode">
+			<hr/>
+			<h2>Outcome code</h2>
+			<div id="codeBox"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- footer -->
+	<footer>
+		<p>© Copyright 2016-2020 Form Generator - Fernando Lucero <br>
+		DAW - IES Fuente San Luis</p>
+	</footer>
+</body>
+</html>
