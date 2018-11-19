@@ -1,25 +1,22 @@
 
 window.onload = function(){
 	
-	var galeria = document.getElementById("galeria");
-	var clasiBox = document.getElementById("clasiBox");
-	var fotoBox = document.getElementById("fotoBox");
-	var pic = 1;
-	fotoBox.style.backgroundImage = "url(img_1.jpg)";
-	var prev = document.getElementById("prev");
+	//Botones
+	const prev = document.getElementById("prev");
 	prev.addEventListener("click", pasafotos, false);
-	var next = document.getElementById("next");
+	const next = document.getElementById("next");
 	next.addEventListener("click", pasafotos, false);
-	var galeriaLink = document.getElementById("galeriaLink");
-	galeriaLink.addEventListener("click", muestraGaleria,false);
-	var clasiLink = document.getElementById("clasiLink");
-	clasiLink.addEventListener("click", muestraClasificacion,false);
-	var selec = document.getElementById("sel");
-	selec.addEventListener("change", actualizaListaGanadores,false);
-	var radios = document.getElementsByClassName("r");
-	var winners = document.getElementById("winners");
-	
 
+	//Cambio de foto
+	const fotoBox = document.getElementById("fotoBox");
+	let img = 1;
+	fotoBox.style.backgroundImage = "url(img_1.jpg)";
+	
+	
+	//Links
+	document.getElementById("galeriaLink").addEventListener("click", muestraGaleria,false);
+	document.getElementById("clasiLink").addEventListener("click", muestraClasificacion,false);
+	
 	//Ganadores/Maraton
 	const selecM = document.getElementById("masculino").addEventListener("click", actualizaListaGanadores,false);
 
@@ -41,40 +38,29 @@ window.onload = function(){
 	document.getElementById("e1").addEventListener("dragstart", dragstart);
 	document.getElementById("e2").addEventListener("dragstart", dragstart);
 	document.getElementById("e3").addEventListener("dragstart", dragstart);
-	
-
-	function muestraGaleria () {
-		document.getElementById("clasiBox").style.display = "none";	
-		document.getElementById("galeria").style.display = "block";		
-	}
 		
-	function muestraClasificacion () {
-		document.getElementById("galeria").style.display = "none";
-		document.getElementById("clasiBox").style.display = "block";
-	}
 
 	function pasafotos(){
-		
 		if(this.innerHTML == "PREV"){
-			//Si es la primera foto, pondrá la última
-			if (pic == 1){
+			//Si es la primera foto
+			if (img == 1){
 				fotoBox.style.backgroundImage = "url(img_4.jpg)";
-				pic = 4;
+				img = 4;
 			//sinó pondrá la anterior	
 			}else{
-				fotoBox.style.backgroundImage = "url(img_"+parseInt(pic-1)+".jpg)";
-				pic = pic -1;
+				fotoBox.style.backgroundImage = "url(img_" + parseInt(img-1)+".jpg)";
+				img = img -1;
 			}
-			
 		}else{
 			//Si es la última, pondrá la primera
-			if (pic == 4){
+			if (img == 4){
 				fotoBox.style.backgroundImage = "url(img_1.jpg)";
-				pic = 1;
+				img = 1;
 			//sinó pondrá la siguiente	
 			}else{
-				fotoBox.style.backgroundImage = "url(img_"+parseInt(pic+1)+".jpg)";
-				pic = pic+1;
+				fotoBox.style.backgroundImage = "url(img_" + parseInt(img+1)+".jpg)";
+				img = img+1;
+				
 			}
 		}
 	}
@@ -121,6 +107,16 @@ window.onload = function(){
 			}	 */
 	}
 }	
+
+muestraGaleria = () =>{
+	document.getElementById("clasiBox").style.display = "none";	
+	document.getElementById("galeria").style.display = "block";		
+}
+	
+muestraClasificacion = () =>{
+	document.getElementById("galeria").style.display = "none";
+	document.getElementById("clasiBox").style.display = "block";
+}
 
 //Arrastrar
 over = (ev) => {
