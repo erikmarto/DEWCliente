@@ -9,9 +9,8 @@ window.onload = function(){
 
 	//Cambio de foto
 	const fotoBox = document.getElementById("fotoBox");
-	let img = 1;
 	fotoBox.style.backgroundImage = "url(img_1.jpg)";
-	
+	let img = 1;
 	
 	//Links
 	document.getElementById("galeriaLink").addEventListener("click", muestraGaleria,false);

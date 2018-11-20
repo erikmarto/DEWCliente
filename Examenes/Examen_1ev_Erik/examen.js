@@ -1,25 +1,23 @@
-
 window.onload = function(){
 	
-	var galeria = document.getElementById("galeria");
-	var clasiBox = document.getElementById("clasiBox");
-	var fotoBox = document.getElementById("fotoBox");
-	var pic = 1;
-	fotoBox.style.backgroundImage = "url(img_1.jpg)";
-	var prev = document.getElementById("prev");
+	//Botones
+	const prev = document.getElementById("prev");
 	prev.addEventListener("click", pasafotos, false);
-	var next = document.getElementById("next");
+	const next = document.getElementById("next");
 	next.addEventListener("click", pasafotos, false);
-	var galeriaLink = document.getElementById("galeriaLink");
-	galeriaLink.addEventListener("click", muestraGaleria,false);
-	var clasiLink = document.getElementById("clasiLink");
-	clasiLink.addEventListener("click", muestraClasificacion,false);
-	var selec = document.getElementById("sel");
-	selec.addEventListener("change", actualizaListaGanadores,false);
-	var radios = document.getElementsByClassName("r");
-	var winners = document.getElementById("winners");
-	
 
+	prev.disable = false;
+	next.disable = false;
+	
+	//Cambio de foto
+	const fotoBox = document.getElementById("fotoBox");
+	let img = 1;
+	fotoBox.style.backgroundImage = "url(img_1.jpg)";
+	
+	//Links
+	document.getElementById("galeriaLink").addEventListener("click", muestraGaleria,false);
+	document.getElementById("clasiLink").addEventListener("click", muestraClasificacion,false);
+	
 	//Ganadores/Maraton
 	const selecM = document.getElementById("masculino").addEventListener("click", actualizaListaGanadores,false);
 
@@ -31,7 +29,6 @@ window.onload = function(){
 
 	document.getElementById("clasiBox");
 
-
 	//Arrastrar
 	//Llamamos a los divs que estaran sin arrastrarse y seran en los que se dropen las imagenes
     const arrastrar = document.getElementById("estilo");
@@ -41,51 +38,37 @@ window.onload = function(){
 	document.getElementById("e1").addEventListener("dragstart", dragstart);
 	document.getElementById("e2").addEventListener("dragstart", dragstart);
 	document.getElementById("e3").addEventListener("dragstart", dragstart);
-	
-
-	function muestraGaleria () {
-		document.getElementById("clasiBox").style.display = "none";	
-		document.getElementById("galeria").style.display = "block";		
-	}
 		
-	function muestraClasificacion () {
-		document.getElementById("galeria").style.display = "none";
-		document.getElementById("clasiBox").style.display = "block";
-	}
 
 	function pasafotos(){
-		
-		if(this.innerHTML == "PREV"){
-			//Si es la primera foto, pondrá la última
-			if (pic == 1){
-				fotoBox.style.backgroundImage = "url(img_4.jpg)";
-				pic = 4;
+		if(this.innerHTML == "PREV") {
+			//Si es la primera foto
+			if (img == 1) {
+				prev.disabled = true;
 			//sinó pondrá la anterior	
 			}else{
-				fotoBox.style.backgroundImage = "url(img_"+parseInt(pic-1)+".jpg)";
-				pic = pic -1;
+				fotoBox.style.backgroundImage = "url(img_" + parseInt(img - 1)+".jpg)";
+				img = img - 1;
+				next.disabled = false;
 			}
-			
 		}else{
 			//Si es la última, pondrá la primera
-			if (pic == 4){
-				fotoBox.style.backgroundImage = "url(img_1.jpg)";
-				pic = 1;
+			if (img == 4) {
+				next.disabled = true;
 			//sinó pondrá la siguiente	
 			}else{
-				fotoBox.style.backgroundImage = "url(img_"+parseInt(pic+1)+".jpg)";
-				pic = pic+1;
+				fotoBox.style.backgroundImage = "url(img_" + parseInt(img + 1)+".jpg)";
+				img = img + 1;
+				prev.disabled = false;
 			}
 		}
 	}
-	
-	
 	
 	/*Creamos un array temporal guardando sólo la parte de la matriz que nos interesa
 	y según la condicion guardamos unos elementos u otros, e imprimimos el array. */
 	function actualizaListaGanadores(){
 			
-		let ganadores = new Array(
+		const ganadores = [
 				new Array (new Array ("Jose","Paco", "Mario"), 
 				new Array("Elena","Lusia","Maria")),
 
@@ -94,33 +77,54 @@ window.onload = function(){
 
 				new Array (new Array ("Hector","Oscar","Julian"), 
 				new Array("Lei","Maria","Julia")),
-			);
+			];
 
 			if (selecM.checked) {
 				//10k
-				if (maraton[0]){
-			
+				if (maraton[0]) {
 					let lista = ganadores[0][1];
+					mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
+				}
+			}
+
+			if (selecF.checked) {
+				//10k
+				if (maraton[0]) {
+					let lista = ganadores[0][2];
 					mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
 				}
 			}
 			
 
-			/* //Medio Maraton
-			if (maraton[1]){
+			/*if (selecM.checked) {
+				//Maraton
+				if (maraton[1]) {
 			
-				let lista = ganadores[1][1];
-				winners.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
+					let lista = ganadores[1][1];
+					mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
+				}
 			}
 
-			//Maraton
-			if (maraton[2]){
+			if (selecF.checked) {
+				//Maraton
+				if (maraton[1]) {
 			
-				let lista = ganadores[2][1];
-				winners.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
-			}	 */
+					let lista = ganadores[1][2];
+					mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
+				}
+			}*/
 	}
 }	
+
+muestraGaleria = () =>{
+	document.getElementById("clasiBox").style.display = "none";	
+	document.getElementById("galeria").style.display = "block";		
+}
+	
+muestraClasificacion = () =>{
+	document.getElementById("galeria").style.display = "none";
+	document.getElementById("clasiBox").style.display = "block";
+}
 
 //Arrastrar
 over = (ev) => {
