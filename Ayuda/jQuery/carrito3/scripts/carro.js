@@ -125,9 +125,7 @@ $(function(){
 		var ancho = parseInt($("#cart_items").css("width"));
 		$("#cart_items").css("width", ancho-120+"px");
 		moveLeft();
-		moveLeft();
-		
-		
+		moveLeft();	
 	}
 	
 	function moveRight(){
