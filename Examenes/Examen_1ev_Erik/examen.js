@@ -66,56 +66,23 @@ window.onload = function(){
 	
 	/*Creamos un array temporal guardando sólo la parte de la matriz que nos interesa
 	y según la condicion guardamos unos elementos u otros, e imprimimos el array. */
-	function actualizaListaGanadores(){
-			
-		const ganadores = [
-				new Array (new Array ("Jose","Paco", "Mario"), 
-				new Array("Elena","Lusia","Maria")),
-
-				new Array (new Array ("Marcos","Paco","Alex"), 
-				new Array("Fani","Any","Pepi")),
-
-				new Array (new Array ("Hector","Oscar","Julian"), 
-				new Array("Lei","Maria","Julia")),
-			];
-
-			if (selecM.checked) {
-				//10k
-				if (maraton[0]) {
-					let lista = ganadores[0][1];
-					mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
-				}
-			}
-
-			if (selecF.checked) {
-				//10k
-				if (maraton[0]) {
-					let lista = ganadores[0][2];
-					mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
-				}
-			}
-			
-
-			/*if (selecM.checked) {
-				//Maraton
-				if (maraton[1]) {
-			
-					let lista = ganadores[1][1];
-					mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
-				}
-			}
-
-			if (selecF.checked) {
-				//Maraton
-				if (maraton[1]) {
-			
-					let lista = ganadores[1][2];
-					mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
-				}
-			}*/
-	}
+	
 }	
+function actualizaListaGanadores(){
+			
+	const ganadores = [
+			new Array (new Array ("Jose","Paco", "Mario"), 
+			new Array("Elena","Lusia","Maria")),
 
+			new Array (new Array ("Marcos","Paco","Alex"), 
+			new Array("Fani","Any","Pepi")),
+
+			new Array (new Array ("Hector","Oscar","Julian"), 
+			new Array("Lei","Maria","Julia")),
+		];
+
+		
+} 
 muestraGaleria = () =>{
 	document.getElementById("clasiBox").style.display = "none";	
 	document.getElementById("galeria").style.display = "block";		
@@ -139,4 +106,20 @@ drop = (ev) =>{
 	ev.preventDefault();
 	const data = ev.dataTransfer.getData("contenido");
 	ev.target.appendChild(document.getElementById(data));
+
+	if (selecM) {
+		//10k
+		if (maraton[0]) {
+			let lista = ganadores[0][1];
+			mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
+		}
+	}
+
+	if (selecF) {
+		//10k
+		if (maraton[0]) {
+			let lista = ganadores[0][2];
+			mostrar.innerHTML = "<li>"+lista[0]+"</li><li>"+lista[1]+"</li><li>"+lista[2]+"</li>";
+		}
+	}
 }
