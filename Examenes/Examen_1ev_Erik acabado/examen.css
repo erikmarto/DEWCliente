@@ -46,7 +46,8 @@ div#main{
   float: left; 
   border: 1px black solid; 
   margin-top: 5px;
-  background-color: rgb(233, 179, 154); 
+  background-color: rgb(124, 124, 124);
+  color: white;
 }
 #prev {
   margin-left: 210px;
@@ -89,4 +90,7 @@ li {
   margin-top: 5px;
 }
 
+.btn:disabled {
+  background-color: black !important;
+}
 

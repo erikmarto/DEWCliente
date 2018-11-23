@@ -1,0 +1,66 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Examen Javascript</title>
+  <link href="examen.css" rel="stylesheet" type="text/css" title="Color" />
+  <script type="text/javascript" src="examen.js"></script>
+</head>
+
+<body>
+
+  <!-- PAGINA PRINCIPAL 2 PUNTOS-->
+  <div id="main">
+    <h1>MARATÓN VALENCIA 2015</h1>
+    <div class="button-container">
+      <button id="galeriaBtn" class="btn">Galería</button>
+      <button id="clasifBtn" class="btn">Clasificación</button>
+    </div>
+
+  </div>
+
+  <!-- 4 PUNTOS -->
+  <div id="clasif" class="container">
+    <h2>CLASIFICACION</h2>
+
+    <div class="clasif-elem-container">
+      <div id="clasif-types">
+        <div id="M" class="c-type"><p>Maraton</p></div>
+        <div id="MM" class="c-type"><p>Media Maraton</p></div>
+        <div id="10K" class="c-type"><p>10K</p></div>
+      </div>
+
+      <div class="clasif-show">
+        <div id="active-type"></div>
+        <div id="three-winners"></div>
+        <div id="genderPick">
+            <input type="radio" id="male" name="rad"><p>Hombres</p>
+            <input type="radio" id="female" name="rad"><p>Mujeres</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- 4 PUNTOS -->
+  <div id="galeria" class="container">
+    <h2>GALERIA</h2>
+    <div class="img-container">
+      <img id="galImg" src="img_1.jpg">
+    </div>
+
+    <div class="button-container">
+      <button id="galPrev" class="btn gal-btn" disabled>Prev</button>
+      <button id="galForw" class="btn gal-btn">Next</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
