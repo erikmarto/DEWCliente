@@ -7,10 +7,6 @@ h2, h1{
   text-align: center; 
 }
 
-.text{
-  color:blue;
-}
-
 div#main{
   position:absolute;
   width: 900px;
@@ -18,11 +14,7 @@ div#main{
   margin-left: -445px; 
 }
 
-#estilo, #mostrar{
-  border: 1px solid black;
-  height: 100px;
-}
-
+/*Galeria*/
 #galeria {
   width: 550px; 
   height: 380px; 
@@ -36,7 +28,6 @@ div#main{
   height: 333px; 
   margin-left: 25px; 
   margin-top: 10px; 
-  border: 1px black solid;
 }
 
 #prev, #next {
@@ -44,11 +35,11 @@ div#main{
   height: 20px; 
   font-size: 14px; 
   float: left; 
-  border: 1px black solid; 
   margin-top: 5px;
-  background-color: rgb(124, 124, 124);
+  background-color: black;
   color: white;
 }
+
 #prev {
   margin-left: 210px;
 }
@@ -67,30 +58,56 @@ a, a:hover, a:visited {
 }
 
 #galeriaLink {
-  margin-left: 370px;
+  margin-left: 390px;
 }
 
-#clasiLink {
-  margin-left: 5px;
+.btn:disabled {
+  background-color: red !important;
 }
 
-#galeriaLink:hover, #clasiLink:hover {
-  color: red;
-}
-
+/*Clasificación*/
 #clasiBox {
   display: none;
 }
 
 #clasiCont {
-  margin-top: 100px;
+  display: grid;
+  grid-template-columns: auto 80%;
+  height: 350px;
 }
 
-li {
-  margin-top: 5px;
+.text {
+  font-size: 20px;
+  border: 1px solid white;
+  color: red;
+  width: 150px;
+  text-align: center;
+  padding: 10px; 
+  margin-top: 10px;
 }
 
-.btn:disabled {
-  background-color: black !important;
+.mostrar {
+  display: grid;
+  grid-template-rows: 20%;
 }
+
+#activo {
+  background-color: black;
+}
+
+#activo > div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ganadores{
+  background-color:white;
+  text-align: center;
+}
+
+/*links*/
+#galeriaLink:hover, #clasiLink:hover {
+  color: red;
+}
+
 

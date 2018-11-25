@@ -6,7 +6,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Examen Javascrip Erik</title>
-	<link href="bootstrap.min.css" rel="stylesheet" type="text/css" title="Color" />
 	<link href="examen.css" rel="stylesheet" type="text/css" title="Color" />
 	<script type="text/javascript" src="examen.js"></script>
 </head>
@@ -21,23 +20,27 @@
 
 		<!-- 4 PUNTOS -->
 		<div id="clasiBox">
+			<h2>CLASIFICACIÓN</h2>
 			<div id="clasiCont">
-				<h2>CLASIFICACION</h2>
-				<p id="text" class="text" id="10k" draggable="true">10K</p>
-				<p id="text" class="text" id="MM" draggable="true">Medio Maraton &nbsp;</p>
-				<p id="text" class="text" id="M" draggable="true">Maraton &nbsp;</p>
-				<div id="estilo">Arrastrar</div>
-				<div id="ganadores">Ganadores</div>
-				<div id="genero">
-					<input id="masculino" type="radio" name="genero"> Masculino <br>
-					<input id="femenino" type="radio" name="genero"> Femenino <br>
+				<div id="estilos">
+					<div id="10K" class="text">10K</div>
+					<div id="MM" class="text">Medio Maraton</div>
+					<div id="M" class="text">Maraton</div>
+				</div>
+				<div class="mostrar">
+					<div id="activo"></div>
+					<div id="ganadores"></div>
+					<div id="generos">
+						Elegir:
+						<input id="masculino" type="radio" name="gen" /> Masculino
+						<input id="femenino" type="radio" name="gen" /> Femenino
+					</div>
 				</div>
 			</div>
 		</div>
 		<!-- 4 PUNTOS -->
 		<div id="galeria">
-			<div id="fotoBox">
-			</div>
+			<div id="fotoBox"></div>
 			<button id="prev" class="btn">PREV</button>
 			<button id="next" class="btn">NEXT</button>
 		</div>
