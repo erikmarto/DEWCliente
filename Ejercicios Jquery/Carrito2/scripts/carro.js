@@ -8,9 +8,9 @@ $(function () {
 
 	//movimiento y anchos
 	anchoInicial = 483; //medida
-	/* ancho = parseInt($("#cart_items").css("width")); //recoger el ancho */
+	ancho = parseInt($("#cart_items").css("width")); //recoger el ancho
 	cantArt = $("#cart_items").children().length; //cantidad de articulos
-	/* left = parseInt($("#cart_items").css("left"));  */
+	left = parseInt($("#cart_items").css("left"));
 
 	$("div.item").on("dblclick", dblClick); //doble click
 	$("#btn_clear").on("click", vaciarCarrito); //vaciar
@@ -142,7 +142,6 @@ movDerecha = () => {
 	if (compras > 4){
 		if ((left+ancho)>anchoInicial) {
 			$("#cart_items").css("left", left - 60 + "px");
-			
 		}	
 	}
 }
