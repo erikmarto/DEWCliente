@@ -29,7 +29,7 @@ function dblClick() {
 	if (stock > 0) {//en caso que sea mayor a 0
 		sumarItem = true;
 		actualizarStock(itemID, stock, sumarItem); //actualizar stock
-		compras++; //sumar coimpras
+		compras++; //sumar compras
 
 		/*llamada a las funciones*/
 		actualizarCompra(compras);
