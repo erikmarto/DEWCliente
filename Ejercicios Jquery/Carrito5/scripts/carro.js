@@ -29,8 +29,8 @@ $(function () {
 //Funcion doble click
 function dblClick() {
 	const itemID = this.id;
-	let stockLabel = $(this).children("label.stock").text();
-	let stock = parseInt(stockLabel.substring(6)); //cantidad del stock 
+	let stocklabel = $(this).children("label.stock").text();
+	let stock = parseInt(stocklabel.substring(6)); //cantidad del stock  
 
 	if (stock > 0) { //en caso que sea mayor a 0
 		sumaItem = true;
@@ -79,6 +79,8 @@ actualizarTotal = (itemID, sumaItem) => {
 	let precioTotal = parseInt($("#cprice").val());
 	if (sumaItem) { //si añadimos un articulo al carro
 		$("#cprice").val((precioTotal + precioItem) + ' €'); //suma el precio total
+		$("#cprice").hide();
+		$("#cprice").fadeIn();
 	} else {
 		$("#cprice").val((precioTotal - precioItem) + ' €'); //resta precio total
 		$("#cprice").hide();
@@ -89,19 +91,52 @@ actualizarTotal = (itemID, sumaItem) => {
 addCarrito = (itemID) => {
 	let item = $("#" + itemID);
 	const clon = item.clone(); //crear clon del articulo
-	const $borrar = $('<a href="" class="delete"></a>'); //crear enlace borrar
-
 	$(clon).attr("id", "c" + itemID); //añadir la 'c' al id
 	$(clon).addClass("icart"); //añadir la clase icart
 	$(clon).css("cursor", "default"); //cambiar el cursor
 	$(clon).children(".stock").hide(); //ocultar el stock
-	$(clon).prepend($borrar); //se le añade el enlace al clon
-	$(clon).hide(); //ocultamos el clon para animarla
-	$(clon).prependTo($("#cart_items")); //añadir clon al carro
+
+	const $add = $('<a href="" class="add"></a>');
+	$add.click(sumarCantidad);
+	$add.button({
+		icons: { primary: "ui-icon-circle-add" },
+		text: false
+	});
+
+	const $delete = $('<a href="" class="delete"></a>'); //creamos el enlace borrar
+	$delete.button({
+		icons: { primary: "ui-icon-circle-close" },
+		text: false
+	});
+
+	const $minus = $('<a href="" class="minus"></a>');
+	$minus.click(restarCantidad, $cantidad);
+	$minus.button({
+		icons: { primary: "ui-icon-circle-minus" },
+		text: false
+	});
+
+	$(clon).hide() //ocultamos la clon para animarla
+
+	/*comprueba si ya existe el item en el carro
+	en caso de true, suma la cantidad del input
+	en caso de false, añade al carro
+	*/
+
+	if ($("#cart_items").children().is("#c" + itemID)) {
+		sumarCantidad(event, itemID, cantidad);
+	} else {
+		const cantidad = 1;
+		let $cantidad = $('<input class="cantidad" type="text" value="' + cantidad + '" readonly="true" />');
+		$(clon).prependTo($("#cart_items")); //añadir clon al carro//añadir clon al carro
+		$(clon).prepend($minus, $add, $delete, $cantidad); //agregamos los enlaces de eliminar, sumar y restar item
+	}
+
 	$(clon).animate({ width: "toggle" }, 600);
 
-	/*click de borrar*/
-	$borrar.on("click", function () {
+	/*botón de borrar que guarda los parametros que 
+	queremos pasar a la función de borrar*/
+	$delete.on("click", function () {
 		borrarArticulo(itemID, clon);
 		return false;
 	});
@@ -109,7 +144,7 @@ addCarrito = (itemID) => {
 	const cantArt = $("#cart_items").children().length; //cantidad de articulos
 	if (cantArt > 4) {
 		/*mostramos flechas*/
-		$("#btn_prev").fadeIn(600);
+		$("#btn_prev").fadeIn(600); 
 		$("#btn_next").fadeIn(600);
 		aumAncho(); //si hay mas de 4 incrementamos el ancho 
 	}
@@ -119,12 +154,12 @@ borrarArticulo = (itemID, clon) => {
 	let animando = false;
 	if (!animando) {
 		animando = true;
-		$(clon).fadeOut(600, function () {
+		$(clon).effect("explode", { mode: "hide" }, 600, function () {
 			const item = $("#" + itemID);
 			const stockitem = item.children("label.stock").text();
 			animando = false;
 			compras--;
-			actualizarCompra(compras); //actualizar carrito
+			actualizarCompra(compras);//actualizar carrito
 			clon.remove(); //borramos el artículo
 			stock = parseInt(stockitem.substring(6));
 			sumaItem = false;
@@ -136,8 +171,7 @@ borrarArticulo = (itemID, clon) => {
 			} else { //sinó reiniciamos la posición y medida
 				$("#cart_items").css("left", "0px");
 				$("#cart_items").css("width", anchoInicial);
-				/*ocultamos flechas*/
-				$("#btn_prev").fadeOut(600); 
+				$("#btn_prev").fadeOut(600); //ocultamos flechas
 				$("#btn_next").fadeOut(600);
 			}
 			if (cantArt < 1) { //cuando se queda a 0 ocultamos los botones de comprar y vaciar
@@ -168,14 +202,12 @@ redAncho = () => {
 	const ancho = parseInt($("#cart_items").css("width"));
 	$("#cart_items").css("width", ancho - 120 + "px");
 	movIzquierda();
-	movIzquierda();
 }
 
 //desplaza el carro hasta un borde
 movDerecha = () => {
 	const ancho = parseInt($("#cart_items").css("width"));
 	const left = parseInt($("#cart_items").css("left"));
-
 	if (compras > 4) {
 		if ((left + ancho) > anchoInicial) {
 			$("#cart_items").css("left", left - 60 + "px");
@@ -193,10 +225,11 @@ movIzquierda = () => {
 	}
 }
 
-/*hacemos recursividad en la función de callback para que al terminar la animación siga desplazándose*/
+/*hacemos recursividad en la función de callback 
+para que al terminar la animación siga desplazándose*/
 startSlideIzquierda = () => {
-	const left = parseInt($("#cart_items").css("left"));
-	let desp = "+=5";
+	var left = parseInt($("#cart_items").css("left"));
+	var desp = "+=5";
 	//cambiamos la velocidad dependiendo la cantidad de compras
 	if (compras > 9) {
 		desp = "+=10";
@@ -226,7 +259,7 @@ startSlideDerecha = () => {
 	const ancho = parseInt($("#cart_items").css("width"));
 	const left = parseInt($("#cart_items").css("left"));
 	let desp = "-=5";
-	//cambiamos la velocidad en funcion de los articulos que haya
+	//cambiamos la velocidad dependiendo la cantidad de compras
 	if (compras > 9) {
 		desp = "-=10";
 	}
@@ -239,7 +272,24 @@ startSlideDerecha = () => {
 	}
 }
 
-//función parar desplazamiento a la derecha
+//parar desplazamiento a la derecha
 stopSlideDerecha = () => {
 	$("#cart_items").stop(true, false);
+}
+
+
+//comprueba si el item ya está y cambia su cantidad
+sumarCantidad = (event, itemID, cantidad) => {
+	event.preventDefault();
+	alert();
+	const $cantidad = $("#c" + itemID).find(".cantidad");
+	const cantidad = $cantidad.val();
+	cantidad++;
+	$cantidad.val(cantidad);
+}
+
+//igual que sumar pero decrementando
+restarCantidad = (event, $cantidad) => {
+	event.preventDefault();
+	let cantidad = $cantidad.val();
 }
