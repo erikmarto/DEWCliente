@@ -36,7 +36,7 @@ $(function () {
 	});
 
 	function actualizarStock(stock, itemID, sumaItem) {
-		var item = $("#" + itemID);
+		const item = $("#" + itemID);
 		if (sumaItem) { //estamos añadiendo o borrándolo un item
 			stock--; //restamos stock 
 			if (stock < 1) { //si esta a 0 se añade clase
@@ -77,7 +77,6 @@ $(function () {
 	function addCarrito(itemID) {
 		const item = $("#" + itemID);
 		const clon = item.clone(); //crear clon del articulo
-		/* 		let $cantidad; */
 		$(clon).attr("id", "c" + itemID);  //añadir la 'c' al id
 		$(clon).addClass("icart"); //añadir la clase icart
 		$(clon).css("cursor", "default"); //cambiar el cursor
