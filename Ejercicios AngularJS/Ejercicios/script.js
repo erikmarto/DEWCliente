@@ -2,38 +2,39 @@ var app = angular.module("app", [])
     .controller("HipotecaController", function ($scope) {
         $scope.hipoteca = {
             idHipoteca: 3,
-            nombre: "Juan",
-            ape1: "García",
-            ape2: "Perez",
-            nif: "12345678Z",
-            edad: 32,
-            telefono: "964564563",
-            email: "juan_garcia_perez@gmail.com",
-            ingresosMensuales: 1200,
-            cuotaMensual: 492,
-            interesAplicado: 0.987,
+            nombre: "",
+            ape1: "",
+            ape2: "",
+            nif: "",
+            edad: 0,
+            telefono: "",
+            email: "",
+            ingresosMensuales: 0,
+            cuotaMensual: 0,
+            interesAplicado: 0,
             datosFinancieros: {
-                capital: 150000,
-                tipoInteres: "VARIABLE",
-                tipoEuribor: "EURIBOR3",
-                euribor: 0.287,
-                diferencial: 0.9,
+                capital: 0,
+                tipoInteres: "",
+                tipoEuribor: "",
+                euribor: 0,
+                diferencial: 0,
                 interesFijo: 0,
-                plazoAnyos: 30
+                plazoAnyos: 0
             },
             productosContratados: {
-                seguroCasa: true,
-                nomina: true,
+                seguroCasa: false,
+                nomina: false,
                 seguroVida: false
             }
         }
+
         $scope.hipotecaModelo = {
             datosFinancieros: {
                 tipoInteres: ["VARIABLE", "FIJO"],
                 tipoEuribor: ["EURIBOR", "EURIBOR3"]
             }
         }
-        app.controller("PruebaController", function ($scope) {
-            $scope.url = "detalle.html";
-        });
+        $scope.url = "detalle.html";
     });
+
+
