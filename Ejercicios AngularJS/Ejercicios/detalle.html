@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+    <script src="angular-1.7.5/angular.min.js"></script>
     <script src="main.js"></script>
 </head>
 
@@ -21,6 +21,11 @@
             <label for="interesAplicado">Interés aplicado: </label><input ng-disabled="true" id="interesAplicado" name="interesAplicado" type="number" ng-model="hipoteca.interesAplicado"><br><br>
             <fieldset>
                 <legend>Datos Financieros</legend>
+                <label for="datosFinancieros.capital">Capital: </label><input id="datosFinancieros.capital" name="datosFinancieros.capital" type="number" ng-model="hipoteca.datosFinancieros.capital"><br><br>
+                <label for="tipoInteres">Tipo interés: </label><select ng-model="hipoteca.datosFinancieros.tipoInteres" ng-options="x for x in hipotecaModelo.datosFinancieros.tipoInteres">
+                <label for="tipoEuribor">Tipo Euribor: </label><select ng-model="hipoteca.datosFinancieros.tipoEuribor" ng-options="x for x in hipotecaModelo.datosFinancieros.tipoEuribor">
+                
+                </select>
 
             </fieldset><br>
             <fieldset>
