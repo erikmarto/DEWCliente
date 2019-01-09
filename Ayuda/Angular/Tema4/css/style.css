@@ -1,0 +1,15 @@
+*{margin: 0; padding: 0;}
+body.ind{background: url('../img/sky.jpg'); ba}
+div#formbox {width: 450px; margin-top: 30px; margin-left: auto; margin-right: auto; height: auto; }
+fieldset {border: 1px black solid; padding: 10px; margin-top: 10px; background-color: rgba(255,255,255,0.5);}
+label { font-family: tahoma, courier, georgian; font-size: 12px; display: block; width: 120px; float: left; text-align: right;
+margin-top: 10px;}
+legend {font-family: arial; font-weight: bold; font-size: 15px;}
+input, select {margin-left: 5px; margin-top: 10px; border: 1px #585858 solid; border-radius: 5px;}
+select {width: 170px;}
+.check {float: left;}
+.checkboxes label {text-align: center; margin: auto; }
+.checkboxes input {margin: auto;}
+.calc { border: 1px #585858 solid; border-radius: 5px; width: 80px; margin-left: 0;}
+thead {font-weight: bold;}
+.filterclass {margin-left: 300px; margin-top: 5px;}

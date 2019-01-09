@@ -1,0 +1,29 @@
+<html ng-app="app">
+<head>
+	<script src="scripts/libs/angular.js"></script>
+    <script src="scripts/libs/angular-ui-router.min.js"></script>
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="scripts/services/services.js"></script>
+	<script type="text/javascript" src="detalle/indexController.js"></script>
+	<script type="text/javascript" src="listado/indexController.js"></script>
+	<meta charset="utf-8"> </head>
+</head>
+<body>
+<!-- nav bar -->
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">Hipotecas</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li class="active"><a href="#">Home</a></li>
+		  <li><a ui-sref="detalle">Detalle</a></li>
+		  <li><a ui-sref="listado">Listado</a></li>
+		</ul>
+	  </div>
+	</nav>
+	<div ui-view></div>
+</body>
+</html>

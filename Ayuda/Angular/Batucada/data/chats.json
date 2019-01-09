@@ -1,0 +1,27 @@
+[
+	{
+		"id": 1,
+		"destino": 'U',
+		"nombre": 'Cecilio Albero',
+		"fecha": '2017-02-11 21:17:41'
+	},
+	{
+		"id": 2,
+		"destino": 'G',
+		"nombre": 'Lunes 18hs',
+		"fecha": '2017-02-11 23:01:20'
+	},
+	{
+		"id": 3,
+		"destino": 'E',
+		"nombre": 'Maratón',
+		"fecha": '2017-03-12 11:01:20'
+	},
+	{
+		"id": 4,
+		"destino": 'X',
+		"nombre": 'General',
+		"fecha": '2017-03-10 16:01:20'
+	}
+	
+]

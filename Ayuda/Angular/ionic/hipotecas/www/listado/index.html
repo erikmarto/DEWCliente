@@ -1,0 +1,31 @@
+<!-- contenido -->
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td>Hipoteca</td>
+					<td>DNI</td>
+					<td>Nombre completo</td>
+					<td>Capital</td>
+					<td>Tipo de Interés</td>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr ng-repeat= "hipoteca in vm.listas " ng-style="{backgroundColor:($odd?'#fff':'#CEF6CE')}">
+					<td>{{hipoteca.id}}</td>
+        			<td>{{hipoteca.nif}}</td>
+					<td>{{hipoteca.nombreCompleto}}</td>
+					<td>{{hipoteca.datos_financieros.cap | currency: "€"}} </td>
+					
+					<td ng-switch on="hipoteca.datos_financieros.tipoInteres">
+						<span ng-switch-when="FIJO">Inter&eacute;s fijo</span>
+						<span ng-switch-when="VARIABLE">Inter&eacute;s variable</span>
+					</td>
+					
+				</tr>
+			</tbody>
+			
+		</table>
+		
+	</div> <!-- fin contenido-->

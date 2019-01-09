@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/jquery_v3.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body ng-controller="ListadoHipotecaController">
+	<!-- nav bar -->
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">Listado Hipotecas</a>
+		</div>
+		
+		<ul class="nav navbar-nav">
+		  <li class="active"><a href="index.html">Home</a></li>
+		  <li><a href="detalle.html">Detalle</a></li>
+		  <li><a href="#">Listado</a></li>
+		  <li class="filterclass"><span class="pull-right"><a href="#"><input ng-model="filtro.apel1"></input></a></span></li>
+		</ul>
+		
+	  </div>
+	</nav>
+	<!-- contenido -->
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td>Hipoteca</td>
+					<td>DNI</td>
+					<td>Nombre completo</td>
+					<td>Capital</td>
+					<td>Tipo de Inter&eacute;s</td>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<tr ng-repeat= "hipoteca in hipotecas | filteri18n:{apel1:filtro.apel1}" ng-style="{backgroundColor:($odd?'#fff':'#CEF6CE')}">
+					<td>{{hipoteca.id}}</td>
+        			<td>{{hipoteca.nif}}</td>
+					<td>{{hipoteca.fullName}}</td>
+					<td>{{hipoteca.datos_financieros.cap | EUCoin}}</td>
+					<td ng-switch on="hipoteca.datos_financieros.tipoInteres">
+						<span ng-switch-when="FIJO">Inter&eacute;s fijo</span>
+						<span ng-switch-when="VARIABLE">Inter&eacute;s variable</span>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

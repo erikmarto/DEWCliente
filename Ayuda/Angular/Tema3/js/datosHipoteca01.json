@@ -1,0 +1,26 @@
+{
+	"nombre":"Manolito",
+	"apel1":"Pérez",
+	"apel2":"Hernández",
+	"nif":"X7002789T",
+	"edad":"29",
+	"telf":"693687421",
+	"mail":"manolito@gmail.com",
+	"ingMen":"1200",
+	"CuoMen":"",
+	"interAP":"",
+	"datos_financieros":{
+		"cap":50000,
+		"tipoInteres":"FIJO",
+		"tipoEuribor":"",
+		"euribor":"",
+		"diferencial":"",
+		"intFijo":10,
+		"plazoAnyos":50
+	},
+	"productos":{
+		"pSeguroCasa":false,
+		"pSeguroNomina":false,
+		"pSeguroVida":false	
+	}
+}

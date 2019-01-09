@@ -1,0 +1,16 @@
+[
+	{
+		"chat_id": 1,
+		"msg_id": 1,
+		"nombre":'Administrador',
+		"texto":'Hola usuario',
+		"fecha_msg": '2017-02-11 21:17:35'
+	},
+	{
+		"chat_id": 1,
+		"msg_id": 2,
+		"nombre":'Administrador',
+		"mensaje":'asd',
+		"fecha_msg": '2017-02-11 21:17:35'
+	},
+]

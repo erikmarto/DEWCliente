@@ -1,0 +1,51 @@
+<html ng-app="app">
+<head>
+<script src="js/jquery_v3.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+<link rel="styleSheet" href="css/style.css" type="text/css"/>
+</head>
+	<body ng-controller="HipotecaController">
+	<div id="formbox">
+		<form name="form1" id="form1">
+			<fieldset>
+				<legend>Hipoteca</legend>
+				<label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre" ng-model="hipoteca.nombre"></br>
+				<label for="apel1">Apellido1: </label><input type="text" name="apel1" id="apel1" ng-model="hipoteca.apel1"></br>
+				<label for="apel2">Apellido2: </label><input type="text" name="apel2" id="apel2" ng-model="hipoteca.apel2"></br>
+				<label for="nif">NIF: </label><input type="text" name="nif" id="nif" ng-model="hipoteca.nif"></br>
+				<label for="edad">Edad: </label><input type="text" name="edad" id="edad" ng-model="hipoteca.edad"></br>
+				<label for="telf">Tel&eacute;efono: </label><input type="text" name="telf" id="telf" ng-model="hipoteca.telf"></br>
+				<label for="mail">E-mail: </label><input type="text" name="mail" id="mail" ng-model="hipoteca.mail"></br>
+				<label for="ingMen">Ingresos Mensuales: </label><input type="text" name="ingMen" id="ingMen" ng-model="hipoteca.ingMen"></br>
+				<label for="CuoMen">Cuota Mensual: </label><input type="number" name="CuoMen" id="CuoMen"  ng-disabled="hipoteca.CuoMen===''" ng-model="hipoteca.CuoMen"></br>
+				<label for="interAP">Inter&eacute;s Aplicado: </label><input type="number" name="interAP" id="interAP" ng-disabled="hipoteca.interAP===''" ng-model="hipoteca.interAP"></br>
+			</fieldset>
+			<fieldset>
+				<legend>Datos Financieros</legend>
+				<label for="cap">Capital: </label><input type="number" name="cap" id="cap" ng-model="hipoteca.datos_financieros.cap"></br>
+				<label for="tipoInteres">Tipo Interes: </label><select name="tipoInteres" id="tipoInteres" ng-model="hipoteca.datos_financieros.tipoInteres">
+					<option value="FIJO">FIJO</option>
+					<option value="VARIABLE">VARIABLE</option>
+				</select></br>
+				<label for="tipotipoEuribor">Tipo Euribor: </label><select name="tipoEuribor" id="tipoEuribor" ng-disabled="hipoteca.datos_financieros.tipoInteres==='FIJO' || hipoteca.datos_financieros.tipoInteres===''" ng-model="hipoteca.datos_financieros.tipoEuribor"  ng-change="cambiarEuribor()">
+					<option value="EURIBOR">EURIBOR</option>
+					<option value="EURIBOR3">EURIBOR3</option>
+				</select></br>
+				<label for="euribor">Euribor: </label><input type="number" name="euribor" id="euribor" ng-disabled="hipoteca.datos_financieros.tipoInteres==='FIJO' || hipoteca.datos_financieros.tipoInteres===''" ng-model="hipoteca.datos_financieros.euribor"></br>
+				<label for="diferencial">Diferencial: </label><input type="number" name="diferencial" id="diferencial" ng-disabled="hipoteca.datos_financieros.tipoInteres==='FIJO' || hipoteca.datos_financieros.tipoInteres===''" ng-model="hipoteca.datos_financieros.diferencial"></br>
+				<label for="intFijo">Inter&eacute;s fijo: </label><input type="number" name="intFijo" id="intFijo" ng-enabled="hipoteca.datos_financieros.tipoInteres==='FIJO'" ng-disabled="hipoteca.datos_financieros.tipoInteres==='VARIABLE' || hipoteca.datos_financieros.tipoInteres===''" ng-model="hipoteca.datos_financieros.intFijo"></br>
+				<label for="plazoAnyos">Plazo A&nacute;os: </label><input type="number" name="plazoAnyos" id="plazoAnyos" ng-model="hipoteca.datos_financieros.plazoAnyos"></br>
+			</fieldset>
+			<fieldset class="checkboxes">
+				<legend>Productos Contratados</legend>
+				<label for="pSeguroCasa">Seguro de casa: </label><input class="check" type="checkbox" name="pSeguroCasa" id="pSeguroCasa" ng-model="hipoteca.productos.pSeguroCasa">
+				<label for="pSeguroNomina">Seguro de N&oacute;mina: </label><input class="check" type="checkbox" name="pSeguroNomina" id="pSeguroNomina" ng-model="hipoteca.productos.pSeguroNomina">
+				<label for="pSeguroVida">Seguro de Vida: </label><input  class="check" type="checkbox" name="pSeguroVida" id="pSeguroVida" ng-model="hipoteca.productos.pSeguroVida">
+			</fieldset>
+			<input type="submit" class="calc" name="calcular" value="Calcular" ng-click="calcularHipoteca()" />
+			<input type="submit" class="calc" name="guardar" value="Guardar" ng-click="guardarDatos()" />
+		</form>
+	</div>	
+	</body>
+</html>
