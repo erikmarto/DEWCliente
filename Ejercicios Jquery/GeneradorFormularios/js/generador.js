@@ -1,8 +1,8 @@
 $(function () {
 
-	/* menu Hover function */
+	// Menu
 	$("nav").mouseover(function () {
-		var prevcolor = $(this).css("color");
+		let prevcolor = $(this).css("color");
 		if (prevcolor != "rgb(35, 140, 215)") {
 			$(this).css("color", "rgb(35, 140, 215)");
 			$(this).mouseout(function () {
@@ -11,30 +11,30 @@ $(function () {
 		}
 	});
 
-	//addmenu button
+	// Añadir boton
 	$("#addmenubutton").click(function () {
-		var item = $("#addMenu");
-		var menubutton = this;
+		let item = $("#addMenu");
+		let menubutton = this;
 		mostrarMenu(item, menubutton);
 		resetFieldStyle();
 	});
 
-	//field prop button 
+	// Propiedades del Archivo
 	$("#fieldpropbutton").click(function () {
-		var item = $("#menuProp");
-		var menubutton = this;
+		let item = $("#menuProp");
+		let menubutton = this;
 		mostrarMenu(item, menubutton);
 	});
 
-	//form prop button
+	// Propiedades de la Seccion
 	$("#formpropbutton").click(function () {
-		var item = $("#formProp");
-		var menubutton = this;
+		let item = $("#formProp");
+		let menubutton = this;
 		mostrarMenu(item, menubutton);
 		resetFieldStyle();
 	});
 
-	//function mostrar menu. 
+	// Mostrar Menu 
 	function mostrarMenu(item, menubutton) {
 		$(".navption").css("borderColor", "#0d6586");
 		$(".navption").css("color", "rgb(0,0,0)");
@@ -49,189 +49,182 @@ $(function () {
 		});
 	}
 
-	/* 
-			 ------------------------------------------------------------
-			 
-							Añadir campos al formulario
-			 
-			 ------------------------------------------------------------
-	 */
-	var fields = 0;
-	var textfields = 0;
-	var numberfields = 0;
-	var parafields = 0;
-	var checkboxfields = 0;
-	var checkinputs = 0;
-	var multiplefields = 0;
-	var radioinputs = 0;
-	var selectfields = 0;
-	var selectoptions = 0;
-	var namefields = 0;
-	var datefields = 0;
-	var timefields = 0;
-	var telfields = 0;
-	var addressfields = 0;
-	var webfields = 0;
-	var pricefields = 0;
-	var mailfields = 0;
-	var breakfields = 0;
-	var filefields = 0;
+	/* Añadir campos al formulario */
+	let fields = 0;
+	let textfields = 0;
+	let numberfields = 0;
+	let parafields = 0;
+	let checkboxfields = 0;
+	let checkinputs = 0;
+	let multiplefields = 0;
+	let radioinputs = 0;
+	let selectfields = 0;
+	let selectoptions = 0;
+	let namefields = 0;
+	let datefields = 0;
+	let timefields = 0;
+	let telfields = 0;
+	let addressfields = 0;
+	let webfields = 0;
+	let pricefields = 0;
+	let mailfields = 0;
+	let breakfields = 0;
+	let filefields = 0;
 
-	// Text listener
+	// Texto
 	$("#textfield").click(function () {
-		var item = $("#textfieldbox");
+		let item = $("#textfieldbox");
 		$("#textfieldbox").attr("fieldtype", "text");
 		textfields++;
-		var cantidad = textfields;
+		let cantidad = textfields;
 		insertField(item, cantidad);
 
 	});
 
-	// Number listener
+	// Numero
 	$("#numberfield").click(function () {
-		var item = $("#numberfieldbox");
+		let item = $("#numberfieldbox");
 		$("#numberfieldbox").attr("fieldtype", "number");
 		numberfields++;
-		var cantidad = numberfields;
+		let cantidad = numberfields;
 		insertField(item, cantidad);
 	});
 
-	// Paragraph listener
+	// Parrafo
 	$("#parafield").click(function () {
-		var item = $("#parafieldbox");
+		let item = $("#parafieldbox");
 		$("#parafieldbox").attr("fieldtype", "para");
 		parafields++;
-		var cantidad = parafields;
+		let cantidad = parafields;
 		insertField(item, cantidad);
 	});
 
-	//Checkbox listener
+	// Checkbox
 	$("#checkboxfield").click(function () {
-		var item = $("#checkfieldbox");
+		let item = $("#checkfieldbox");
 		$("#checkfieldbox").attr("fieldtype", "check");
 		checkboxfields++;
 		checkinputs = checkinputs + 3;
-		var cantidad = checkboxfields;
+		let cantidad = checkboxfields;
 		insertField(item, cantidad);
 	});
 
-	//Radio listener
+	// Radio
 	$("#multiplefield").click(function () {
-		var item = $("#multiplefieldbox");
+		let item = $("#multiplefieldbox");
 		$("#multiplefieldbox").attr("fieldtype", "multiple");
 		multiplefields++;
 		radioinputs = radioinputs + 3;
-		var cantidad = multiplefields;
+		let cantidad = multiplefields;
 		insertField(item, cantidad);
 	});
 
-	//Drop Down listener
+	// Desplegable
 	$("#selectfield").click(function () {
-		var item = $("#selectfieldbox");
+		let item = $("#selectfieldbox");
 		$("#selectfieldbox").attr("fieldtype", "select");
 		selectfields++;
 		selectoptions = selectoptions + 3;
-		var cantidad = selectfields;
+		let cantidad = selectfields;
 		insertField(item, cantidad);
 	});
 
-	//name listener
+	// Nombre
 	$("#namefield").click(function () {
-		var item = $("#namefieldbox");
+		let item = $("#namefieldbox");
 		$("#namefieldbox").attr("fieldtype", "name");
 		namefields++;
-		var cantidad = namefields;
+		let cantidad = namefields;
 		insertField(item, cantidad);
 	});
 
-	//Date listener
+	// Fecha
 	$("#datefield").click(function () {
-		var item = $("#datefieldbox");
+		let item = $("#datefieldbox");
 		datefields++;
-		var cantidad = datefields;
+		let cantidad = datefields;
 		insertField(item, cantidad);
 	});
 
-	//Time listener
+	// Hora
 	$("#timefield").click(function () {
-		var item = $("#timefieldbox");
+		let item = $("#timefieldbox");
 		timefields++;
-		var cantidad = timefields;
+		let cantidad = timefields;
 		insertField(item, cantidad);
 	});
 
-	//Phone listener
+	// Teléfono
 	$("#telfield").click(function () {
-		var item = $("#telfieldbox");
+		let item = $("#telfieldbox");
 		telfields++;
-		var cantidad = telfields;
+		let cantidad = telfields;
 		insertField(item, cantidad);
 	});
 
-	//Address listener
+	// Dirección
 	$("#addressfield").click(function () {
-		var item = $("#addressfieldbox");
+		let item = $("#addressfieldbox");
 		addressfields++;
-		var cantidad = addressfields;
+		let cantidad = addressfields;
 		insertField(item, cantidad);
 	});
 
-	//web listener
+	// Web
 	$("#webfield").click(function () {
-		var item = $("#webfieldbox");
+		let item = $("#webfieldbox");
 		webfields++;
-		var cantidad = webfields;
+		let cantidad = webfields;
 		insertField(item, cantidad);
 	});
 
-	//price listener
+	// Precio
 	$("#pricefield").click(function () {
-		var item = $("#pricefieldbox");
+		let item = $("#pricefieldbox");
 		pricefields++;
-		var cantidad = pricefields;
+		let cantidad = pricefields;
 		insertField(item, cantidad);
 	});
 
-	//mail listener
+	// E-mail
 	$("#mailfield").click(function () {
-		var item = $("#mailfieldbox");
+		let item = $("#mailfieldbox");
 		mailfields++;
-		var cantidad = mailfields;
+		let cantidad = mailfields;
 		insertField(item, cantidad);
 	});
 
-	//section break listener
+	// Espacio
 	$("#breakfield").click(function () {
-		var item = $("#breakfieldbox");
+		let item = $("#breakfieldbox");
 		breakfields++;
-		var cantidad = breakfields;
+		let cantidad = breakfields;
 		insertField(item, cantidad);
 
 	});
 
-	//FIle
+	// Archivo
 	$("#filefield").click(function () {
-		var item = $("#filefieldbox");
+		let item = $("#filefieldbox");
 		filefields++;
-		var cantidad = filefields;
+		let cantidad = filefields;
 		insertField(item, cantidad);
 	});
 
 
-	/* Insert. Clonamos el item y le cambiamos su id */
+	/* Insertar. Clonamos el item y le cambiamos su id */
 	function insertField(item, cantidad) {
 		fields++;
-		var copia = $(item).clone();
-		var itemID = $(item).attr("id");
+		let copia = $(item).clone();
+		let itemID = $(item).attr("id");
 		$(copia).attr("id", itemID + cantidad);
-		var labelID = $(copia).find(".fieldLabel").attr("id");
+		let labelID = $(copia).find(".fieldLabel").attr("id");
 		$(copia).find(".fieldLabel").attr("id", labelID + cantidad);
 		$(copia).attr("selected", false);
 		$(copia).hide();
 		$(copia).appendTo($("#form"));
-		//alert (copia.attr("id"));
 		$(copia).mouseover(fieldHover);
-		var animando = false;
+		let animando = false;
 		if (!animando) {
 			animando = true;
 			$(copia).fadeIn(function () {
@@ -266,12 +259,9 @@ $(function () {
 			editField(copia);
 		});
 	}
-
-
-	// hover del field
 	$(".fieldbox").mouseover(fieldHover);
 
-	//reset de estilos del form
+	// Reseteo de estilos del form
 	function resetFieldStyle() {
 		$(".fieldBox").css("backgroundColor", "#fff");
 		$(".fieldBox").css("borderColor", "#fff");
@@ -279,12 +269,11 @@ $(function () {
 		$(".fieldBox").find(".removeButton").hide();
 	}
 
-	/* Cambia estilos con el hover evitando los items seleccionados */
+	// Cambia estilos con el hover 
 	function fieldHover() {
 
 		$(this).css("borderColor", "rgb(35, 140, 215)");
 		$(this).css("borderStyle", "dotted");
-		//$(this).css("backgroundColor", "#E5F9FC");
 
 		$(this).mouseout(function () {
 			if (!($(this).attr("selected"))) {
@@ -296,41 +285,29 @@ $(function () {
 		});
 	}
 
-	//Save button
+	// Guardar
 	$("#savebutton").click(function () {
-		var resultado = $("#formBox").clone();
-		var copiaID = $(resultado).attr("id");
-		$(resultado).attr("id", "c" + copiaID); //cambiamos su id para evitar duplicados
+		let resultado = $("#formBox").clone();
+		let copiaID = $(resultado).attr("id");
+		$(resultado).attr("id", "c" + copiaID);
 		$(resultado).find("#savebutton").remove();
 		$("#codeBox").text(resultado.html());
 		$("#outcode").show();
 	});
 
-	/* limpiar value de input al hacer click */
+	// Limpia al hacer Click
 	$("input").click(function () {
 		inputdefault = $(this).val();
-		//alert(inputdefault);
 		$(this).val("");
 	});
 	$("textarea").click(function () {
 		$(this).val("");
 	});
 
-	/* 
-			 ------------------------------------------------------------
-			 
-									Edición de campos
-			 
-			 ------------------------------------------------------------
-	 */
-
-	/* Esta función cambia todos los items del form para quitarles cualquier estilo y el atributo selected, y 
-	   los cambia para el item seleccionado en concreto para remarcarlo.
-	   Por otra parte muestra sus opciones de edición correspondientes.
-	*/
+	/* Edición de campos */
 	function editField(item) {
 
-		//selección del item	
+		//Selección del item	
 		$(".fieldBox").css("backgroundColor", "#fff");
 		$(".fieldBox").css("borderColor", "#fff");
 		$(".fieldBox").attr("selected", false);
@@ -343,8 +320,6 @@ $(function () {
 		//Borrar item
 		$(item).find(".removeButton").click(function () {
 			$(item).fadeOut();
-			var addbox = $("#addMenu");
-			var addbtn = $("#addmenubutton");
 			mostrarMenu(mebox, menubtn);
 
 		});
@@ -357,17 +332,17 @@ $(function () {
 		});
 
 		//Mostrar propiedades
-		var mebox = $("#menuProp");
-		var menubtn = $("#fieldpropbutton");
+		let mebox = $("#menuProp");
+		let menubtn = $("#fieldpropbutton");
 		mostrarMenu(mebox, menubtn);
 		$("#errormenupropbox").hide();
 
 		//edit label
 		$("#editLabelbox").show();
-		var prevValor = $(item).find(":first").html();
+		let prevValor = $(item).find(":first").html();
 		$("#editlabelinput").val(prevValor);
 		$("#editlabelinput").change(function () {
-			var valor = $("#editlabelinput").val();
+			let valor = $("#editlabelinput").val();
 			if ($(item).attr("selected")) {
 				$(item).find(":first").html(valor);
 			}
@@ -410,46 +385,13 @@ $(function () {
 			$("#editSizebox").hide();
 
 		}
-		//Checkbox y radiobuttons
-		if ($(item).attr("fieldtype") == "check" || $(item).attr("fieldtype") == "multiple") {
-			$("#editchoisesbox").show();
-			if ($(item).attr("fieldtype") == "check") {
-				var inputtype = "checkboxinput";
-			} else {
-				var inputtype = "radioinput";
-			}
-			var cantOpciones = $(item).find("input").length;
-			for (var i = 1; i < cantOpciones; i++) {
-				var opcion = $("#editrow").clone();
-				//alert ($("#editrow").find("input").attr("id"));
-				/* Por alguna razón no me saca la id del input 
-				Mi idea era hacer ducplicados, cambiarle la id y ponerle los valores de la id del input
-				usando los contadores de inputs.
-				Luego hacer un evento que para cambiar el valor de los inputs con el valor de este campo*/
-
-
-
-			}
-		}
-
 	}
 
+	let inputdefault = "";
 
-	/* 
-			 ------------------------------------------------------------
-			 
-								Propiedades formulario
-			 
-			 ------------------------------------------------------------
-	 */
-
-	var inputdefault = "";
-	var txtareadefault = "";
-
-	/* form name */
-
+	/* Form name */
 	$("#formname").change(function () {
-		var formname = $("#formname").val();
+		let formname = $("#formname").val();
 		if (formname != "") {
 			$("#form").attr("name", formname);
 		} else {

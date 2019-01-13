@@ -1,19 +1,21 @@
 <html>
+
 <head>
 	<title>Generador de Formularios</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link rel="stylesheet" title="normal" href="css/gen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" title="normal" href="css/main.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.12.1/jquery-ui.css">
-    <script src="js/jquery_v3.js"></script>
+	<script src="js/jquery_v3.js"></script>
 	<script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
-	<script src="js/generator.js" type="text/javascript"></script>
-	
+	<script src="js/generador.js" type="text/javascript"></script>
+
 </head>
+
 <body>
 
 	<!-- header -->
 	<header id="headBox">
-		<div id="logo"></div>
+		<h1>Generador de Formularios</h1>
 	</header>
 	<!-- content-->
 	<div id="content">
@@ -23,25 +25,25 @@
 			<form name="form1" id="form" method="post" enctype="multipart/form-data">
 				<!-- text field -->
 				<div class="fieldBox" id="textfieldbox">
-					<div class="fieldLabel" id="textlabel">Text</div>
+					<div class="fieldLabel" id="textlabel">Texto</div>
 					<div class="clear"></div>
-					<input type="text" name="textfielinput" id="textfieldinput"/>
+					<input type="text" name="textfielinput" id="textfieldinput" />
 					<div class="clear"></div>
 					<div class="removeButton"></div>
-				</div>	
+				</div>
 				<!-- number field -->
 				<div class="fieldBox" id="numberfieldbox">
-					<div class="fieldLabel" id="numberlabel">Number</div>
+					<div class="fieldLabel" id="numberlabel">Número</div>
 					<div class="clear"></div>
-					<input type="number" name="numberfieldinput" id="numberfieldinput"/>
+					<input type="number" name="numberfieldinput" id="numberfieldinput" />
 					<div class="clear"></div>
 					<div class="removeButton"></div>
 				</div>
 				<!-- paragraph field -->
 				<div class="fieldBox" id="parafieldbox">
-					<div class="fieldLabel" id="paralabel">Paragraph</div>
+					<div class="fieldLabel" id="paralabel">Párrafo</div>
 					<div class="clear"></div>
-					<textarea id="parafieldinput">insert paragraph</textarea>
+					<textarea id="parafieldinput"></textarea>
 					<div class="clear"></div>
 					<div class="removeButton"></div>
 				</div>
@@ -50,65 +52,78 @@
 					<div class="fieldLabel" id="checklabel">Checkbox</div>
 					<div class="clear"></div>
 					<div class="checkrow">
-						<div class="checkinputbox"><input type="checkbox" class="checks" name="FirstOption" id="checkboxinput"/></div>
-						<div class="checkvalue"><p>First Option</p></div>
+						<div class="checkinputbox"><input type="checkbox" class="checks" name="FirstOption" id="checkboxinput" /></div>
+						<div class="checkvalue">
+							<p>Primera Opción</p>
+						</div>
 					</div>
 					<div class="checkrow">
-						<div class="checkinputbox"><input type="checkbox" class="checks" name="SecondOption" id="checkboxinput2"/></div>
-						<div class="checkvalue"><p>Second Option</p></div>
+						<div class="checkinputbox"><input type="checkbox" class="checks" name="SecondOption" id="checkboxinput2" /></div>
+						<div class="checkvalue">
+							<p>Segunda Opción</p>
+						</div>
 					</div>
 					<div class="checkrow">
-						<div class="checkinputbox"><input type="checkbox" class="checks" name="ThirdOption" id="checkboxinput3"/></div>
-						<div class="checkvalue"><p>Third Option</p></div>
+						<div class="checkinputbox"><input type="checkbox" class="checks" name="ThirdOption" id="checkboxinput3" /></div>
+						<div class="checkvalue">
+							<p>Tercera Opción</p>
+						</div>
 					</div>
 					<div class="clear"></div>
 					<div class="removeButton"></div>
 				</div>
 				<!-- Radio buttons -->
 				<div class="fieldBox" id="multiplefieldbox">
-					<div class="fieldLabel" id="multiplelabel">Multiple Choises</div>
+					<div class="fieldLabel" id="multiplelabel">Multiple Opción</div>
 					<div class="clear"></div>
 					<div class="checkrow">
-						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput"/></div>
-						<div class="checkvalue"><p>First Option</p></div>
+						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput" /></div>
+						<div class="checkvalue">
+							<p>Primera Opción</p>
+						</div>
 					</div>
 					<div class="checkrow">
-						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput2"/></div>
-						<div class="checkvalue"><p>Second Option</p></div>
+						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput2" /></div>
+						<div class="checkvalue">
+							<p>Segunda Opción</p>
+						</div>
 					</div>
 					<div class="checkrow">
-						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput3"/></div>
-						<div class="checkvalue"><p>Third Option</p></div>
+						<div class="checkinputbox"><input type="radio" class="checks" name="Option" id="radioinput3" /></div>
+						<div class="checkvalue">
+							<p>Tercera Opción</p>
+						</div>
 					</div>
 					<div class="clear"></div>
 					<div class="removeButton"></div>
 				</div>
 				<!-- Selects -->
 				<div class="fieldBox" id="selectfieldbox">
-					<div class="fieldLabel" id="selectlabel">Multiple Choises</div>
+					<div class="fieldLabel" id="selectlabel">Multiple Opción</div>
 					<div class="clear"></div>
 					<select name="Drop Down" id="selectfieldinput">
-						<option value="first" id="selecoption">First Option</option>
-						<option value="second" id="selectoption2">Second Option</option>
-						<option value="third" id="selectoption3">Third Option</option>
-					</select>	
+						<option value="first" id="selecoption">Primera Opción</option>
+						<option value="second" id="selectoption2">Segunda Opción</option>
+						<option value="third" id="selectoption3">Tercera Opción</option>
+					</select>
 					<div class="clear"></div>
 					<div class="removeButton"></div>
-				</div>	
+				</div>
 				<!-- Name -->
 				<div class="fieldBox" id="namefieldbox">
-					<div class="fieldLabel" id="namelabel">Name</div>
+					<div class="fieldLabel" id="namelabel">Nombre</div>
 					<div class="clear"></div>
 					<input type="text" name="nombre" id="namefieldinput">
 					<input type="text" name="lastname" id="lastnamefieldinput">
 					<div class="clear"></div>
-					<p class="namep">First Name</p><p class="namep" id="lastnamep">Last Name</p>
+					<p class="namep">Primer Nom.</p>
+					<p class="namep" id="lastnamep">Segundo Nom.</p>
 					<div class="clear"></div>
 					<div class="removeButton"></div>
 				</div>
 				<!-- Date -->
 				<div class="fieldBox" id="datefieldbox">
-					<div class="fieldLabel" id="datelabel">Date</div>
+					<div class="fieldLabel" id="datelabel">Fecha</div>
 					<div class="clear"></div>
 					<input type="date" name="date" id="datepicker">
 					<div class="clear"></div>
@@ -116,7 +131,7 @@
 				</div>
 				<!-- Time -->
 				<div class="fieldBox" id="timefieldbox">
-					<div class="fieldLabel" id="timelabel">Time</div>
+					<div class="fieldLabel" id="timelabel">Hora</div>
 					<div class="clear"></div>
 					<input type="time" name="time" id="timefieldinput">
 					<div class="clear"></div>
@@ -124,7 +139,7 @@
 				</div>
 				<!-- Phone -->
 				<div class="fieldBox" id="telfieldbox">
-					<div class="fieldLabel" id="telflabel">Phone</div>
+					<div class="fieldLabel" id="telflabel">Teléfono</div>
 					<div class="clear"></div>
 					<input type="number" name="telf" id="telfieldinput">
 					<div class="clear"></div>
@@ -132,25 +147,25 @@
 				</div>
 				<!-- Address -->
 				<div class="fieldBox" id="addressfieldbox">
-					<div class="fieldLabel" id="addresslabel">Address</div>
+					<div class="fieldLabel" id="addresslabel">Dirección</div>
 					<div class="clear"></div>
 					<input type="text" name="street" id="streetfieldinput">
 					<div class="clear"></div>
-					<p class="namep">Street</p>
+					<p class="namep">Calle</p>
 					<div class="clear"></div>
 					<input type="text" name="city" id="cityfieldinput">
 					<input type="text" name="state" id="statefieldinput">
 					<div class="clear"></div>
-					<p class="namep">City</p>
-					<p class="namep" id="statep">State</p>
+					<p class="namep">Ciudad</p>
+					<p class="namep" id="statep">Estado</p>
 					<div class="clear"></div>
 					<input type="text" name="cp" id="cpfieldinput">
 					<select name="country" id="countryfieldinput">
-						<option selected>Country</option>
+						<option selected>Pais</option>
 					</select>
 					<div class="clear"></div>
 					<p class="namep">Zip / CP</p>
-					<p class="namep" id="countryp">Country</p>
+					<p class="namep" id="countryp">Pais</p>
 					<div class="clear"></div>
 					<div class="removeButton"></div>
 				</div>
@@ -164,15 +179,15 @@
 				</div>
 				<!-- Price -->
 				<div class="fieldBox" id="pricefieldbox">
-					<div class="fieldLabel" id="pricelabel">Price</div>
+					<div class="fieldLabel" id="pricelabel">Precio</div>
 					<div class="clear"></div>
 					<p id="moneytype">$</p>
 					<input type="number" id="pricefieldinput">
 					<p id="dot">.</p>
 					<input type="number" id="centsinput">
 					<div class="clear"></div>
-					<p id="moneyp">Dollars</p>
-					<p id="centsp">Cents</p>
+					<p id="moneyp">Dolares</p>
+					<p id="centsp">Centimos</p>
 					<div class="clear"></div>
 					<div class="removeButton"></div>
 				</div>
@@ -180,20 +195,20 @@
 				<div class="fieldBox" id="mailfieldbox">
 					<div class="fieldLabel">E-Mail</div>
 					<div class="clear"></div>
-					<input type="text" name="mail" id="webfieldinput" value="@">
+					<input type="text" name="mail" id="webfieldinput">
 					<div class="clear"></div>
-					
+
 					<div class="removeButton"></div>
 				</div>
 				<!-- Section break -->
 				<div class="fieldBox" id="breakfieldbox">
-					<div class="fieldLabel" id="breaklabel">Section Break</div>
+					<div class="fieldLabel" id="breaklabel">Espacio</div>
 					<div class="clear"></div>
 					<div class="removeButton"></div>
 				</div>
 				<!-- File  -->
 				<div class="fieldBox" id="filefieldbox">
-					<div class="fieldLabel" id="filelabel">File Upload</div>
+					<div class="fieldLabel" id="filelabel">Subir archivo</div>
 					<div class="clear"></div>
 					<input type="file" id="filefieldinput" name="file">
 					<div class="clear"></div>
@@ -203,110 +218,148 @@
 			<!-- Save Button -->
 			<div id="savebutton">
 				<div id="saveicon"></div>
-				<p>Save Form</p>
+				<p>Guardar</p>
 			</div>
 		</div>
 		<!-- Options -->
 		<div id="menuBox">
-			<div id = "menuTitle">
-				<nav class="navption" id="addmenubutton"><p>Add field</p></nav>
-				<nav class="navption" id="fieldpropbutton"><p>Field properties</p></nav>
-				<nav class="navption" id="formpropbutton"><p>Form Properties</p></nav>
-			</div>	
+			<div id="menuTitle">
+				<nav class="navption" id="addmenubutton">
+					<p>Añadir Archivo</p>
+				</nav>
+				<nav class="navption" id="fieldpropbutton">
+					<p>Prop. de Archivos</p>
+				</nav>
+				<nav class="navption" id="formpropbutton">
+					<p>Prop. de Secciones</p>
+				</nav>
+			</div>
 			<div class="clear"></div>
 			<!-- add Menu -->
 			<div id="addMenu">
 				<!-- Input row -->
-				<div class ="menuRow">
-					<p>Click to add a field</p>
+				<div class="menuRow">
+					<p>Añadir Sección</p>
 				</div>
 				<!-- Input row -->
-				<div class ="menuRow">
+				<div class="menuRow">
 					<div class="menuColA" id="textfield">
 						<div class="inputIcon" id="texticon"></div>
-						<div class="inputLabel"><p>Single Line</p></div>
+						<div class="inputLabel">
+							<p>Texto</p>
+						</div>
 					</div>
 					<div class="menuColB" id="numberfield">
 						<div class="inputIcon" id="numbericon"></div>
-						<div class="inputLabel"><p>Number</p></div>
+						<div class="inputLabel">
+							<p>Número</p>
+						</div>
 					</div>
 				</div>
 				<!-- Input row -->
-				<div class ="menuRow">
+				<div class="menuRow">
 					<div class="menuColA" id="parafield">
 						<div class="inputIcon" id="paraicon"></div>
-						<div class="inputLabel"><p>Paragraph</p></div>
+						<div class="inputLabel">
+							<p>Párrafo</p>
+						</div>
 					</div>
 					<div class="menuColB" id="checkboxfield">
 						<div class="inputIcon" id="checkicon"></div>
-						<div class="inputLabel"><p>Checkbox</p></div>
+						<div class="inputLabel">
+							<p>Checkbox</p>
+						</div>
 					</div>
-					
+
 				</div>
 				<!-- Input row -->
-				<div class ="menuRow">
+				<div class="menuRow">
 					<div class="menuColA" id="multiplefield">
 						<div class="inputIcon" id="multipleicon"></div>
-						<div class="inputLabel"><p>Multiple </p></div>
+						<div class="inputLabel">
+							<p>Multiple</p>
+						</div>
 					</div>
 					<div class="menuColB" id="selectfield">
 						<div class="inputIcon" id="selicon"></div>
-						<div class="inputLabel"><p>Drop Down</p></div>
+						<div class="inputLabel">
+							<p>Desplegable</p>
+						</div>
 					</div>
 				</div>
 				<!-- Input row -->
-				<div class ="menuRow">
+				<div class="menuRow">
 					<div class="menuColA" id="namefield">
 						<div class="inputIcon" id="nameicon"></div>
-						<div class="inputLabel"><p>Name</p></div>
+						<div class="inputLabel">
+							<p>Nombre</p>
+						</div>
 					</div>
 					<div class="menuColB" id="datefield">
 						<div class="inputIcon" id="dateicon"></div>
-						<div class="inputLabel"><p>Date</p></div>
+						<div class="inputLabel">
+							<p>Fecha</p>
+						</div>
 					</div>
 				</div>
 				<!-- Input row -->
-				<div class ="menuRow">
+				<div class="menuRow">
 					<div class="menuColA" id="timefield">
 						<div class="inputIcon" id="timeicon"></div>
-						<div class="inputLabel"><p>Time</p></div>
+						<div class="inputLabel">
+							<p>Hora</p>
+						</div>
 					</div>
 					<div class="menuColB" id="telfield">
 						<div class="inputIcon" id="telficon"></div>
-						<div class="inputLabel"><p>Phone</p></div>
+						<div class="inputLabel">
+							<p>Teléfono</p>
+						</div>
 					</div>
 				</div>
 				<!-- Input row -->
-				<div class ="menuRow">
+				<div class="menuRow">
 					<div class="menuColA" id="addressfield">
 						<div class="inputIcon" id="addressicon"></div>
-						<div class="inputLabel"><p>Address</p></div>
+						<div class="inputLabel">
+							<p>Dirrecion</p>
+						</div>
 					</div>
 					<div class="menuColB" id="webfield">
 						<div class="inputIcon" id="webicon"></div>
-						<div class="inputLabel"><p>Web Site</p></div>
+						<div class="inputLabel">
+							<p>Web</p>
+						</div>
 					</div>
 				</div>
 				<!-- Input row -->
-				<div class ="menuRow">
+				<div class="menuRow">
 					<div class="menuColA" id="pricefield">
 						<div class="inputIcon" id="dolaricon"></div>
-						<div class="inputLabel"><p>Price</p></div>
+						<div class="inputLabel">
+							<p>Precio</p>
+						</div>
 					</div>
 					<div class="menuColB" id="mailfield">
 						<div class="inputIcon" id="mailicon"></div>
-						<div class="inputLabel"><p>Email</p></div>
+						<div class="inputLabel">
+							<p>E-mail</p>
+						</div>
 					</div>
 				</div>
 				<!-- Input row -->
-				<div class ="menuRow">
+				<div class="menuRow">
 					<div class="menuColA" id="breakfield">
 						<div class="inputIcon" id="sectionicon"></div>
-						<div class="inputLabel"><p>Section Break</p></div>
+						<div class="inputLabel">
+							<p>Espacio</p>
+						</div>
 					</div>
 					<div class="menuColB" id="filefield">
 						<div class="inputIcon" id="fileicon"></div>
-						<div class="inputLabel"><p>File Upload</p></div>
+						<div class="inputLabel">
+							<p>Subir archivo</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -314,33 +367,33 @@
 			<div id="menuProp">
 				<!-- No field selected -->
 				<div id="errormenupropbox">
-					<p id="errormenuprop">Please select a field</p>
-					<p id="errormenuprop2">Click on a field on the left to change its properties.</p>
+					<p id="errormenuprop">Selecciona una sección</p>
+					<p id="errormenuprop2">Clicala para modificarla.</p>
 				</div>
 				<!-- Label Edit -->
 				<div id="editLabelbox">
-					<p class="proplabel">Field Label</p>
+					<p class="proplabel">Label del Archivo</p>
 					<div class="clear"></div>
-					<input type="text" id ="editlabelinput" name="editLabelinput"/>
+					<input type="text" id="editlabelinput" name="editLabelinput" />
 				</div>
 				<!-- field Size-->
 				<div id="editSizebox">
-					<p class="proplabel">Field Size</p>
+					<p class="proplabel">Tamño del Archivo</p>
 					<div class="clear"></div>
 					<select id="fieldsizeinput">
-						<option>    </option>
-						<option>Small</option>
-						<option>Medium</option>
-						<option>Large</option>
-					</select>	
+						<option> </option>
+						<option>Pequeño</option>
+						<option>Mediano</option>
+						<option>Grande</option>
+					</select>
 				</div>
 				<!-- Selects, checks & radios -->
 				<div id="editchoisesbox">
-					<p class="proplabel">Choises</p>
+					<p class="proplabel">Elecciones</p>
 					<div class="clear"></div>
 					<div class="editrow">
 						<input type="text" id="editoption" class="editleftinput">
-						<img src="img/remove.png" alt="Delete"/>
+						<img src="img/remove.png" alt="Delete" />
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -348,22 +401,23 @@
 			<div id="formGenerate"></div>
 			<!-- Form Properties -->
 			<div id="formProp">
-				<div class="proplabel">Form title</div>
+				<div class="proplabel">Título</div>
 				<div class="clear"></div>
-				<input type="text" id="formname" class="txtinput" value="Insert form name"/>
+				<input type="text" id="formname" class="txtinput" />
 				<div class="clear"></div>
-				<div class="proplabel">Form description</div>
+				<div class="proplabel">Descripción</div>
 				<div class="clear"></div>
-				<textarea id="iddesc" class="bigarea">insert description</textarea>
+				<textarea id="iddesc" class="bigarea">Inserta descripción</textarea>
 			</div>
 		</div>
 		<div class="clear"></div>
 		<!-- Outcome code -->
 		<div id="outcode">
-			<hr/>
-			<h2>Generador</h2>
+			<hr />
+			<h2>Generador de Código</h2>
 			<div id="codeBox"></div>
 		</div>
 	</div>
 </body>
+
 </html>
