@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <script src="librerias/angular-1.7.5/angular.min.js"></script>
+    <script src="script3.js"></script>
+</head>
+
+<body>
+    <div ng-controller="PrimerController">
+        <input ng-model="style.backgroundColor">
+        <div ng-style="style">
+            <p>Color de fondo {{style.backgroundColor}}.</p>
+        </div>
+    </div>
+
+    <div ng-controller="SegundoController">
+        <input ng-model="style.color">
+        <div ng-style="style">
+            <p>Color de fuente {{style.color}}.</p>
+        </div>
+    </div>
+
+    <div ng-controller="TercerController">
+        <input ng-model="input" ng-change="update()">
+        <div>
+            <p>Contador: {{cont}}.</p>
+        </div>
+    </div>
+</body>
+
+</html>
