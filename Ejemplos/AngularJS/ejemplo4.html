@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <script src="Librerias/angular-1.7.5/angular.js"></script>
+    <script src="script4.js"></script>
+</head>
+
+<body ng-controller="CalcController">
+        <h1>Acumulador</h1>
+        <h2>Control de operación:</h2>
+        <input ng-model="calc.opcion1">
+        <div class="btn-grp">
+            <button ng-click="sumar()">+</button>
+            <button ng-click="restar()">-</button>
+            <button ng-click="dividir()">*</button>
+            <button ng-click="multiplicar()">/</button>
+        </div>
+        <p>Total: {{calc.opcion2}}</p>
+    </body>
+
+</html>
