@@ -2,7 +2,7 @@
   <div class="card-header bg-primary text-white">
     My product's list </div>
   <div class="card-block">
-    <div class="table-responsive">
+    <div class="table-responsive" *ngIf="products && products.length">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -12,7 +12,11 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Aquí van los productos. Por ahora se queda vacío -->
+          <tr *ngFor="let products of products">
+            <td>{{products.desc}}</td>
+            <td>{{products.price}}</td>
+            <td>{{products.avail}}</td>
+          </tr>
         </tbody>
       </table>
     </div>

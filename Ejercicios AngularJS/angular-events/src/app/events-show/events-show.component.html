@@ -1,0 +1,22 @@
+<div class="col-md-6 mt-4">
+  <!-- Repetir esto por cada evento -->
+  <div class="card" *ngFor="let events of events">
+    <div class="card-body">
+      Author: Arturo Bernal Mayordomo IES San Vicente 2016 / 2017 Page: 3
+      <h4 class="card-title">{{events.title}}</h4>
+      <p class="card-text">{{events.description}}</p>
+    </div>
+    <div class="card-footer text-muted"> {{events.date}} <span class="float-right">{{events.price}}€</span> </div>
+  </div>
+</div>
+
+<div class="col-md-6 mt-4">
+    <div class="card" *ngFor="let eventos of eventos">
+        <div class="card-body">
+          Author: Arturo Bernal Mayordomo IES San Vicente 2016 / 2017 Page: 3
+          <h4 class="card-title">{{eventos.title}}</h4>
+          <p class="card-text">{{eventos.description}}</p>
+        </div>
+        <div class="card-footer text-muted"> {{eventos.date}} <span class="float-right">{{eventos.price}}€</span> </div>
+      </div>
+</div>
