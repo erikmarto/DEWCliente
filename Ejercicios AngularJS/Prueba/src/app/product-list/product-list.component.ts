@@ -9,6 +9,9 @@ import { IProduct} from '../interfaces/i-product';
 export class ProductListComponent implements OnInit {
     title = "My product's list"; 
     headers = { desc: 'Product', price: 'Price', avail: 'Available' };
+    showImage = true;
+    lightTheme: boolean = true;
+    filterSearch: string = '';
 
   products: IProduct[] = [{ 
     id: 1, 
@@ -23,6 +26,14 @@ export class ProductListComponent implements OnInit {
       price: 96.95, 
       imageUrl: 'assets/motherboard.jpg', 
       rating: 4 }];
+
+  toggleImage() {    
+    this.showImage = !this.showImage;  
+  }
+
+  toggleTheme = () => {
+    this.lightTheme = !this.lightTheme;
+  }
 
   constructor() { }
 

@@ -1,0 +1,35 @@
+<div class="card-header bg-primary text-white">
+  {{title}}
+  <!-- Repetir esto por cada evento -->
+</div>
+<div class="container">
+  <div class="row" *ngIf="people && people.length">
+    <div class="col-6" *ngFor="let person of people">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title" [ngStyle]="{'background-color': 'green', 'font-size.px':60}">{{person.name}}</h4>
+          <!-- <p class="card-text" [ngStyle]="{'background-color': person.country == 'suiza' ? 'red':'blue'}">{{person.country}}</p> -->
+          <p class="card-text" [ngStyle]="{'background-color': getColor(person.country)}">{{person.country}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card-header bg-primary text-white">
+  {{title2}}
+</div>
+<!-- Repetir esto por cada evento -->
+<div class="container">
+  <div class="row" *ngIf="people && people.length">
+    <div class="col-6" *ngFor="let person of people">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title" [ngClass]="{'bg-info':true}">{{person.name}}</h4>
+          <p class="card-text" [ngClass]="getColorClases(person.country)">{{person.country}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
