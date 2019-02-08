@@ -2,41 +2,41 @@
   <div class="card-header" [ngClass]="{'bg-light' : lightTheme, 'text-dark' : lightTheme,
                 'bg-dark' : !lightTheme, 'text-light' : !lightTheme}">
     <div class="card-header bg-primary text-white">
-      My product's list </div>
+      My product's list
+    </div>
+    <form class="form">
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2 text-sm-right" for="filterDesc">Filtro:</label>
+        <div class="col-sm-5"> <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc"
+            id="filterDesc" placeholder="Filter...">
+        </div>
+        <label class="col-form-label col-sm-5"> Filtrando por: {{filterSearch}}</label>
+      </div>
+    </form>
+    <button class="btn btn-sm" [ngClass]="{'btn-danger': showImage, 'btn-primary': !showImage}" (click)="toggleImage()">
+      {{showImage?'Ocultar':'Mostrar'}} imagen </button>
     <span class="float-right">
       <button class="btn" [ngClass]="{'btn-dark': lightTheme, 'btn-light': !lightTheme}" (click)="toggleTheme()">
         Toggle theme
       </button>
     </span>
     <div class="card-block">
-      <div class="table-responsive" *ngIf="products && products.length">
+      <div class="table-responsive" *ngIf="product && product.length">
         <table class="table table-striped">
           <thead>
-            <div class="card-block">
-              <form class="form">
-                <div class="form-group row">
-                  <label class="col-form-label col-sm-2 text-sm-right" for="filterDesc">Filtro:</label>
-                  <div class="col-sm-5"> <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc"
-                      id="filterDesc" placeholder="Filter...">
-                  </div>
-                  <label class="col-form-label col-sm-5"> Filtrando por: {{filterSearch}}</label>
-                </div>
-              </form>
-            </div>
-            <button class="btn btn-sm" [ngClass]="{'btn-danger': showImage, 'btn-primary': !showImage}" (click)="toggleImage()">
-              {{showImage?'Ocultar':'Mostrar'}} imagen </button>
             <tr>
-              <th>{{headers.desc}}</th>
-              <th>{{headers.price}}</th>
-              <th>{{headers.avail}}</th>
+              <th>{{header.image}}</th>
+              <th>{{header.desc}}</th>
+              <th>{{header.price}}</th>
+              <th>{{header.avail}}</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let products of products">
-              <td><img [src]="products.imageUrl" [title]="products.desc" *ngIf="showImage" alt=""></td>
-              <td>{{products.desc}}</td>
-              <td>{{products.price}}</td>
-              <td>{{products.avail}}</td>
+            <tr *ngFor="let product of product | productFilter:filterSearch">
+              <td><img [src]="product.imageUrl" [title]="product.desc | uppercase" *ngIf="showImage" alt=""></td>
+              <td>{{product.desc}}</td>
+              <td>{{product.price | currency:'EUR':'symbol'}}</td>
+              <td>{{product.avail | date:'dd/MM/y'}}</td>
             </tr>
           </tbody>
         </table>

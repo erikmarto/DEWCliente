@@ -1,22 +1,55 @@
-<div class="col-md-6 mt-4">
-  <!-- Repetir esto por cada evento -->
-  <div class="card" *ngFor="let events of events">
+<nav class="navbar navbar-light bg-light justify-content-between mt-3">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#" (click)="orderDate()">Orden por fecha</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" (click)="orderPrice()">Orden por precio</a>
+    </li>
+  </ul>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="text" [(ngModel)]="search" name="search" placeholder="Search"
+      aria-label="Search">
+  </form>
+</nav>
+
+<div class="row" *ngIf="events && events.length">
+  <div class="col-md-6 mt-4" *ngFor="let event of events | eventFilter:search">
+    <div class="card"></div>
+    <img class="card-img-top" [src]="event.image">
     <div class="card-body">
-      Author: Arturo Bernal Mayordomo IES San Vicente 2016 / 2017 Page: 3
-      <h4 class="card-title">{{events.title}}</h4>
-      <p class="card-text">{{events.description}}</p>
+      <h4 class="card-title">{{event.title | titlecase}}</h4>
+      <p class="card-text">{{event.description}}</p>
     </div>
-    <div class="card-footer text-muted"> {{events.date}} <span class="float-right">{{events.price}}€</span> </div>
+    <div class="card-footer text-muted">
+      {{event.date | date:'dd/MM/y'}}
+      <span class="float-right">{{event.price | currency:'EUR'}}</span>
+    </div>
   </div>
 </div>
 
-<div class="col-md-6 mt-4">
-    <div class="card" *ngFor="let eventos of eventos">
-        <div class="card-body">
-          Author: Arturo Bernal Mayordomo IES San Vicente 2016 / 2017 Page: 3
-          <h4 class="card-title">{{eventos.title}}</h4>
-          <p class="card-text">{{eventos.description}}</p>
-        </div>
-        <div class="card-footer text-muted"> {{eventos.date}} <span class="float-right">{{eventos.price}}€</span> </div>
-      </div>
-</div>
+<form class="mt-4" (ngSubmit)="addEvent()">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="newEvent.title" placeholder="Enter
+      name">
+    </div>
+    <div class="form-group">
+      <label for="date">Fecha</label>
+      <input type="date" class="form-control" [(ngModel)]="newEvent.date" name="date">
+    </div>
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea class="form-control" name="description" [(ngModel)]="newEvent.description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Precio</label>
+      <input type="number" class="form-control" name="price" min="0.00" max="10000.00" [(ngModel)]="newEvent.price" step="0.01" />
+    </div>
+    <!-- <div class="form-group">
+      <label for="image">Imagen</label>
+      <input type="fle" class="form-control" name="image" #fleImage (change)="changeImage(fleImage)">
+    </div> -->
+    <img [src]="newEvent.image" alt="" class="img-thumbnail" [(ngModel)]="newEvent.image">
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>

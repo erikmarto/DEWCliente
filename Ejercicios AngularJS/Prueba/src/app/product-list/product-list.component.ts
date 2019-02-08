@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct} from '../interfaces/i-product';
+import { HAMMER_LOADER } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-list',
@@ -8,16 +9,16 @@ import { IProduct} from '../interfaces/i-product';
 })
 export class ProductListComponent implements OnInit {
     title = "My product's list"; 
-    headers = { desc: 'Product', price: 'Price', avail: 'Available' };
+    header = { desc: 'Product', price: 'Price', avail: 'Available', image: 'Imagen' };
     showImage = true;
     lightTheme: boolean = true;
     filterSearch: string = '';
 
-  products: IProduct[] = [{ 
+  product: IProduct[] = [{ 
     id: 1, 
     desc: 'SSD hard drive', 
     avail: new Date('2016-10-03'), 
-    price: 75, 
+    price: 75,
     imageUrl: 'assets/ssd.jpg', 
     rating: 5 }
     , { id: 2, 
