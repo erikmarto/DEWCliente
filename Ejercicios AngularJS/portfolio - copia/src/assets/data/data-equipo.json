@@ -1,0 +1,20 @@
+[
+    {
+        "frase": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "nombre": "Robert T. Williams",
+        "subtitulo": "alumno",
+        "twitter": "@robertwilliams"
+    },
+    {
+        "frase": "Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+        "nombre": "Angelina B. Widow",
+        "subtitulo": "profesora",
+        "twitter": "@angelinawidow"
+    },
+    {
+        "frase": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "nombre": "Patrick Anderson",
+        "subtitulo": "alumno",
+        "twitter": "@patrickanderson"
+    }
+]
