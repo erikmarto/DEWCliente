@@ -2,61 +2,58 @@
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-4">
-        <h3 class="mb-4">About</h3>
-        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, quod!</p>
+        <h3 class="mb-4">¿Quienes Somos?</h3>
         <ul class="list-unstyled ">
-          <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-location"></span></span><span class="">34
-              Street Name, City Name Here, United States</span></li>
-          <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-telephone"></span></span><span class="">+1 242
-              4942 290</span></li>
-          <li class="d-flex"><span class="mr-3"><span class="icon ion-email"></span></span><span><a
-                href="mailTo:{{infoPageService.info.email}}">{{infoPageService.info.email}}</a></span></li>
+          <h6>({{infoPageService.info.titulo}})</h6>
+          <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-location"></span></span><span>{{infoPageService.info.localizacion}}</span></li>
+          <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-telephone"></span></span><span>{{infoPageService.info.telefono}}</span></li>
+          <li class="d-flex"><span class="mr-3"><span class="icon ion-email"></span></span><span>{{infoPageService.info.email}}</span></li>
         </ul>
       </div>
-      <div class="col-md-2">
-        <h3 class="mb-4">Links</h3>
+      <!-- <div class="col-md-2">
+        <h3 class="mb-4">Enlaces</h3>
         <ul class="list-unstyled ">
-          <li><a href="about.html">About</a></li>
-          <li><a href="hairstyle.html">Hairstyle</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a routerLink="about">Sobre Nosotros</a></li>
+          <li><a routerLink="hairstyle">Estilos</a></li>
+          <li><a routerLink="contact">Contactanos</a></li>
         </ul>
-      </div>
-      <div class="col-md-3">
-        <h3 class="mb-4">Latest Blog</h3>
+      </div> -->
+      <div class="col-md-4">
+        <h3 class="mb-4">Últimos Blogs</h3>
         <ul class="list-unstyled blog-entry-footer">
           <li><a href="#">
-              <span class="post-meta">March 20, 2018</span>
-              <h3>7 Best Destination in The World</h3>
+              <span class="post-meta">Marzo 20, 2018</span>
+              <h3>Los mejores cortes realizados</h3>
             </a>
           </li>
           <li><a href="#">
-              <span class="post-meta">December 20, 2018</span>
-              <h3>4 Hour Work Week And The Rest Is Travel</h3>
+              <span class="post-meta">Diciembre 20, 2018</span>
+              <h3>4 Horas de semana laboral y el resto es viaje.</h3>
             </a>
           </li>
           <li><a href="#">
-              <span class="post-meta">January 2, 2019</span>
-              <h3>Why You Should Travel Today</h3>
+              <span class="post-meta">Enero 2, 2019</span>
+              <h3>Porque deberias venir a nosotros</h3>
             </a>
           </li>
         </ul>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <!-- Redes sociales -->
-        <h3>Connect</h3>
-        <p>
-          <a href="{{infoPageService.info.facebook}}" class="p-2"><span class="fa fa-facebook"></span></a>
-          <a href="{{infoPageService.info.twitter}}" class="p-2"><span class="fa fa-twitter"></span></a>
-          <a href="{{infoPageService.info.instagram}}" class="p-2"><span class="fa fa-instagram"></span></a>
-        </p>
+        <h3>Redes Sociales</h3>
+        <div>
+          <a href="{{infoPageService.info.facebook}}" class="p-3"><span class="fa fa-facebook"></span></a>
+          <a href="{{infoPageService.info.twitter}}" class="p-3"><span class="fa fa-twitter"></span></a>
+          <a href="{{infoPageService.info.instagram}}" class="p-3"><span class="fa fa-instagram"></span></a>
+        </div>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-md-7 text-center">
         <!-- Modificación de fecha -->
-        Copyright &copy; {{anyo}} All rights reserved | This template is made with
+        Copyright &copy; {{anyo}} Derechos reservados | Este tema esta realizado por
         <!-- Derechos de autor -->
-        <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        <a href="https://colorlib.com" target="_blank" class="fa fa-heart-o"> Colorlib</a>
       </div>
     </div>
   </div>

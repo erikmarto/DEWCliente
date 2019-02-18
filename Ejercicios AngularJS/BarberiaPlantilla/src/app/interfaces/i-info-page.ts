@@ -1,11 +1,11 @@
 export interface IInfoPage {
     titulo?: string;
     email?: string;
-    nombre_corto?: string;
-    pagina_autor?: string;
+    telefono?: string;
+    localizacion?: string;
     facebook?: string;
     twitter?: string;
     instagram?: string;
-    tublr?: string;
     equipo_trabajo?: any[];
 }
+

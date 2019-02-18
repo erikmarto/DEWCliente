@@ -1,35 +1,30 @@
-<header role="banner"> 
+<header role="banner">
   <nav class="navbar navbar-expand-md navbar-dark bg-light">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Alotan</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" routerLink="home">Alotan</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+        aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
         <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link active" routerLink="home">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="hairstyle.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Haircut</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown04">
-              <a class="dropdown-item" href="hairstyle.html">Crew Cut</a>
-              <a class="dropdown-item" href="hairstyle.html">Regular Hair Cut</a>
-              <a class="dropdown-item" href="hairstyle.html">Shampoo + Cut</a>
-              <a class="dropdown-item" href="hairstyle.html">Beard Trim with Razor</a>
-              <a class="dropdown-item" href="hairstyle.html">Hair Color</a>
-            </div>
-
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="hairstyle">Estilos</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="blog">Blog</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="about">Sobre Nosotros</a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+            <a class="nav-link" routerLink="contact">Contactanos</a>
           </li>
         </ul>
-        
       </div>
     </div>
   </nav>
