@@ -9,7 +9,7 @@ import { InfoPageService } from './servicios/info-page.service';
 export class AppComponent {
   title = 'BarberiaPlantilla';
 
-  constructor(public infoPageService : InfoPageService,){
+  constructor(public infoPageService : InfoPageService){
 
   }
 

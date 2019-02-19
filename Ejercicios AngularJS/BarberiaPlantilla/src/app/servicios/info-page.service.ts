@@ -8,7 +8,7 @@ import { IEquipo } from '../interfaces/i-equipo';
 })
 export class InfoPageService {
   info: IInfoPage = {};
-  equipo: IEquipo = {};
+  equipo: IEquipo[] = [];
 
   cargada = false;
   constructor(private http: HttpClient) {
@@ -21,16 +21,14 @@ export class InfoPageService {
       .subscribe((respuesta: IInfoPage) => {
         this.cargada = true;
         this.info = respuesta;
-        /* console.log(this.info); */
       });
   }
 
   private cargaEquipo() {
     this.http.get('https://barberia-fc7d1.firebaseio.com/equipo.json')
-      .subscribe((respuesta: IEquipo) => {
+      .subscribe((respuesta: IEquipo[]) => {
         this.cargada = true;
         this.equipo = respuesta;
-        /* console.log(this.equipo); */
       });
   }
 }
