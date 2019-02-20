@@ -5,19 +5,14 @@
         <h3 class="mb-4">¿Quienes Somos?</h3>
         <ul class="list-unstyled ">
           <h6>({{infoPageService.info.titulo}})</h6>
-          <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-location"></span></span><span>{{infoPageService.info.localizacion}}</span></li>
-          <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-telephone"></span></span><span>{{infoPageService.info.telefono}}</span></li>
-          <li class="d-flex"><span class="mr-3"><span class="icon ion-email"></span></span><span>{{infoPageService.info.email}}</span></li>
+          <li class="d-flex"><span class="mr-3"><span
+                class="icon ion-ios-location"></span></span><span>{{infoPageService.info.localizacion}}</span></li>
+          <li class="d-flex"><span class="mr-3"><span
+                class="icon ion-ios-telephone"></span></span><span>{{infoPageService.info.telefono}}</span></li>
+          <li class="d-flex" routerLinkActive="active"><span class="mr-3"><span class="icon ion-email"></span></span><a
+              routerLink="#"><span>{{infoPageService.info.email}}</span></a></li>
         </ul>
       </div>
-      <!-- <div class="col-md-2">
-        <h3 class="mb-4">Enlaces</h3>
-        <ul class="list-unstyled ">
-          <li><a routerLink="about">Sobre Nosotros</a></li>
-          <li><a routerLink="hairstyle">Estilos</a></li>
-          <li><a routerLink="contact">Contactanos</a></li>
-        </ul>
-      </div> -->
       <div class="col-md-4">
         <h3 class="mb-4">Últimos Blogs</h3>
         <ul class="list-unstyled blog-entry-footer">

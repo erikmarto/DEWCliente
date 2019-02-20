@@ -1,66 +1,106 @@
+<section class="site-hero site-hero-innerpage overlay" data-stellar-background-ratio="0.5"
+  style="background-image: url(assets/images/big_image_1.jpg);">
+  <div class="container">
+    <div class="row align-items-center site-hero-inner justify-content-center">
+      <div class="col-md-8 text-center">
 
-    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(assets/images/big_image_1.jpg);">
-      <div class="container">
-        <div class="row align-items-center site-hero-inner justify-content-center">
-          <div class="col-md-8 text-center">
-
-            <div class="mb-5 element-animate">
-              <h1 class="mb-4">Contactanos</h1>
-              <p class="lead">Preguntanos cualquier cosa que quieras, siempre a tu dispiosición</p>
-            </div>
-
-          </div>
+        <div class="mb-5 element-animate">
+          <h1 class="mb-4">Contactanos</h1>
+          <p class="lead">Comentanos cualquier cosa, siempre a tu dispiosición</p>
         </div>
+
       </div>
-    </section>
-    <!-- END section -->
-    
-    <section class="site-section">
-      <div class="container">
+    </div>
+  </div>
+</section>
+<!-- END section -->
+
+<section class="quick-info element-animate" data-animate-effect="fadeInLeft">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 bgcolor">
         <div class="row">
-          <div class="col-md-12">
-            <form action="#" method="post">
-                  <div class="row">
-                    <div class="col-md-4 form-group">
-                      <label for="name">Nombre</label>
-                      <input type="text" id="name" class="form-control ">
-                    </div>
-                    <div class="col-md-4 form-group">
-                      <label for="phone">Teléfono</label>
-                      <input type="text" id="phone" class="form-control ">
-                    </div>
-                     <div class="col-md-4 form-group">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" class="form-control ">
-                    </div>
-                  </div>
-                   
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="message">Escribe el mensaje</label>
-                      <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input type="submit" value="Enviar" class="btn btn-primary">
-                    </div>
-                  </div>
-                </form>
+          <div class="col-md-4 mb-3">
+            <div class="media">
+              <div class="mr-3 icon-wrap"><span class="icon ion-ios-telephone"></span></div>
+              <div class="media-body">
+                <h5>{{infoPageService.info.telefono}}</h5>
+                <p>Cualquier consulta o cita llamanos</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="media">
+              <div class="mr-3 icon-wrap"><span class="icon ion-location"></span></div>
+              <div class="media-body">
+                <h5>{{infoPageService.info.localizacion}}</h5>
+                <p>Encuentranos en esta ubicación</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="media">
+              <div class="mr-3 icon-wrap"><span class="icon ion-android-time"></span></div>
+              <div class="media-body">
+                <h5>Desde: 10 am - 22 pm</h5>
+                <p>Lunes-Viernes, Domingos <br> Sabados: Cerrado</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- END section -->
+    </div>
+  </div>
+</section>
+<!-- END section -->
 
-    <section class="section-cover cta" data-stellar-background-ratio="0.5" style="background-image: url(assets/images/big_image_2.jpg);">
-      <div class="container">
-        <div class="row justify-content-center align-items-center intro">
-          <div class="col-md-8 text-center element-animate">
-            <h2 class="mb-4"><span>Novdedad</span> Obten 25% de descuento despues de 10 cortes</h2>
-            <p><a href="#" class="btn btn-black">Pedir hora</a></p>
+<section class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form action="#" method="post">
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" class="form-control ">
+            </div>
+            <div class="col-md-4 form-group">
+              <label for="phone">Teléfono</label>
+              <input type="text" id="phone" class="form-control ">
+            </div>
+            <div class="col-md-4 form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control ">
+            </div>
           </div>
-        </div>
+
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <label for="message">Escribe el mensaje</label>
+              <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="submit" value="Enviar" class="btn btn-primary">
+            </div>
+          </div>
+        </form>
       </div>
-    </section>
-    <!-- END section -->
+    </div>
+  </div>
+</section>
+<!-- END section -->
+
+<section class="section-cover cta" data-stellar-background-ratio="0.5"
+  style="background-image: url(assets/images/big_image_2.jpg);">
+  <div class="container">
+    <div class="row justify-content-center align-items-center intro">
+      <div class="col-md-8 text-center element-animate" routerLinkActive="active">
+        <h2 class="mb-4"><span>Novdedad</span> Obten 25% de descuento despues de 10 cortes</h2>
+        <p><a routerLink="#" class="btn btn-black">Pedir hora</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END section -->

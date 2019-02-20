@@ -1,11 +1,12 @@
-<section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(assets/images/big_image_1.jpg);">
+<section class="site-hero site-hero-innerpage overlay" data-stellar-background-ratio="0.5"
+  style="background-image: url(assets/images/big_image_1.jpg);">
   <div class="container">
     <div class="row align-items-center site-hero-inner justify-content-center">
       <div class="col-md-8 text-center">
 
         <div class="mb-5 element-animate">
           <h1 class="mb-4">Estilos</h1>
-          <p class="lead">Marcamos tendencia con cualquier corte de barba o de pelo que quieras hacerte.</p>
+          <p class="lead">Marcamos tendencia con cualquier corte de barba/pelo que quieras hacerte</p>
         </div>
 
       </div>
@@ -13,10 +14,6 @@
   </div>
 </section>
 <!-- END section -->
-
-
-
-
 
 <section class="quick-info element-animate" data-animate-effect="fadeInLeft">
   <div class="container">
@@ -27,8 +24,8 @@
             <div class="media">
               <div class="mr-3 icon-wrap"><span class="icon ion-ios-telephone"></span></div>
               <div class="media-body">
-                <h5>+1 234 5633 342</h5>
-                <p>Call us 24/7 we will get back to you ASAP</p>
+                <h5>{{infoPageService.info.telefono}}</h5>
+                <p>Cualquier consulta o cita llamanos</p>
               </div>
             </div>
           </div>
@@ -36,8 +33,8 @@
             <div class="media">
               <div class="mr-3 icon-wrap"><span class="icon ion-location"></span></div>
               <div class="media-body">
-                <h5>249 Division Rad</h5>
-                <p>Fake st. New York, New York City,  PO 2923 USA</p>
+                <h5>{{infoPageService.info.localizacion}}</h5>
+                <p>Encuentranos en esta ubicación</p>
               </div>
             </div>
           </div>
@@ -45,8 +42,8 @@
             <div class="media">
               <div class="mr-3 icon-wrap"><span class="icon ion-android-time"></span></div>
               <div class="media-body">
-                <h5>Daily: 8 am - 10 pm</h5>
-                <p>Mon-Fri, Sunday <br> Saturday: Closed</p>
+                <h5>Desde: 10 am - 22 pm</h5>
+                <p>Lunes-Viernes, Domingos <br> Sabados: Cerrado</p>
               </div>
             </div>
           </div>
@@ -59,64 +56,28 @@
 
 
 <section class="site-section pb-5">
-  <div class="container">
+  <div *ngFor="let estilo of infoPageService.estilos" class="container">
     <div class="row">
       <div class="col-md-6 video-wrap mb-5">
-        <img src="assets/images/img_5.jpg" alt="Image placeholder" class="img-fluid">
+        <img src="{{estilo.url}}" alt="Image placeholder" class="img-fluid">
       </div>
       <div class="col-md-6 pl-md-5">
-        <h3>Crew Cut</h3>
-        <p class="lead">Expert Barber</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam facere a excepturi quod impedit rerum ipsum totam incidunt, necessitatibus id veritatis maiores quos saepe dolore commodi magnam fugiat. Incidunt, omnis.</p>
-        <p>Nobis quae eaque facere architecto eligendi, voluptas quasi, blanditiis aperiam possimus inventore quis nam! Cupiditate necessitatibus, voluptatem excepturi placeat exercitationem quos vitae ut vero dolorem, provident sit odio porro facere.</p>
+        <h3>{{estilo.nombre}}</h3>
+        <p class="lead">{{estilo.subtitulo}}</p>
+        <p>{{estilo.frase}}</p>
       </div>
     </div>
   </div>
 </section>
 <!-- END section -->
-
-<section class="pt-5 pb-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 video-wrap mb-5">
-        <img src="assets/images/img_3.jpg" alt="Image placeholder" class="img-fluid">
-      </div>
-      <div class="col-md-6 pl-md-5">
-        <h3>Regular Hair Cut</h3>
-        <p class="lead">Expert Barber</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam facere a excepturi quod impedit rerum ipsum totam incidunt, necessitatibus id veritatis maiores quos saepe dolore commodi magnam fugiat. Incidunt, omnis.</p>
-        <p>Nobis quae eaque facere architecto eligendi, voluptas quasi, blanditiis aperiam possimus inventore quis nam! Cupiditate necessitatibus, voluptatem excepturi placeat exercitationem quos vitae ut vero dolorem, provident sit odio porro facere.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- END section -->
-
-<section class="pt-5 pb-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 video-wrap mb-5">
-        <img src="assets/images/img_2.jpg" alt="Image placeholder" class="img-fluid">
-      </div>
-      <div class="col-md-6 pl-md-5">
-        <h3>Hair Color</h3>
-        <p class="lead">Expert Barber</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam facere a excepturi quod impedit rerum ipsum totam incidunt, necessitatibus id veritatis maiores quos saepe dolore commodi magnam fugiat. Incidunt, omnis.</p>
-        <p>Nobis quae eaque facere architecto eligendi, voluptas quasi, blanditiis aperiam possimus inventore quis nam! Cupiditate necessitatibus, voluptatem excepturi placeat exercitationem quos vitae ut vero dolorem, provident sit odio porro facere.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- END section -->
-
-
 
 <section class="site-section">
   <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-md-7 text-center">
         <h2>More Hair Styles</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur,
+          eveniet.</p>
       </div>
     </div>
     <div class="row top-destination">
@@ -167,12 +128,13 @@
 </section>
 <!-- END section -->
 
-<section class="section-cover cta" data-stellar-background-ratio="0.5" style="background-image: url(assets/images/big_image_2.jpg);">
+<section class="section-cover cta" data-stellar-background-ratio="0.5"
+  style="background-image: url(assets/images/big_image_2.jpg);">
   <div class="container">
     <div class="row justify-content-center align-items-center intro">
-      <div class="col-md-8 text-center element-animate">
-        <h2 class="mb-4"><span>Appoint a Haircut Today and</span> Get 25% discount</h2>
-        <p><a href="#" class="btn btn-black">Make an Appointment</a></p>
+      <div class="col-md-8 text-center element-animate" routerLinkActive="active">
+        <h2 class="mb-4"><span>Novdedad</span> Obten 25% de descuento despues de 10 cortes</h2>
+        <p><a routerLink="#" class="btn btn-black">Pedir hora</a></p>
       </div>
     </div>
   </div>

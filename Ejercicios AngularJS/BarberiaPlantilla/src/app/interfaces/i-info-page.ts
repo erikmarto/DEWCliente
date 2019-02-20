@@ -6,6 +6,5 @@ export interface IInfoPage {
     facebook?: string;
     twitter?: string;
     instagram?: string;
-    equipo_trabajo?: any[];
 }
 
