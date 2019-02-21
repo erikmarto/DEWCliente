@@ -67,8 +67,7 @@
     <div *ngFor="let persona of infoPageService.equipo" class="row element-animate">
       <div class="col-md-6 video-wrap mb-5">
         <img src="{{persona.url}}" alt="Image placeholder" class="img-fluid">
-        <a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo btn-video"><span
-            class="fa fa-play"></span></a>
+        <a href="{{persona.video}}" class="btn-video"><span class="fa fa-play"></span></a>
       </div>
       <div class="col-md-6 pl-md-5">
         <h3>{{persona.nombre}}</h3>

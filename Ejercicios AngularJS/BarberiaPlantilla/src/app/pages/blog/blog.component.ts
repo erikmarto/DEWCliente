@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { InfoPageService } from 'src/app/servicios/info-page.service';
 import { ScriptService } from 'src/app/servicios/script.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ScriptService } from 'src/app/servicios/script.service';
 })
 export class BlogComponent implements OnInit, OnDestroy {
 
-  constructor(public script: ScriptService) { }
+  constructor(public infoPageService: InfoPageService, public script: ScriptService) { }
 
   ngOnInit() {
     this.script.load('main').then(data => {

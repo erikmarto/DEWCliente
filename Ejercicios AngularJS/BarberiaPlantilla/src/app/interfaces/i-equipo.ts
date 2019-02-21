@@ -4,4 +4,5 @@ export interface IEquipo {
     subtitulo?: string;
     twitter?: string;
     url?: string;
+    video?: string;
 }

@@ -18,68 +18,22 @@
 <section class="slider-wrap site-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 element-animate ">
-        <a href="#" class="img-bg" style="background-image: url('assets/images/img_2.jpg')">
+      <div *ngFor="let blog of infoPageService.blogs" class="col-md-4">
+        <a href="#" class="img-bg tamaño"> 
+          <img src="{{blog.url}}" alt="Image placeholder" class="img-fluid imagen">
           <div class="text">
-            <span class="icon ion-ios-videocam"></span>
-            <h2>Video in Stockton Beach, Austrlia</h2>
-            <p>Continua leyendo...</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 element-animate ">
-        <a href="#" class="img-bg" style="background-image: url('assets/images/img_1.jpg')">
-          <div class="text">
-            <span class="icon ion-images"></span>
-            <h2>Photography in Trogir, Croatia</h2>
-            <p>Continua leyendo...</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 element-animate ">
-        <a href="#" class="img-bg last" style="background-image: url('assets/images/img_3.jpg')">
-          <div class="text">
-            <span class="icon ion-document"></span>
-            <h2>Enjoyimg the Desert in Morocco</h2>
-            <p>Continua leyendo...</p>
+            <span class="icon {{blog.icono}}"></span>
+            <h2>{{blog.nombre}}</h2>
+            <p>{{blog.texto}}</p>
           </div>
         </a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4 element-animate ">
-        <a href="#" class="img-bg" style="background-image: url('assets/images/img_4.jpg')">
-          <div class="text">
-            <span class="icon ion-images"></span>
-            <h2>Travel in India's Popular Places</h2>
-            <p>Continua leyendo...</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 element-animate ">
-        <a href="#" class="img-bg" style="background-image: url('assets/images/img_5.jpg')">
-          <div class="text">
-            <span class="icon ion-document"></span>
-            <h2>Popular Tower in France</h2>
-            <p>Continua leyendo...</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 element-animate ">
-        <a href="#" class="img-bg last" style="background-image: url('assets/images/img_6.jpg')">
-          <div class="text">
-            <span class="icon ion-document"></span>
-            <h2>Best Places in Australia</h2>
-            <p>Continua leyendo...</p>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="row element-animate pt-5">
-      <div class="col-6 text-left mb-3"><a href="#" class="btn btn-primary">Anterior</a></div>
-      <div class="col-6 text-right"><a href="#" class="btn btn-primary">Siguiente</a></div>
-    </div>
+  <!--<div class="row element-animate pt-5">
+        <div class="col-6 text-left mb-3"><a href="#" class="btn btn-primary">Anterior</a></div>
+        <div class="col-6 text-right"><a href="#" class="btn btn-primary">Siguiente</a></div>
+      </div>-->
   </div>
+  
 </section>
 <!-- END section -->
