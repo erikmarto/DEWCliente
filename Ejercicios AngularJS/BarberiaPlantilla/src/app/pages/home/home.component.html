@@ -186,60 +186,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div *ngFor="let servicio of infoPageService.servicios" class="col-md-4">
         <div class="media d-block media-feature text-center">
-          <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-scissors-1"></span></div>
+          <div class="mr-3 icon-wrap"><span class="custom-icon {{servicio.icono}}"></span></div>
           <div class="media-body">
-            <h3>Tratamiento Anti-caída</h3>
-            <p>Cuida tu cabello para evitar la caída especializados en reforzar el cabello.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="media d-block media-feature text-center">
-          <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-cream"></span></div>
-          <div class="media-body">
-            <h3>Tratamiento nutritivo</h3>
-            <p>Mantén tu cabello natural y con la máxima vitalidad gracias a nuestros productos.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="media d-block media-feature text-center">
-          <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-moustache"></span></div>
-          <div class="media-body">
-            <h3>Arreglo de barba</h3>
-            <p>Mantén tu cabello natural y con la máxima vitalidad gracias a nuestros productos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-4">
-        <div class="media d-block media-feature text-center">
-          <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-scissors"></span></div>
-          <div class="media-body">
-            <h3>Corte de cabello</h3>
-            <p>Especializados en todo tipo de cortes de cabello para todas las edades y estilos.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="media d-block media-feature text-center">
-          <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-razor"></span></div>
-          <div class="media-body">
-            <h3>Afeitado Profesional</h3>
-            <p>Saborea el apurado de nuestras navajas mientras se deslizan sobre tu piel.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="media d-block media-feature text-center">
-          <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-hair-comb"></span></div>
-          <div class="media-body">
-            <h3>Desrizante de queratina</h3>
-            <p>Desriza tu cabello a la vez que lo nutres y le das vitalidad, con nuestra queratina.</p>
+            <h3>{{servicio.nombre}}</h3>
+            <p>{{servicio.texto}}</p>
           </div>
         </div>
       </div>

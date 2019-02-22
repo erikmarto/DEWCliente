@@ -5,6 +5,7 @@ import { IEquipo } from '../interfaces/i-equipo';
 import { IEstilos } from '../interfaces/i-estilos';
 import { IEmpieza } from '../interfaces/i-empieza';
 import { IBlog } from '../interfaces/i-blog';
+import { IServiciosOfertados } from '../interfaces/i-servicios-ofertados';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class InfoPageService {
   equipo: IEquipo[] = [];
   estilos: IEstilos[] = [];
   blogs: IBlog[] = [];
+  servicios: IServiciosOfertados[] = [];
 
   cargada = false;
   constructor(private http: HttpClient) {
@@ -23,6 +25,7 @@ export class InfoPageService {
     this.Estilos();
     this.Blog();
     this.Empieza();
+    this.serviciosOfertados();
   }
 
   private Info() {
@@ -62,6 +65,14 @@ export class InfoPageService {
       .subscribe((respuesta: IEmpieza) => {
         this.cargada = true;
         this.empieza = respuesta;
+      });
+  }
+
+  private serviciosOfertados() {
+    this.http.get('https://barberia-fc7d1.firebaseio.com/servicios_ofertados.json')
+      .subscribe((respuesta: IServiciosOfertados[]) => {
+        this.cargada = true;
+        this.servicios = respuesta;
       });
   }
 }
