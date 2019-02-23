@@ -3,4 +3,5 @@ export interface IBlog {
     texto?:string;
     url?:string;
     icono?:string;
+    multimedia?: string;
 }

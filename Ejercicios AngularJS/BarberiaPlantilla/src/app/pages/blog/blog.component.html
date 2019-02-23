@@ -19,7 +19,7 @@
   <div class="container">
     <div class="row">
       <div *ngFor="let blog of infoPageService.blogs" class="col-md-4">
-        <a href="#" class="img-bg tamaño"> 
+        <a href="{{blog.multimedia}}" class="img-bg tamaño"> 
           <img src="{{blog.url}}" alt="Image placeholder" class="img-fluid imagen">
           <div class="text">
             <span class="icon {{blog.icono}}"></span>
@@ -29,10 +29,10 @@
         </a>
       </div>
     </div>
-  <!--<div class="row element-animate pt-5">
+  <div class="row element-animate pt-5">
         <div class="col-6 text-left mb-3"><a href="#" class="btn btn-primary">Anterior</a></div>
         <div class="col-6 text-right"><a href="#" class="btn btn-primary">Siguiente</a></div>
-      </div>-->
+      </div>
   </div>
   
 </section>
