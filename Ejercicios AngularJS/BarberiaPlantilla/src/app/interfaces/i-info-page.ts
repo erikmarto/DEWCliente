@@ -6,5 +6,6 @@ export interface IInfoPage {
     facebook?: string;
     twitter?: string;
     instagram?: string;
+    gmail?: string;
 }
 
