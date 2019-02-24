@@ -62,9 +62,9 @@
         <h2 class="mb-3">Cortes</h2>
         <p class="mb-5">Los mejores que te puedas imaginar aqui te dejamos una variedad de ellos.</p>
         <div class="mb-3 custom-nav">
-          <a href="#" class="btn btn-primary btn-sm custom-prev mr-2 mb-2"><span
+          <a href="" class="btn btn-primary btn-sm custom-prev mr-2 mb-2"><span
               class="ion-android-arrow-back"></span></a>
-          <a href="#" class="btn btn-primary btn-sm custom-next mr-2 mb-2"><span
+          <a href="" class="btn btn-primary btn-sm custom-next mr-2 mb-2"><span
               class="ion-android-arrow-forward"></span></a>
         </div>
       </div>
@@ -97,7 +97,7 @@
 </section>
 <!-- END section -->
 
-<section class="site-section">
+<section class="site-section padding">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-7 text-center">
@@ -124,9 +124,9 @@
   style="background-image: url(assets/images/big_image_2.jpg);">
   <div class="container">
     <div class="row justify-content-center align-items-center intro">
-      <div class="col-md-8 text-center element-animate" routerLinkActive="active">
+      <div class="col-md-8 text-center element-animate">
         <h2 class="mb-4"><span>Novedad</span> Obten 25% de descuento despues de 10 cortes</h2>
-        <p><a class="btn btn-black">Pedir hora</a></p>
+        <p><a routerLink="/contact" class="btn btn-black">Pedir hora</a></p>
       </div>
     </div>
   </div>
@@ -143,7 +143,7 @@
       <div class="col-md-6 pl-md-5">
         <h3>{{infoPageService.empieza.titulo}}</h3>
         <p class="lead">{{infoPageService.empieza.subtitulo}}</p>
-        <p>{{infoPageService.empieza.parrafo}}</p>
+        <p class="text-justify">{{infoPageService.empieza.parrafo}}</p>
       </div>
     </div>
   </div>
